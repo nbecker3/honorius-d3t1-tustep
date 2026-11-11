@@ -1,0 +1,1914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="la">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Magistri Honorii Summa Quaestionum ‘De quaestionibus decretalibus tractaturi’, D.3 t.1 de iure naturali</title>
+        <editor>Niels Becker</editor>
+        <editor>Waltraud Kozur</editor>
+        <editor>Karin Miethaner-Vent</editor>
+        <respStmt>
+          <resp xml:lang="de">TEI-Kodierung (TEI-Kern als Grundlage der TUSTEP-Fassung)</resp>
+          <name>Niels Becker</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p xml:lang="de">Unveröffentlichter Arbeitsstand. Die Druckfassung ist lizenziert unter CC BY-NC-ND 4.0; diese Datei gibt sie in anderem Format wieder.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl xml:id="ed2024">Magistri Honorii Summa Quaestionum ‘De quaestionibus decretalibus tractaturi’. Tertia distinctio, Titulus 1: De iure naturali. Textus, ediderunt Niels Becker, Waltraud Kozur, Karin Miethaner-Vent, München und Würzburg 2024 (15.02.2024). <ref target="https://honorius-summa-quaestionum.com/">honorius-summa-quaestionum.com</ref>. Lizenz: <ref target="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</ref></bibl>
+        <listWit>
+          <witness xml:id="P">Paris, Bibliothèque nationale de France, lat. 14591 (Leithandschrift)</witness>
+          <witness xml:id="L">Leipzig, Universitätsbibliothek 984</witness>
+          <witness xml:id="Z">Zwettl, Stiftsbibliothek 162</witness>
+          <witness xml:id="B">Bamberg, Staatsbibliothek, Msc. Can. 45 (P. II. 4)</witness>
+          <witness xml:id="D">Douai, Bibliothèque municipale 640 (584)</witness>
+        </listWit>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <editorialDecl>
+        <p xml:lang="de">TEI-Kern: Text, Zeilen und Seiten der Druckfassung, Gliederung und beide Apparate im Wortlaut des Drucks. Allegationen, Zitate, Namen und Register sind (noch) nicht ausgezeichnet. Die Datei folgt dem Modell von D.2 t.1, damit sie später nach dessen Standard angereichert werden kann.</p>
+        <p xml:lang="de">Zeilen und Seiten wie im Druck (#ed2024): &lt;lb n&gt; mit break="no" bei Silbentrennung, &lt;pb ed="#ed2024" n&gt;. Fettdruck des Drucks als &lt;hi rend="bold"&gt;, Nummern der Quaestiones und „pr.“ als &lt;label&gt;. Die Ergänzung „&lt;dispensat&gt;“ (Z. 103) als &lt;supplied reason="editorial"&gt;. „(!)“ und „(?)“ der Edition stehen als Zeichen im Text.</p>
+        <p xml:lang="de">Gliederung: praefatio (pr.) und quaestio (q.1–q.22), darin queritur / videtur / econtra / solutio. Ein Absatz endet, wo die Druckzeile vor dem rechten Rand endet. Der Typ eines Abschnitts richtet sich nach dem ersten fett gedruckten Wort in der ersten Zeile des Absatzes; ein Absatz ohne fettes Wort setzt den laufenden Abschnitt fort, am Anfang einer Quaestio ist er die Eingangsfrage (queritur). Wiederholungen innerhalb einer Quaestio sind weitere Abschnitte gleichen Typs.</p>
+        <p xml:lang="de">Reichweite des kritischen Apparats (wie in der Druckfassung): Vollständig verzeichnet ist nur die Leithandschrift P. L, Z, B und D sind nur für die Allegationen (bzw. Passagen, die Allegationen enthalten) und für die Gliederungselemente (Queritur, Videtur, Econtra, Solutio usw. bzw. Passagen, die sie enthalten) verzeichnet. Schweigen des Apparats bedeutet für L, Z, B und D außerhalb dieser Passagen keine Übereinstimmung mit dem Text.</p>
+        <p xml:lang="de">Kritischer Apparat: Jeder Eintrag des Drucks ist ein &lt;app&gt; in der Reihenfolge des Drucks; er lässt sich aus der TEI-Datei wortgleich zurückgewinnen. &lt;lem rend="bracket"&gt;: Lemma mit Klammer („lemma]“); &lt;lem rend="plain"&gt;: Lemma ohne Klammer, ggf. mit den Zeugen des Lemmas oder dem Vermerk der Herausgeber (emend., coniec.) in &lt;wit&gt;; &lt;lem rend="implicit"&gt;: der Druck nennt kein Lemma (Inhalt = verankerte Textstelle). &lt;wit&gt; gibt die Zeugenangabe in der Form des Drucks wieder (Sigel mit Vermerken wie om., add., marg., et Friedb.); maßgeblich für die Auswertung sind @wit und @type. Klammern des Drucks in Lesarten und nach den Sigeln sind &lt;note type="editorial"&gt; an ihrer Stelle; eine Schlussbemerkung („; cf. …“) ist eine &lt;note type="editorial"&gt; am Ende des &lt;app&gt;. @type der Lesarten: om, add (Lesart = Lemma mit Zusatz), praem (Zusatz vor dem Lemma), tr, marg, supra, ras, corr, del, dupl, illeg, lac, pc, ac; Angaben ohne eigenen Wortlaut (marg., supra lin., ras., corr., del., dupl., illeg., lac., tr.) als &lt;witDetail&gt;. Hochgestellte Ziffern im Lemma zählen die Vorkommen des Wortes in seiner Zeile. Korrekturen gegenüber dem Druck stehen als Kommentar im jeweiligen &lt;app&gt;.</p>
+        <p xml:lang="de">Kürzungen von P in Lesarten (Entscheidungen des Herausgebers vom 02.11.2026): die „9“ des Drucks als Kürzungszeichen ꝯ (U+A76F, con/cum); Überstriche als kombinierender Überstrich U+0304 über dem Buchstaben; steht der Strich im Druck mitten zwischen zwei Buchstaben, als kombinierender Doppel-Überstrich U+035E zwischen ihnen (z.B. „c͞a“). Eckige Klammern in Randlesarten von P sind Ergänzungen der Herausgeber, wo der Text im Falz der Handschrift nicht lesbar ist (Entscheidung vom 04.11.2026).</p>
+        <p xml:lang="de">Quellenapparat: Jeder Eintrag ist eine &lt;note type="fons"&gt; mit dem ganzen Wortlaut des Drucks (Kursive und Hochstellung als &lt;hi&gt;). @target/@targetEnd zeigen auf Ankerpaare um das Lemma (kursiver Anfang des Eintrags), bei Allegationen ohne Lemma um die Allegation im Text (abgegrenzt wie &lt;ref type="allegation"&gt; in D.2 t.1: ohne „ut“/„arg.“, mit „di.“, „in extra.“ bzw. „ff.“ und der Kennung des Kanons, ohne abschließendes Satzzeichen; zwei Allegationen eines Eintrags zusammen), bei Verweisen auf ganze Abschnitte („Cf. …“) um die ganzen Zeilen der Zeilenangabe; bei Zeilenlisten („225,231,234“) ein Paar je Zeile. Korrekturen gegenüber dem Druck stehen als Kommentar am Anfang der jeweiligen &lt;note&gt;.</p>
+      </editorialDecl>
+      <!-- Kritischer Apparat: Lemma und Lesarten stehen gesammelt im <back>; im Text markieren leere <anchor/>-Paare
+           Anfang und Ende jedes Lemmas (Methode "double end-point attachment"), weil sich Lemmata überlappen und
+           Gliederungsgrenzen überschreiten. -->
+      <variantEncoding method="double-end-point" location="external"/>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2026-11-05">Erzeugt aus der Druckfassung mit tools/pdf_auszug.py und tools/tei_aus_auszug.py (Festlegungen: tools/auszeichnung_D3_t1.py).</change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+      <pb ed="#ed2024" n="1"/>
+      <div type="distinctio" n="3" xml:id="D3">
+        <head><supplied reason="editorial">TERTIA DISTINCTIO</supplied></head>
+        <div type="titulus" n="1" xml:id="D3.t1">
+          <head><label>D.3 t.1</label> <anchor xml:id="D3.t1.a1s"/>de iure naturali<anchor xml:id="D3.t1.a1e"/></head>
+
+          <div type="praefatio" n="pr" xml:id="D3.t1.pr">
+            <p><lb n="1"/><label>pr.</label> Primam et secundam distinctionem hactenus perstrinximus.
+              <lb n="2"/>Nunc autem eo docente qui <anchor xml:id="D3.t1.f1s"/>docet mites uias suas<anchor xml:id="D3.t1.f1e"/> tertiam questiones
+              <lb n="3"/>matrimoniales et dubitabilia que circa matrimonium proponi possunt
+              <lb n="4"/>continentem breuiter perstringemus. Sciendum autem ante omnia:
+              <lb n="5"/>matrimonium inter cetera ecclesiastica sacramenta non minimum
+              <lb n="6"/>locum optinere meruit, quia testante doctore <anchor xml:id="D3.t1.a2s"/>gentium<anchor xml:id="D3.t1.a2e"/> <anchor xml:id="D3.t1.f2s"/>magnum est
+              <lb n="7"/>sacramentum in Christo et ecclesia<anchor xml:id="D3.t1.f2e"/>. Preminet enim ceteris temporis
+              <lb n="8"/>dignitate et rei significate sanctitate et loci institutionis auctoritate.
+              <lb n="9"/>Cum enim cetera sacramenta originem habuerint uel a ueteri
+              <lb n="10"/>testamento, ut sacramentum unctionis <anchor xml:id="D3.t1.a3s"/>regum<anchor xml:id="D3.t1.a3e"/> et episcoporum et si qua
+              <lb n="11"/>similia, uel a nouo, ut baptismus et eucharistia et huiusmodi, solum
+              <lb n="12"/>matrimonium est humane nature coeuum. Item quid sanctius
+              <lb n="13"/><anchor xml:id="D3.t1.a4s"/>coniunctione<anchor xml:id="D3.t1.a4e"/> Christi et ecclesie que in matrimonio significatur? Item
+              <lb n="14"/>cum cetera sacramenta in terra, <anchor xml:id="D3.t1.a5s"/>solum<anchor xml:id="D3.t1.a5e"/> istud in paradiso fuit institutum.
+              <lb n="15"/>Quoniam ergo a solo iure naturali matrimonium exordium habuit, recte
+              <lb n="16"/>de iure naturali quedam prelibanda censemus. Primo considerantes
+              <lb n="17"/>quot et que sint iuris naturalis acceptiones, et quoniam <anchor xml:id="D3.t1.f3s"/>ius naturale
+              <lb n="18"/>consistit in preceptis, prohibitionibus et demonstrationibus<anchor xml:id="D3.t1.f3e"/>, que circa
+              <lb n="19"/>singula dubitabilia proponantur, inquiramus. <anchor xml:id="D3.t1.f4s"/>Sciendum est igitur
+              <lb n="20"/>uarias esse acceptiones iuris naturalis, quas ignorantes de facili
+              <lb n="21"/>paralogizantur. <anchor xml:id="D3.t1.a6s"/>Sex<anchor xml:id="D3.t1.a6e"/> ergo dicimus esse acceptiones iuris naturalis:</p>
+            <pb ed="#ed2024" n="2"/>
+            <p><lb n="22"/><hi rend="bold">Primo</hi> <anchor xml:id="D3.t1.a7s"/>modo<anchor xml:id="D3.t1.a7e"/> <anchor xml:id="D3.t1.a8s"/>dicitur<anchor xml:id="D3.t1.a8e"/> <anchor xml:id="D3.t1.f5s"/>ordo quidam et instinctus nature<anchor xml:id="D3.t1.f5e"/>, secundum <anchor xml:id="D3.t1.a9s"/>quem<anchor xml:id="D3.t1.a9e"/>
+              <lb n="23"/>similia ex similibus procreantur. De hoc iure dicit <anchor xml:id="D3.t1.a10s"/>iurisperitus<anchor xml:id="D3.t1.a10e"/>: ‘<anchor xml:id="D3.t1.f6s"/>Ius
+              <lb n="24"/>naturale est quod natura omnia animantia docuit<anchor xml:id="D3.t1.f6e"/>’. <hi rend="bold">Secundo</hi> dicitur ius
+              <lb n="25"/>naturale <anchor xml:id="D3.t1.f7s"/>licitum et approbatum<anchor xml:id="D3.t1.f7e"/> quod a Domino nec precipitur nec
+              <lb n="26"/>prohibetur, quod et fas appellatur, <anchor xml:id="D3.t1.a11s"/>ut suum repetere, non repetere<anchor xml:id="D3.t1.a11e"/>. De
+              <lb n="27"/>quo dicit Apostolus: ‘<anchor xml:id="D3.t1.f8s"/>Omnia michi licent<anchor xml:id="D3.t1.f8e"/>’; Augustinus super illum
+              <lb n="28"/>locum: ‘<anchor xml:id="D3.t1.f9s"/>Licent que nullo precepto Domini precipiuntur uel <anchor xml:id="D3.t1.a12s"/>pro<lb n="29" break="no"/>hibentur<anchor xml:id="D3.t1.a12e"/><anchor xml:id="D3.t1.f9e"/>’; Ambrosius: ‘<anchor xml:id="D3.t1.f10s"/>Licent lege nature<anchor xml:id="D3.t1.f10e"/>’. <hi rend="bold">Tertio</hi> ius naturale dicitur
+              <lb n="30"/>precepta euangelica et legalia. Et dicitur ius naturale <anchor xml:id="D3.t1.a13s"/><anchor xml:id="D3.t1.a14s"/>uel quia a Deo<anchor xml:id="D3.t1.a13e"/>,
+              <lb n="31"/>qui est summa natura, est proditum, uel innatam siue naturalem
+              <lb n="32"/>sequitur equitatem. Ius idem diuinum appellatur<anchor xml:id="D3.t1.a14e"/>, quia a Deo sine
+              <lb n="33"/>hominum ministerio sub miraculorum ostensione est <anchor xml:id="D3.t1.a15s"/>proditum<anchor xml:id="D3.t1.a15e"/>, lex
+              <lb n="34"/>uetus in fulgure et tonitruo, doctrina Christi in linguis igneis. <anchor xml:id="D3.t1.a16s"/><hi rend="bold">Quarto</hi><anchor xml:id="D3.t1.a16e"/>
+              <lb n="35"/>dicitur ius naturale quedam habilitas, qua homo statim, <anchor xml:id="D3.t1.a17s"/>ut est, habilis
+              <lb n="36"/>est<anchor xml:id="D3.t1.a17e"/> ad discernendum inter bonum et malum, secundum quod dicitur ius
+              <lb n="37"/>naturale facultas discernendi bonum a malo cum approbatione unius et
+              <lb n="38"/>detestatione alterius, et hoc liberum arbitrium potest dici. De hoc iure
+              <lb n="39"/>dicit Apostolus: ‘<anchor xml:id="D3.t1.f11s"/>Video legem in membris meis repugnantem legi
+              <lb n="40"/>mentis<anchor xml:id="D3.t1.f11e"/>’. Ex hac lege ligamur; unde ab effectu lex appellatur. <hi rend="bold">Quinto</hi>
+              <lb n="41"/>dicitur ius naturale <anchor xml:id="D3.t1.f12s"/>iudicium rationis<anchor xml:id="D3.t1.f12e"/>. <anchor xml:id="D3.t1.f13s"/>Vnde Origines et Remigius super
+              <pb ed="#ed2024" n="3"/><lb n="42"/>illud Apostoli: ‘<anchor xml:id="D3.t1.f14s"/>Cum enim gentes legem non habeant, naturaliter tamen
+              <lb n="43"/>que legis sunt faciunt<anchor xml:id="D3.t1.f14e"/>’, idest iudicio rationis, et infra: ‘Si non habent
+              <lb n="44"/>gentes legem scriptam, habent tamen eam qua intelligunt, idest dis<lb n="45" break="no"/>cernunt, et sic conscii sibi sunt quid sit bonum<anchor xml:id="D3.t1.f13e"/>.’ <hi rend="bold">Sexto</hi> dicitur ius
+              <lb n="46"/>naturale ipsum operari, scilicet obseruatio diuinorum mandatorum.
+              <lb n="47"/>Vnde Hilarius: ‘<anchor xml:id="D3.t1.f15s"/>Lex <anchor xml:id="D3.t1.a18s"/>naturalis<anchor xml:id="D3.t1.a18e"/> est nemini iniuriam facere, nichil cuiquam
+              <lb n="48"/>preripere, et ut uniuersaliter dicam, id cuique non facere quod sibi nolit
+              <lb n="49"/>fieri<anchor xml:id="D3.t1.f4e"/><anchor xml:id="D3.t1.f15e"/>’. His ergo acceptionibus consideratis facile erit respondere
+              <lb n="50"/>sequentibus, hoc tamen prenotato quod <anchor xml:id="D3.t1.a19s"/>dicta<anchor xml:id="D3.t1.a19e"/> apostolorum et iiii.
+              <lb n="51"/>generalium conciliorum sunt portio iuris naturalis, secundum quod
+              <lb n="52"/>dicitur diuinum. Vnde non est concedendum quod sit positiuum.
+              <lb n="53"/>Aliorum uero dicta, que ius canonicum <anchor xml:id="D3.t1.a20s"/>censentur<anchor xml:id="D3.t1.a20e"/>, proprie ad ius
+              <lb n="54"/>positiuum pertinent; impropria tamen et larga appellatione etiam ad ius
+              <lb n="55"/>naturale spectant.</p>
+          </div>
+
+          <div type="quaestio" n="1" xml:id="D3.t1.q1">
+            <div type="queritur">
+              <p><lb n="56"/><label>q.1</label> De preceptis ergo utpote de dignioribus primo dicendum est,
+                <lb n="57"/>proponentes que dubitabilia uidentur.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="58"/>Et primo <hi rend="bold">queritur</hi> de illo quod generalius est ceteris, quo quilibet
+                <lb n="59"/>iubetur <anchor xml:id="D3.t1.f16s"/>alii facere quod <anchor xml:id="D3.t1.a21s"/>sibi<anchor xml:id="D3.t1.a21e"/> uult fieri<anchor xml:id="D3.t1.f16e"/>. <hi rend="bold">Queritur</hi> ergo, utrum sit pre<lb n="60" break="no"/>ceptum <anchor xml:id="D3.t1.a22s"/>uel consilium.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="61"/>Preceptum <hi rend="bold">uidetur</hi> esse. Nam cum preceptum <anchor xml:id="D3.t1.a23s"/>sit quemlibet ‘<anchor xml:id="D3.t1.f17s"/>diligere
+                <lb n="62"/>proximum sicut<anchor xml:id="D3.t1.f17e"/>’ <anchor xml:id="D3.t1.a24s"/>etc.<anchor xml:id="D3.t1.a24e"/>, consequenter preceptum<anchor xml:id="D3.t1.a23e"/> <anchor xml:id="D3.t1.a25s"/>intelligo<anchor xml:id="D3.t1.a22e"/><anchor xml:id="D3.t1.a25e"/> cuilibet facere
+                <lb n="63"/>quod sibi uult fieri. Item ad illud sequitur istud, ergo uno precepto
+                <lb n="64"/>reliquum preceptum intelligitur, arg. <anchor xml:id="D3.t1.f18s"/>xxiii. Q.v. <anchor xml:id="D3.t1.a26s"/>Si non<anchor xml:id="D3.t1.a26e"/><anchor xml:id="D3.t1.f18e"/>.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="65"/><hi rend="bold">Econtra uidetur</hi> quod non sit preceptum, quia nec in ueteri nec in
+                <lb n="66"/>nouo testamento expressum reperitur, nec ergo preceptum intelligitur.
+                <lb n="67"/><anchor xml:id="D3.t1.a27s"/>Nam<anchor xml:id="D3.t1.a27e"/> quicquid est preceptum, expressum est, arg. <anchor xml:id="D3.t1.a28s"/><anchor xml:id="D3.t1.f19s"/>xxviii.<anchor xml:id="D3.t1.a28e"/> Q.i. Iam nunc<anchor xml:id="D3.t1.f19e"/>.</p>
+              <pb ed="#ed2024" n="4"/>
+              <p><lb n="68"/>Item si esset preceptum et generale, ergo quicquid michi uellem
+                <lb n="69"/>facere(!), et alii deberem idem facere, ergo si <anchor xml:id="D3.t1.a29s"/>uellem<anchor xml:id="D3.t1.a29e"/> michi dari centum,
+                <lb n="70"/>deberem alii dare centum. Item pari ratione, si uellem michi ludibria
+                <lb n="71"/>fieri uel iniuras inferri, deberem alii hoc facere?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="72"/><hi rend="bold">Solutio</hi>: Dici potest preceptum esse et generale <anchor xml:id="D3.t1.a30s"/>de<anchor xml:id="D3.t1.a30e"/> beneficiis tantum
+                <lb n="73"/>intelligendum. Et sic debeo dare alii centum, si uellem michi dari
+                <lb n="74"/>eadem, subaudi iuste. Nam si iuste <anchor xml:id="D3.t1.a31s"/>ex<anchor xml:id="D3.t1.a31e"/> aliquo titulo uolo michi dari
+                <lb n="75"/>centum, eadem manente iustitia et titulo alii debeo dare. Nec obstat
+                <lb n="76"/>obiectio de iniuriis, de quibus sibi irrogandis non proprie dicitur quis
+                <lb n="77"/>‘uelle’, set ‘concupiscere’. Voluntas enim in bono concupiscentia in malo
+                <lb n="78"/>accipitur.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="2" xml:id="D3.t1.q2">
+            <div type="queritur">
+              <p><lb n="79"/><label>q.2</label> Item <hi rend="bold">queritur</hi> de illo euangelico: ‘<anchor xml:id="D3.t1.f20s"/>Omnia quecumque uultis<anchor xml:id="D3.t1.f20e"/>’ etc.,
+                <lb n="80"/>qualiter sit intelligendum, quia si notat omnimodam expressionem,
+                <lb n="81"/>omnes <anchor xml:id="D3.t1.a32s"/>homines<anchor xml:id="D3.t1.a32e"/> sunt trangressores illius precepti.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="82"/><anchor xml:id="D3.t1.a33s"/><hi rend="bold">Resp.</hi>:<anchor xml:id="D3.t1.a33e"/> Dici potest quod expressionem notat, set hoc si suppetat
+                <lb n="83"/>facultas. Si non suppetit, tunc notat similitudinem, non expressam, ut
+                <lb n="84"/>saltem uicem quandam debeamus rependere, puta animi compassione,
+                <lb n="85"/>ut <anchor xml:id="D3.t1.f21s"/>di. <anchor xml:id="D3.t1.a34s"/>xlv.<anchor xml:id="D3.t1.a34e"/> Sunt namque<anchor xml:id="D3.t1.f21e"/>.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="3" xml:id="D3.t1.q3">
+            <div type="queritur">
+              <p><lb n="86"/><label>q.3</label> Item reddere uotum est a iure naturali preceptum, aut precep<lb n="87" break="no"/>tum fuit, tam de simplici quam de sollempni, uel(!) non?</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="88"/><hi rend="bold">Videtur</hi> <anchor xml:id="D3.t1.a35s"/>quod<anchor xml:id="D3.t1.a35e"/> de utroque, quia generaliter sine distinctione hoc dictum
+                <lb n="89"/>est. Ergo de utroque datum intelligitur. Ergo sicut unum indispen<lb n="90" break="no"/>sabile, sic et reliquum.</p>
+              <p><lb n="91"/>Item si de altero tantum, ergo de reliquo consilium tantum est. Set si
+                <lb n="92"/>hoc, ergo frangere uotum simplex non est mortale. Set hoc falsum, ut
+                <lb n="93"/><anchor xml:id="D3.t1.f22s"/>xxvii. di. <anchor xml:id="D3.t1.a36s"/>Si uir<anchor xml:id="D3.t1.a36e"/><anchor xml:id="D3.t1.f22e"/>. De hoc latius inuenies <anchor xml:id="D3.t1.a37s"/><anchor xml:id="D3.t1.f23s"/>infra<anchor xml:id="D3.t1.a37e"/> t. De <anchor xml:id="D3.t1.a38s"/>uoto<anchor xml:id="D3.t1.a38e"/><anchor xml:id="D3.t1.f23e"/>.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="94"/><anchor xml:id="D3.t1.f24s"/><hi rend="bold">Solutio</hi>: Dici potest redditionem uoti in genere a iure naturali esse.
+                <lb n="95"/>Ecclesia tamen distinctionem introduxit, quod bene potuit, ut alio
+                <lb n="96"/>modo preceptum intelligatur de tali et alio de tali. De illo dispensa<lb n="97" break="no"/>biliter, de isto non. <anchor xml:id="D3.t1.a39s"/>Dispensabiliter<anchor xml:id="D3.t1.a39e"/> dico post fractionem et non ante.</p>
+              <pb ed="#ed2024" n="5"/>
+              <p><lb n="98"/>Vnde congrue dici potest redditionem eque preceptam esse. Vnde nec
+                <lb n="99"/>circa <anchor xml:id="D3.t1.a40s"/>redditionem<anchor xml:id="D3.t1.a40e"/> dispensat ecclesia, licet quandoque circa alterum
+                <lb n="100"/>dissimilet, ut <anchor xml:id="D3.t1.f25s"/>xxvii. Q.i. c. ult.<anchor xml:id="D3.t1.f25e"/>, set circa fractionem. Vnde redditio gene<lb n="101" break="no"/>raliter est a iure naturali, pena fractionis est ab institutione ecclesie.
+                <lb n="102"/>Vel dici potest circa redditionem preceptum uarium esse <anchor xml:id="D3.t1.a41s"/>secundum
+                <lb n="103"/><anchor xml:id="D3.t1.a42s"/>quod<anchor xml:id="D3.t1.a42e"/> ecclesia difficilius istius quam illius fractionem<anchor xml:id="D3.t1.a41e"/> <anchor xml:id="D3.t1.a43s"/><supplied reason="editorial">dispensat</supplied><anchor xml:id="D3.t1.a43e"/><anchor xml:id="D3.t1.f24e"/>.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="4" xml:id="D3.t1.q4">
+            <div type="queritur">
+              <p><lb n="104"/><label>q.4</label> Item de illo precepto ‘<anchor xml:id="D3.t1.a44s"/><anchor xml:id="D3.t1.f26s"/>Honora<anchor xml:id="D3.t1.a44e"/> patrem<anchor xml:id="D3.t1.f26e"/>’ <anchor xml:id="D3.t1.a45s"/>etc.<anchor xml:id="D3.t1.a45e"/> <hi rend="bold">queritur</hi>, an eo non
+                <lb n="105"/>obstante filius possit patrem excommunicare.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="106"/>Et <hi rend="bold">non uidetur</hi>, quia eum excommunicando ab omnium et a sua com<lb n="107" break="no"/>munione reicit, ergo eum inhonorat, ergo reus est illius precepti. Item
+                <lb n="108"/>ipse habet neccesse ei excommunicato communicare, ut <anchor xml:id="D3.t1.f27s"/>xi. Q.iii.
+                <lb n="109"/>Quoniam<anchor xml:id="D3.t1.f27e"/>, quanto ergo minus poterit eum ab aliorum communione
+                <lb n="110"/>remouere. Item etsi malus sit pater, bonus filius, tamen a filio debetur
+                <lb n="111"/>ei honorificentia, ut <anchor xml:id="D3.t1.f28s"/>ii. Q.vii. <anchor xml:id="D3.t1.a46s"/>Queritur<anchor xml:id="D3.t1.a46e"/><anchor xml:id="D3.t1.f28e"/>.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="112"/><hi rend="bold">Econtra</hi>: Preest patri, quia eius pater spiritualis est, ergo eum ut
+                <lb n="113"/><anchor xml:id="D3.t1.a47s"/>subditum<anchor xml:id="D3.t1.a47e"/>, ut filium potest excommunicare. Item non est sub potestate
+                <lb n="114"/>patris, quia episcopalis dignitas eum a potestate absoluit, ut <anchor xml:id="D3.t1.f29s"/>di. liiii.
+                <lb n="115"/>Si seruus<anchor xml:id="D3.t1.f29e"/>. Item in spiritualibus non debet haberi, maxime in sententiis,
+                <lb n="116"/>personarum acceptio, ut <anchor xml:id="D3.t1.f30s"/>ii. Q.v. c.ii.<anchor xml:id="D3.t1.f30e"/> Cum ergo hic contumax et ita
+                <lb n="117"/>excommunicari debeat, ut <anchor xml:id="D3.t1.f31s"/>xi. Q.iii. Certum<anchor xml:id="D3.t1.f31e"/>, non est ei <anchor xml:id="D3.t1.a48s"/>deferendum<anchor xml:id="D3.t1.a48e"/>.
+                <lb n="118"/>Item posito quod esset papa filius, et pater in sua diocesi delinqueret,
+                <lb n="119"/>numquid non posset eum excommunicare, cum nec alius in diocesi pape
+                <lb n="120"/>unum transiret delictum impunitum?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="121"/><hi rend="bold">Solutio</hi>: Dici potest quod eum excommunicare debet nec sic eum
+                <lb n="122"/>inhonorat; nec enim hoc principaliter intendit, set corrigere. Vel dici
+                <lb n="123"/>potest eum honorandum, dum potest iuste; nec hec expositio aliena,
+                <lb n="124"/>immo a lege etiam introducta, arg. <anchor xml:id="D3.t1.f32s"/>xxiii. Q.viii. <anchor xml:id="D3.t1.a49s"/>Legi<anchor xml:id="D3.t1.a49e"/><anchor xml:id="D3.t1.f32e"/>.</p>
+            </div>
+          </div>
+
+          <pb ed="#ed2024" n="6"/>
+          <div type="quaestio" n="5" xml:id="D3.t1.q5">
+            <div type="queritur">
+              <p><lb n="125"/><anchor xml:id="D3.t1.f33s"/><label>q.5</label> Item educare filios est preceptum iuris naturalis.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="126"/><hi rend="bold">Queritur</hi> utrum generale ad filios, quod omnes debeant exhiberi, et ad
+                <lb n="127"/><anchor xml:id="D3.t1.a50s"/>patres<anchor xml:id="D3.t1.a50e"/>, utrum quilibet pater debeat exhibere.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="128"/>Et ad omnes filios <hi rend="bold">non uidetur</hi> esse generale, quia filios excommunica<lb n="129" break="no"/>tos non tenetur exhibere, ut <anchor xml:id="D3.t1.a51s"/><anchor xml:id="D3.t1.f34s"/>xxvii.<anchor xml:id="D3.t1.a51e"/> Q.i. De filia<anchor xml:id="D3.t1.f34e"/>. Item esurienti quilibet
+                <lb n="130"/>debet panem subtrahere, si iustitiam negligit, ut <anchor xml:id="D3.t1.f35s"/>v. Q.v. Non omnis<anchor xml:id="D3.t1.f35e"/>.
+                <lb n="131"/>Item hereticos non exhibebit, quia omnes interficere potest, ut <anchor xml:id="D3.t1.f36s"/>xxiii. <anchor xml:id="D3.t1.a52s"/>Q.
+                <lb n="132"/>viii. <anchor xml:id="D3.t1.a53s"/>Legi<anchor xml:id="D3.t1.a53e"/><anchor xml:id="D3.t1.f36e"/>. Non ergo generale est preceptum ad omnes filios.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="133"/><hi rend="bold">Econtra uidetur</hi> quod exhibebit, ut <anchor xml:id="D3.t1.f37s"/>xi.<anchor xml:id="D3.t1.a52e"/> Q.iii. Quoniam<anchor xml:id="D3.t1.f37e"/>. <anchor xml:id="D3.t1.a54s"/>Item pena est
+                <lb n="134"/>patris non alentis filium anathema. Indistincte dicit ‘filios’, quare de
+                <lb n="135"/>quibuslibet intelligi <anchor xml:id="D3.t1.a55s"/>debet<anchor xml:id="D3.t1.a55e"/>, ut <anchor xml:id="D3.t1.f38s"/>di. xxx. <anchor xml:id="D3.t1.a56s"/>Si quis<anchor xml:id="D3.t1.a54e"/><anchor xml:id="D3.t1.a56e"/><anchor xml:id="D3.t1.f38e"/>. Item patribus etiam in<lb n="136" break="no"/>fidelibus tenentur filii ministrare, ut <anchor xml:id="D3.t1.f39s"/>di. xxx. <anchor xml:id="D3.t1.a57s"/>Si qui<anchor xml:id="D3.t1.a57e"/> filii<anchor xml:id="D3.t1.f39e"/>, quare et paren<lb n="137" break="no"/>tes talibus filiis. Item nec quilibet hoc precepto arcetur.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="138"/>Posito quod abbas <anchor xml:id="D3.t1.a58s"/>uel<anchor xml:id="D3.t1.a58e"/> claustralis habeat filium spurium, <hi rend="bold">queritur</hi> ergo
+                <lb n="139"/><anchor xml:id="D3.t1.a59s"/>utrum<anchor xml:id="D3.t1.a59e"/> alere teneatur.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="140"/>Et <hi rend="bold">non uidetur</hi>, quia nulla propria habet, set dando ei communia sic
+                <lb n="141"/><anchor xml:id="D3.t1.a60s"/>appropriabit<anchor xml:id="D3.t1.a60e"/> et hoc facere non debet, ergo nec alere, cum aliter non
+                <lb n="142"/>possit. Item dispensator qui pauperibus prouidet uix permittitur dare
+                <lb n="143"/>cognatis, ut <anchor xml:id="D3.t1.f40s"/>xii. Q.<anchor xml:id="D3.t1.a61s"/>ii.<anchor xml:id="D3.t1.a61e"/> Quisquis, <anchor xml:id="D3.t1.a62s"/>xvi.<anchor xml:id="D3.t1.a62e"/> Q.vii. Peruenit<anchor xml:id="D3.t1.f40e"/>. <anchor xml:id="D3.t1.a63s"/>At<anchor xml:id="D3.t1.a63e"/> hic dispensator
+                <lb n="144"/>non est, non ergo aliqua ei dare poterit.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="145"/><anchor xml:id="D3.t1.a64s"/>Set <anchor xml:id="D3.t1.a65s"/>nonne<anchor xml:id="D3.t1.a65e"/> de pane qui sibi assignatur aliquam partem ei dare poterit<anchor xml:id="D3.t1.a64e"/>?</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="146"/><hi rend="bold">Non uidetur</hi>, quia communis est; non est concessus ad dispensandum
+                <lb n="147"/>ab eo, set ad comedendum, ut residuum dispenset pauperum procu<lb n="148" break="no"/>rator.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="149"/><hi rend="bold">Econtra</hi> uidetur: Legitur de quadam uirgine, que sub habitu uirili
+                <lb n="150"/><anchor xml:id="D3.t1.a66s"/>monachicum<anchor xml:id="D3.t1.a66e"/> habitum suscepit, cui postea cum mulier quedam filium
+                <lb n="151"/>ascripsisset, <anchor xml:id="D3.t1.a67s"/>ipsum autem<anchor xml:id="D3.t1.a67e"/> pauit de reliquis panis sui, quod non fecisset,
+                <lb n="152"/>si iuri naturali contrarium esset.</p>
+            </div>
+            <pb ed="#ed2024" n="7"/>
+            <div type="solutio">
+              <p><lb n="153"/><hi rend="bold">Solutio</hi>: In primo casu dicatur preceptum ad filios omnes porrigi.
+                <lb n="154"/>Educatio enim ad omnes pertinet. Set modus in educatione a sanctis
+                <lb n="155"/>patribus distinctus est, ut dictum est <anchor xml:id="D3.t1.f41s"/>supra de uoto simplici<anchor xml:id="D3.t1.f41e"/>. Bonos
+                <lb n="156"/>enim passim tenentur patres educare, malos autem non nisi ex
+                <lb n="157"/><anchor xml:id="D3.t1.a68s"/>necessitate<anchor xml:id="D3.t1.a68e"/>. In secundo dicatur ad omnes patres illud preceptum
+                <lb n="158"/>extendi, qui habent unde exhibeant, ut per hoc excludantur claustrales
+                <lb n="159"/>qui nichil habent, nec sunt dispensatores qui bene possent clam <anchor xml:id="D3.t1.a69s"/>alere<anchor xml:id="D3.t1.a69e"/>
+                <lb n="160"/>filios ut alios pauperes. Num ergo debet malle filium mori quam sine
+                <lb n="161"/>auctoritate prelati aliquid dare? Quid ergo, si uideret alium pauperem
+                <lb n="162"/>fame uel frigore morientem? Num ei partem panis uel uestis dare
+                <lb n="163"/>deberet? Et si alii, nonne magis tali filio? <anchor xml:id="D3.t1.f42s"/>Responsio de his latius infra<anchor xml:id="D3.t1.f42e"/>.<anchor xml:id="D3.t1.f33e"/></p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="6" xml:id="D3.t1.q6">
+            <div type="queritur">
+              <p><lb n="164"/><anchor xml:id="D3.t1.f43s"/><label>q.6</label> Item successio liberorum est a iure naturali precepta. Aut hoc
+                <lb n="165"/>intelligitur de successione quoad propagationem aut hereditatis succes<lb n="166" break="no"/>sionem. Si ergo ad <anchor xml:id="D3.t1.a70s"/>propagationem<anchor xml:id="D3.t1.a70e"/>, ergo peccatum originale commisceri
+                <lb n="167"/>gratia fornicationis uitande, cum <anchor xml:id="D3.t1.a71s"/>contra sit<anchor xml:id="D3.t1.a71e"/> <anchor xml:id="D3.t1.f44s"/>xxxii. Q.ii. § Hiis <anchor xml:id="D3.t1.a72s"/>ita<anchor xml:id="D3.t1.a72e"/><anchor xml:id="D3.t1.f44e"/>,
+                <lb n="168"/>Quicquid. Item si talis successio est precepta, qualiter ergo potuit
+                <lb n="169"/>Apostolus <anchor xml:id="D3.t1.a73s"/>dispensare<anchor xml:id="D3.t1.a73e"/>, ut alia causa <anchor xml:id="D3.t1.a74s"/>commisceretur<anchor xml:id="D3.t1.a74e"/>? Item si precepta est
+                <lb n="170"/>quoad hereditatem, qualiter ius ciuile potuit statuere ingratis aufe<lb n="171" break="no"/>rendam hanc successionem, presertim cum Apostolus dicat, quod
+                <lb n="172"/>parentes filiis debeant thesaurizare, ut <anchor xml:id="D3.t1.f45s"/>xvi. <anchor xml:id="D3.t1.a75s"/>Q.i.<anchor xml:id="D3.t1.a75e"/> Predicator<anchor xml:id="D3.t1.f45e"/>?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="173"/><hi rend="bold">Solutio</hi>: Successionem ad hereditatem a iure ciuili esse introductam,
+                <lb n="174"/>nam iure naturali omnia sunt communia. Recte ergo a iure ciuili potuit
+                <lb n="175"/>excipi casus ingratitudinis. Vel etiam a iure naturali est, secundum
+                <lb n="176"/>quod ius naturale est diuinum, cuius portio sunt dicta apostolorum, ubi
+                <lb n="177"/>hoc statutum ad <anchor xml:id="D3.t1.a76s"/>quod<anchor xml:id="D3.t1.a76e"/> pertinet ius canonicum, ubi <anchor xml:id="D3.t1.a77s"/>casus ingratitudinis<anchor xml:id="D3.t1.a77e"/>
+                <lb n="178"/>reperitur, ut <anchor xml:id="D3.t1.f46s"/>xi. Q.i. Christianis<anchor xml:id="D3.t1.f46e"/>. Prima melior, secundum quam sola
+                <lb n="179"/>successio ad <anchor xml:id="D3.t1.a78s"/>propagationem<anchor xml:id="D3.t1.a78e"/> est a iure naturali. Nec <anchor xml:id="D3.t1.a79s"/>dispensauit
+                <lb n="180"/>Apostolus contra; non enim<anchor xml:id="D3.t1.a79e"/> dispensauit, ut aliqui commiscerentur sine
+                <lb n="181"/>spe prolis, uel secundaria uel principali. <anchor xml:id="D3.t1.a80s"/>Sic ergo<anchor xml:id="D3.t1.a80e"/> ut supra, non dis<lb n="182" break="no"/>pensauit circa successionem, set circa modum.<anchor xml:id="D3.t1.f43e"/></p>
+            </div>
+          </div>
+
+          <pb ed="#ed2024" n="8"/>
+          <div type="quaestio" n="7" xml:id="D3.t1.q7">
+            <div type="queritur">
+              <p><lb n="183"/><label>q.7</label> Item restitutio depositi uel commodati est a iure naturali
+                <lb n="184"/>precepta, ut <anchor xml:id="D3.t1.f47s"/>di. i. Ius naturale<anchor xml:id="D3.t1.f47e"/>.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="185"/><hi rend="bold">Set econtra</hi>: Si res <anchor xml:id="D3.t1.a81s"/>deposita<anchor xml:id="D3.t1.a81e"/> communis esset, restitui non <anchor xml:id="D3.t1.a82s"/>iuberetur<anchor xml:id="D3.t1.a82e"/>. Si
+                <lb n="186"/>ergo restitui iubetur iure naturali, ergo aliqua res est propria iure
+                <lb n="187"/>naturali. Set iure naturali omnia sunt communia. Item uidetur potius
+                <lb n="188"/>esse a iure ciuili, a quo prodite sunt actiones depositi et commodati.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="189"/><hi rend="bold">Solutio</hi>: A iure naturali est secundum quod dicitur ‘<anchor xml:id="D3.t1.f48s"/>iudicium rationis<anchor xml:id="D3.t1.f48e"/>’.
+                <lb n="190"/>Cuilibet enim dictat ratio tale debere restitui. Vel est a iure naturali sub
+                <lb n="191"/>illo precepto <anchor xml:id="D3.t1.a83s"/>contentum<anchor xml:id="D3.t1.a83e"/>: ‘<anchor xml:id="D3.t1.f49s"/>Omnia quecumque uultis<anchor xml:id="D3.t1.f49e"/>’ etc. Nec repugnat
+                <lb n="192"/>quod est propria, nam iure naturali <anchor xml:id="D3.t1.a84s"/>aliqua<anchor xml:id="D3.t1.a84e"/> res est propria, ut infra
+                <lb n="193"/>dicetur.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="8" xml:id="D3.t1.q8">
+            <div type="queritur">
+              <p><lb n="194"/><label>q.8</label> Item de precepto decalogi: ‘<anchor xml:id="D3.t1.f50s"/>Memento sanctificare diem sabbati<anchor xml:id="D3.t1.f50e"/>’
+                <lb n="195"/><hi rend="bold">queritur</hi>, cum morale fuerit, quare non seruetur, cum omnia moralia
+                <lb n="196"/>etiam ad litteram seruari debeant. Item de <anchor xml:id="D3.t1.a85s"/>primitiis<anchor xml:id="D3.t1.a85e"/> solet queri, cum
+                <lb n="197"/>eodem precepto decime et primitie sint precepte, et de moralibus <anchor xml:id="D3.t1.a86s"/>sint<anchor xml:id="D3.t1.a86e"/>,
+                <lb n="198"/>qualiter non dantur primitie.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="199"/>Ad primum <hi rend="bold">respondeo</hi> quod obseruatio ad litteram non fuit precepta,
+                <lb n="200"/>set mistice spirituale sabbatum , requies scilicet spiritualis a uitiis, que
+                <lb n="201"/>generaliter ab omni populo debet obseruari. Vel dicatur non esse de
+                <lb n="202"/>decem mandatis. Vel quod dicuntur precepta decalogi esse moralia, pro
+                <lb n="203"/>maiori parte intelligitur dictum. De primitiis respondeatur <anchor xml:id="D3.t1.f51s"/>ut supra t.
+                <lb n="204"/>de decimis et primitiis<anchor xml:id="D3.t1.f51e"/>.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="9" xml:id="D3.t1.q9">
+            <div type="queritur">
+              <p><lb n="205"/><label>q.9</label> De prohibitionibus consequens est ut aliqua dicamus. Primo
+                <lb n="206"/>ergo <hi rend="bold">queritur</hi> de illa prohibitione qua prohibetur quilibet alii inferre
+                <lb n="207"/>quod sibi nolit fieri.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="208"/><hi rend="bold">Videtur</hi> quod quilibet iudex transgressor istius precepti sit, nam reo
+                <lb n="209"/>penam sanguinis <anchor xml:id="D3.t1.a87s"/>infert<anchor xml:id="D3.t1.a87e"/> quam sibi nollet inferri. Item huic precepto ius
+                <lb n="210"/>canonicum uidetur esse contrarium, quo iudex occidens excusatur, ut
+                <lb n="211"/><anchor xml:id="D3.t1.f52s"/>xxiii. Q.v. Miles, <anchor xml:id="D3.t1.a88s"/>Cum homo<anchor xml:id="D3.t1.a88e"/><anchor xml:id="D3.t1.f52e"/>.</p>
+            </div>
+            <pb ed="#ed2024" n="9"/>
+            <div type="solutio">
+              <p><lb n="212"/><hi rend="bold">Solutio</hi>: Placet quibusdam ita intelligi debere quod sibi nolit, idest
+                <lb n="213"/>nolle debeat fieri. Ideo dicitur ‘nolle fieri debet’, quia iudex sibi
+                <lb n="214"/>delinquenti debet uelle infligi penam, quia ei dictat naturalis ratio
+                <lb n="215"/>nullum peccatum transire debere impunitum. Set obicitur: Ergo secun<lb n="216" break="no"/>dum hoc huius precepti transgressor est reus qui se non offert iudici
+                <lb n="217"/>puniendum, item qui laborat uinctus, ut aufugiat. Quid ergo? Resp.:
+                <lb n="218"/>Secundum quosdam notorii tenentur sese offerre, <anchor xml:id="D3.t1.a89s"/>occulti<anchor xml:id="D3.t1.a89e"/> non, quia non
+                <lb n="219"/>debent se scandalizare. Et secundum hoc cessat prima obiectio, quia
+                <lb n="220"/>non debet iudex alii occulto inferre quod sibi occulto debet nolle inferri.
+                <lb n="221"/>Notorio sibi et alii penam inferre debet. Set obicitur: Si quilibet debet
+                <lb n="222"/>sibi notorio uelle inferri penam, num ergo debet aliquis se morti
+                <lb n="223"/>exponere, cum contra sit <anchor xml:id="D3.t1.f53s"/>xxiii. Q.v. Non est nostrum<anchor xml:id="D3.t1.f53e"/>? Vnde dicatur
+                <lb n="224"/>breuiter de iniuriis esse intelligendum, et sic cessabit omnis obiectio.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="10" xml:id="D3.t1.q10">
+            <div type="queritur">
+              <p><lb n="225"/><anchor xml:id="D3.t1.f54s"/><label>q.10</label> <anchor xml:id="D3.t1.a90s"/>Item<anchor xml:id="D3.t1.a90e"/> cum dictum sit indistincte ‘<anchor xml:id="D3.t1.f55s"/>non occides<anchor xml:id="D3.t1.f55e"/>’, numquid licuit
+                <lb n="226"/>legi uel canoni contra preceptum decalogi dispensare, ut iudices
+                <lb n="227"/>occiderent, ut <anchor xml:id="D3.t1.f58s"/>xxiii. Q.<anchor xml:id="D3.t1.a91s"/>v.<anchor xml:id="D3.t1.a91e"/> Miles<anchor xml:id="D3.t1.f58e"/>? Item quilibet potest occidere causa
+                <lb n="228"/>euadendi. Item numquid deliquit Phinees, qui occidit? Non, ut <anchor xml:id="D3.t1.f59s"/>xxiii.
+                <lb n="229"/><anchor xml:id="D3.t1.a92s"/>Q.viii. Occidit<anchor xml:id="D3.t1.f59e"/>. Et numquid Moyses? Non, ut <anchor xml:id="D3.t1.f60s"/>xxiii.<anchor xml:id="D3.t1.a92e"/> Q.iiii. Quid crudele<anchor xml:id="D3.t1.f60e"/>.
+                <lb n="230"/>Et numquid Petrus? Non, ut <anchor xml:id="D3.t1.f61s"/>xxiii. Q.viii. Legi<anchor xml:id="D3.t1.f61e"/>.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="231"/><hi rend="bold">Solutio</hi>: Licet dictum sit indistincte ‘<anchor xml:id="D3.t1.f56s"/>non occides<anchor xml:id="D3.t1.f56e"/>’, tamen in multis
+                <lb n="232"/>casibus licite occidit homo, nec canon dispensat. Immo is qui pro<lb n="233" break="no"/>hibitionem indistinctam dedit interpretatus est, etsi non uerbo, tamen
+                <lb n="234"/>opere. Vnde innuit ita esse intelligendum ‘<anchor xml:id="D3.t1.f57s"/>non occides<anchor xml:id="D3.t1.f57e"/>’, scilicet iniuste.
+                <lb n="235"/>Vel dici potest, ubi iuste occiditur, non hominem, set legem occidere, ut
+                <lb n="236"/><anchor xml:id="D3.t1.a93s"/><anchor xml:id="D3.t1.f62s"/>xxxiii.<anchor xml:id="D3.t1.a93e"/> Q.<anchor xml:id="D3.t1.a94s"/>ii.<anchor xml:id="D3.t1.a94e"/> Quos Deus<anchor xml:id="D3.t1.f62e"/>.<anchor xml:id="D3.t1.f54e"/></p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="11" xml:id="D3.t1.q11">
+            <div type="queritur">
+              <p><lb n="237"/><anchor xml:id="D3.t1.f63s"/><label>q.11</label> Item circa prohibitionem ‘<anchor xml:id="D3.t1.f64s"/>non furtum facies<anchor xml:id="D3.t1.f64e"/>’ multipliciter
+                <lb n="238"/>obicitur. Primo, si a iure naturali est, nec in ueteri uel nouo testamento
+                <lb n="239"/>exceptum reperitur, qualiter excusantur Israelite qui furtum in Egypto
+                <lb n="240"/>fecerunt, ut <anchor xml:id="D3.t1.f65s"/>xiiii. Q.v. Dixit<anchor xml:id="D3.t1.f65e"/>? Item furtum est contrectatio rei aliene.
+                <pb ed="#ed2024" n="10"/><lb n="241"/>Qualiter furtum est preceptum iuris naturalis, cum ex hoc sequitur de
+                <lb n="242"/>iure naturali rem esse alienam et ita propriam? Item si illo precepto
+                <lb n="243"/>siue prohibitione usurpatio rei aliene prohibetur, qualiter ergo contra
+                <lb n="244"/>prohibitionem decalogi potest aliquis <anchor xml:id="D3.t1.a95s"/>se tueri in re prescripta<anchor xml:id="D3.t1.a95e"/>?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="245"/><hi rend="bold">Solutio</hi>: Dici potest ad primum quod Israelite excusantur, quia
+                <lb n="246"/>Domino precipienti obedierunt ‘<anchor xml:id="D3.t1.f66s"/>cuius sunt omnia<anchor xml:id="D3.t1.f66e"/>’. Ad secundum
+                <lb n="247"/>respondetur <anchor xml:id="D3.t1.f67s"/>infra, ubi <anchor xml:id="D3.t1.a96s"/>de<anchor xml:id="D3.t1.a96e"/> demonstrationibus <anchor xml:id="D3.t1.a97s"/>agitur<anchor xml:id="D3.t1.a97e"/><anchor xml:id="D3.t1.f67e"/>. Ad tertium dici
+                <lb n="248"/>potest quia ubi iustus titulus et bona fides, non est usurpatio, immo
+                <lb n="249"/>licita acquisitio. <anchor xml:id="D3.t1.a98s"/>De male<anchor xml:id="D3.t1.a98e"/> fidei prescriptione <anchor xml:id="D3.t1.a99s"/>difficile<anchor xml:id="D3.t1.a99e"/> est responderi.<anchor xml:id="D3.t1.f63e"/></p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="12" xml:id="D3.t1.q12">
+            <div type="queritur">
+              <p><lb n="250"/><anchor xml:id="D3.t1.f68s"/><label>q.12</label> Item de prohibitione usure <hi rend="bold">solet queri</hi>, cum utroque testa<lb n="251" break="no"/>mento sit prohibita, qualiter <anchor xml:id="D3.t1.a100s"/>Ambrosius<anchor xml:id="D3.t1.a100e"/> <anchor xml:id="D3.t1.f69s"/>xiiii. Q.<anchor xml:id="D3.t1.a101s"/>iiii.<anchor xml:id="D3.t1.a101e"/> c. ult.<anchor xml:id="D3.t1.f69e"/> potuit
+                <lb n="252"/>dispensare, cum in neutro testamento dicto uel facto exceptum ab
+                <lb n="253"/><anchor xml:id="D3.t1.a102s"/>aliquo<anchor xml:id="D3.t1.a102e"/> reperiatur, ut scilicet sibi <anchor xml:id="D3.t1.a103s"/>acciperentur<anchor xml:id="D3.t1.a103e"/> usure, ubi esset ius belli.
+                <lb n="254"/>Item qualiter Turonense concilium potuit etiam ulterius dispensare, ut
+                <lb n="255"/>etiam ubi non esset ius belli, esset ius usure, cum statuerit etiam
+                <lb n="256"/>clericos qui non habent ius pugnandi, habere licentiam usuras
+                <lb n="257"/>exercendi, puta si crederent predium ecclesiasticum de manu laici
+                <lb n="258"/>redimendum, ut <anchor xml:id="D3.t1.f70s"/>in extra. de usuris Plures<anchor xml:id="D3.t1.f70e"/>? Item qualiter potuit
+                <lb n="259"/><anchor xml:id="D3.t1.a104s"/>Romanum<anchor xml:id="D3.t1.a104e"/> concilium dispensare, ut Iudei ad fidem conuersi pecuniam
+                <lb n="260"/>usurariam retineant, ut <anchor xml:id="D3.t1.f71s"/>in extra. ex Romano concilio Iudei<anchor xml:id="D3.t1.f71e"/>?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="261"/><hi rend="bold">Solutionem</hi> omnium huiusmodi collige <anchor xml:id="D3.t1.f72s"/>supra t. de usuris<anchor xml:id="D3.t1.f72e"/>.<anchor xml:id="D3.t1.f68e"/></p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="13" xml:id="D3.t1.q13">
+            <div type="queritur">
+              <p><lb n="262"/><label>q.13</label> Item <hi rend="bold">queritur</hi> quomodo dicta apostolorum et quattuor
+                <lb n="263"/>conciliorum recipiant dispensationem, cum ipsa <anchor xml:id="D3.t1.a105s"/>sint<anchor xml:id="D3.t1.a105e"/> portio iuris
+                <lb n="264"/>naturalis siue diuini. Cum enim <anchor xml:id="D3.t1.f73s"/>Apostolus prohibuerit bigamum
+                <lb n="265"/>ordinari<anchor xml:id="D3.t1.f73e"/>, Martinus statuit ordinandum esse in subdiaconum, <anchor xml:id="D3.t1.f74s"/>di. xxxiiii.
+                <lb n="266"/>Lector<anchor xml:id="D3.t1.f74e"/>. Item cum apostoli statuerunt presbiterum fornicantem debere
+                <pb ed="#ed2024" n="11"/><lb n="267"/>deponi, <anchor xml:id="D3.t1.a106s"/>Siluester<anchor xml:id="D3.t1.a106e"/> tamen dispensauit, ut tantum <anchor xml:id="D3.t1.a107s"/>suspenderetur<anchor xml:id="D3.t1.a107e"/>, ut <anchor xml:id="D3.t1.f75s"/>di.
+                <lb n="268"/>lxxxii. Presbiter si<anchor xml:id="D3.t1.f75e"/>. Item cum <anchor xml:id="D3.t1.f76s"/>Nicenum concilium de bigamo statuerit<anchor xml:id="D3.t1.f76e"/>
+                <lb n="269"/>idem quod Apostolus, qualiter apostolicus statuit in contrarium? Item
+                <lb n="270"/>cum Nicenum et Constantinopolitanum <anchor xml:id="D3.t1.a108s"/>statuerint<anchor xml:id="D3.t1.a108e"/> non debere aliquem
+                <lb n="271"/>suscipi in aliena diocesi nisi cum formata, ut <anchor xml:id="D3.t1.f77s"/>di. <anchor xml:id="D3.t1.a109s"/>lxxiii.<anchor xml:id="D3.t1.a109e"/> In nomine<anchor xml:id="D3.t1.f77e"/>,
+                <lb n="272"/>qualiter receptum, ut sufficiant littere trium uel quinque episcoporum,
+                <lb n="273"/>ut <anchor xml:id="D3.t1.f78s"/>di. <anchor xml:id="D3.t1.a110s"/>xcviii.<anchor xml:id="D3.t1.a110e"/> <anchor xml:id="D3.t1.a111s"/>c. i.<anchor xml:id="D3.t1.a111e"/>, ii.<anchor xml:id="D3.t1.f78e"/>? Item cum Calcedonense concilium statuerit nemi<lb n="274" break="no"/>nem duabus ecclesiis prefici, ut <anchor xml:id="D3.t1.f79s"/>xxi. Q.i. c. ii.<anchor xml:id="D3.t1.f79e"/>, qualiter dispensatur hodie
+                <lb n="275"/>in contrarium, ut <anchor xml:id="D3.t1.f80s"/>x. Q.iii. Vnio, in extra. de simonia Peruenit<anchor xml:id="D3.t1.f80e"/>?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="276"/><hi rend="bold">Solutio</hi>: Dici potest ad primum quia Apostolus de subdiacono non
+                <lb n="277"/>prohibuit, quia subdiaconatus <anchor xml:id="D3.t1.a112s"/>nondum fuerat<anchor xml:id="D3.t1.a112e"/> introductus. Immo etsi de
+                <lb n="278"/>subdiacono statuisset, responderi potest et ad hec et ad omnia
+                <lb n="279"/><anchor xml:id="D3.t1.a113s"/>sequentia<anchor xml:id="D3.t1.a113e"/> quod licite dispensatur <anchor xml:id="D3.t1.a114s"/>contra ista, ubi animaduertitur<anchor xml:id="D3.t1.a114e"/> <anchor xml:id="D3.t1.a115s"/>rigi<lb n="280" break="no"/>dum in personas<anchor xml:id="D3.t1.a115e"/>, non autem ubi super uniuersali statu aliquid dicunt.
+                <lb n="281"/>Vnde in omnibus premissis subtiliter intuenti animaduersio in personas
+                <lb n="282"/>uidebitur. Set in ultimo casu qualiter papa potest dispensare, ut qui
+                <lb n="283"/>nunc illicite tres habet, cras eas licite habeat? Num de mortali peccato
+                <lb n="284"/>potest facere, ut sit ueniale?</p>
+              <p><lb n="285"/>Resp.: Potest facere ut illa species facti, que modo est mortalis, fiat iam
+                <lb n="286"/>uenialis, <anchor xml:id="D3.t1.a116s"/>non<anchor xml:id="D3.t1.a116e"/> autem quod semel est mortale fiat ueniale. Sicut ante
+                <lb n="287"/>dispensationem stare in matrimonio in tertio gradu est mortale, post
+                <lb n="288"/>dispensationem erit ueniale, non quod non teneatur penitere de eo quod
+                <lb n="289"/>ante factum est ut pro mortali, quia tenetur, set sic stare ut ante, non
+                <lb n="290"/>est mortale post dispensationem. Ea enim que ab homine statuuntur ab
+                <lb n="291"/>homine possunt immutari.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="14" xml:id="D3.t1.q14">
+            <div type="queritur">
+              <p><lb n="292"/><label>q.14</label> Item <hi rend="bold">queritur</hi> qualiter post prohibitionem legalium <anchor xml:id="D3.t1.f81s"/>Petrus
+                <lb n="293"/><anchor xml:id="D3.t1.a117s"/>excusetur<anchor xml:id="D3.t1.a117e"/>, qui gregem cum Iudeis faciens se a gentilibus subtraxit<anchor xml:id="D3.t1.f81e"/>.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="294"/><hi rend="bold">Et uidetur</hi> quia mortaliter peccauerit, quia legalia post ascensionem et
+                <lb n="295"/>Spiritus sancti missionem non <anchor xml:id="D3.t1.a118s"/>erant<anchor xml:id="D3.t1.a118e"/> tenenda; ergo, si tenebat ea,
+                <pb ed="#ed2024" n="12"/><lb n="296"/>mortaliter peccabat. <anchor xml:id="D3.t1.f82s"/>Item scandalizabat fratres qui de gentilibus
+                <lb n="297"/>conuersi fuerant<anchor xml:id="D3.t1.f82e"/>. Numquid ergo Petrus contra hoc dispensare poterat?
+                <lb n="298"/>Vel numquid, si non peccauit Petrus, male reprehensus fuit a Paulo?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="299"/><hi rend="bold">Solutio</hi>: In permutatione legalium quedam dispensatiue permitte<lb n="300" break="no"/>bantur que post non permitterentur. Vnde dicimus peccasse Petrum
+                <lb n="301"/>uenialiter tantum. Numquid ergo super ueniali Paulus debuit eum
+                <lb n="302"/>reprehendere qui princeps fuit apostolorum, cum contra sit <anchor xml:id="D3.t1.f83s"/>di. xl. Si
+                <lb n="303"/>papa<anchor xml:id="D3.t1.f83e"/>? Respondemus <anchor xml:id="D3.t1.f84s"/>ut supra t. de accusationibus<anchor xml:id="D3.t1.f84e"/>.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="15" xml:id="D3.t1.q15">
+            <div type="queritur">
+              <p><lb n="304"/><label>q.15</label> <anchor xml:id="D3.t1.a119s"/>De<anchor xml:id="D3.t1.a119e"/> demonstrationibus autem consequenter aliqua dicemus.</p>
+              <p><lb n="305"/>Et primo quod solet dici demonstratio, ut omnia sint communia.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="306"/><hi rend="bold">Videtur esse</hi> preceptum, quia contrarium, <anchor xml:id="D3.t1.a120s"/>scilicet habere proprium<anchor xml:id="D3.t1.a120e"/>, est
+                <lb n="307"/>iniquum, ut <anchor xml:id="D3.t1.f85s"/>xii. Q.<anchor xml:id="D3.t1.a121s"/>i.<anchor xml:id="D3.t1.a121e"/> Dilectissimi<anchor xml:id="D3.t1.f85e"/>, ergo peccatum. Si peccatum, non
+                <lb n="308"/>esset, nisi illud propter quod est peccatum esset preceptum. Ergo illud
+                <lb n="309"/>est preceptum. Item Ananias, quia sibi <anchor xml:id="D3.t1.a122s"/>appropriauit<anchor xml:id="D3.t1.a122e"/>, morte eterna et
+                <lb n="310"/>corporali dampnatus est, ut <anchor xml:id="D3.t1.f86s"/>xvii. Q.i. Ananias<anchor xml:id="D3.t1.f86e"/>; ergo appropriare erat
+                <lb n="311"/><anchor xml:id="D3.t1.a123s"/>mortale<anchor xml:id="D3.t1.a123e"/> peccatum. Item qui plus retinet <anchor xml:id="D3.t1.a124s"/>quam ad sumptum, uiolenter
+                <lb n="312"/>retinet<anchor xml:id="D3.t1.a124e"/>, ut <anchor xml:id="D3.t1.f87s"/>di. xlvii. Sicut<anchor xml:id="D3.t1.f87e"/>, ergo iniuste, ergo cum peccato, ergo illud
+                <lb n="313"/>propter quod est peccatum est preceptum. Item ‘apud Platonem
+                <lb n="314"/>iustissime ordinatur ciuitas, in qua quisque nescit proprios affectus’, ut
+                <lb n="315"/><anchor xml:id="D3.t1.f88s"/>di. viii. § i.<anchor xml:id="D3.t1.f88e"/> Item Nembroth sibi appropriando mortaliter peccauit, ergo
+                <lb n="316"/>eo tempore omnia debere esse communia fuit preceptum. <anchor xml:id="D3.t1.a125s"/>Set <anchor xml:id="D3.t1.a126s"/>numquam<anchor xml:id="D3.t1.a126e"/>
+                <lb n="317"/>fuit relaxatum preceptum<anchor xml:id="D3.t1.a125e"/>. Ergo adhuc est preceptum, ergo qui sibi
+                <lb n="318"/>aliqua appropriant mortaliter delinquunt.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="319"/><hi rend="bold">Econtra uidetur</hi> esse tantum demonstrationem. Nec enim peccat qui
+                <lb n="320"/>sibi aliqua appropriat, quia iure diuino, quod est naturale, omnia sunt
+                <lb n="321"/>iustorum, ut <anchor xml:id="D3.t1.f89s"/>xxiii. Q.vii. c.i.<anchor xml:id="D3.t1.f89e"/> Sic ergo iure naturali nulla sunt in<lb n="322" break="no"/>iustorum. Sic ergo non omnia sunt communia. Item <anchor xml:id="D3.t1.a127s"/>contrectatio<anchor xml:id="D3.t1.a127e"/> a iure
+                <lb n="323"/>naturali est inhibita rei aliene, ergo illicita, ergo res est aliena licite,
+                <lb n="324"/>ergo sine peccato. Item iure canonico quod diuinum potest dici,
+                <lb n="325"/>prescriptio licita est. Set prescriptione res appropriatur, ergo licite,
+                <lb n="326"/>ergo sine peccato; non ergo illud, omnia scilicet esse communia, fuit
+                <lb n="327"/>preceptum.</p>
+            </div>
+            <pb ed="#ed2024" n="13"/>
+            <div type="solutio">
+              <p><lb n="328"/><anchor xml:id="D3.t1.f90s"/><hi rend="bold">Solutio</hi>: Dici potest tantum demonstrationem etiam ab initio fuisse,
+                <lb n="329"/>nec Nembroth peccasse appropriando, set indebite concupiscendo; unde
+                <lb n="330"/>et hodie ex ea cupiditate aliquis sibi appropriando mortaliter peccaret.
+                <lb n="331"/>Vel forte tunc fuit mortale peccatum, non quod <anchor xml:id="D3.t1.a128s"/>illud<anchor xml:id="D3.t1.a128e"/> esset preceptum,
+                <lb n="332"/>set quia modum et statum humane condicionis perturbauit. <anchor xml:id="D3.t1.a129s"/>Ad<anchor xml:id="D3.t1.a129e"/>
+                <lb n="333"/>assiduitatem tractum, non est hodie peccatum. Vnde expone quod<anchor xml:id="D3.t1.f90e"/>
+                <lb n="334"/>dictum est <anchor xml:id="D3.t1.f91s"/>xii. Q.i. Dilectissimis<anchor xml:id="D3.t1.f91e"/> ex iniquitate et non ex equitate, idest
+                <lb n="335"/>non ex demonstratione naturalis iuris que equa erat uel ex iniquitate,
+                <lb n="336"/>idest sollicitudine acquirendi que est ex iniquitate, idest fomite peccati
+                <lb n="337"/>primi hominis. Quod de Anania dicitur, intelligitur de his qui iter
+                <lb n="338"/>perfectionis arripuerunt, quibus, <anchor xml:id="D3.t1.f92s"/>ut iam dicetur<anchor xml:id="D3.t1.f92e"/>, illa demonstratio est
+                <lb n="339"/>preceptum, quia quod non est preceptum, potest sibi facere quilibet
+                <lb n="340"/>preceptum. Quod dicitur ultra neccessarium obtentum uiolenter
+                <lb n="341"/>obtineri, uerum est si sit qui indigeat. Nam pro tempore omnia sunt
+                <lb n="342"/>communicanda. Vel uiolenter, idest in preiudicium demonstrationis
+                <lb n="343"/>iuris naturalis, nec tamen cum peccato.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="16" xml:id="D3.t1.q16">
+            <div type="queritur">
+              <p><lb n="344"/><label>q.16</label> Item de libertate <hi rend="bold">queritur</hi>, utrum ecclesie peccent que uendunt
+                <lb n="345"/>et emunt seruos et etiam faciunt seruos, ut <anchor xml:id="D3.t1.f93s"/>xv. Q.viii. Cum multe<anchor xml:id="D3.t1.f93e"/>.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="346"/><hi rend="bold">Et uidetur</hi> quia a iure naturali, quo reguntur, non debent discrepare,
+                <lb n="347"/>set iure naturali ‘omnium est una libertas’, ut <anchor xml:id="D3.t1.f94s"/>di. i. Ius naturale<anchor xml:id="D3.t1.f94e"/>.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="348"/><hi rend="bold">Econtra uidetur</hi> quia Noe primus introduxit seruitutem, ut <anchor xml:id="D3.t1.f95s"/>di. xxxv.
+                <lb n="349"/>Sexto<anchor xml:id="D3.t1.f95e"/>. Non ergo uidetur esse peccatum. Item seruitus est pena ut ibi,
+                <lb n="350"/>ergo non est peccatum. Item Apostolus: ‘<anchor xml:id="D3.t1.f96s"/>Estote serui, subditi dominis
+                <lb n="351"/>uestris<anchor xml:id="D3.t1.f96e"/>’, quod non dixisset, si peccatum esset esse seruum, <anchor xml:id="D3.t1.a130s"/>immo potius
+                <lb n="352"/>iuberet dominos manumittere. Item excommunicantur qui seruos
+                <lb n="353"/>dominis subtrahunt, ut <anchor xml:id="D3.t1.f97s"/>xvii. Q.iiii. Si <anchor xml:id="D3.t1.a131s"/>quis<anchor xml:id="D3.t1.a131e"/> seruum<anchor xml:id="D3.t1.a130e"/><anchor xml:id="D3.t1.f97e"/>.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="354"/>Item <hi rend="bold">queritur</hi>, utrum ei qui <anchor xml:id="D3.t1.a132s"/>seruus<anchor xml:id="D3.t1.a132e"/> efficitur auferatur libertas.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="355"/><hi rend="bold">Et uidetur</hi> quod ‘manumissio est datio libertatis’, <anchor xml:id="D3.t1.a133s"/>ut <anchor xml:id="D3.t1.f98s"/>in Inst. <anchor xml:id="D3.t1.a134s"/>de liber<lb n="356" break="no"/>tinis<anchor xml:id="D3.t1.a134e"/><anchor xml:id="D3.t1.f98e"/>, ergo detrusio in seruitutem <anchor xml:id="D3.t1.a135s"/>est ablatio libertatis<anchor xml:id="D3.t1.a133e"/><anchor xml:id="D3.t1.a135e"/>.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="357"/><hi rend="bold">Econtra</hi>: Vna est omnium <anchor xml:id="D3.t1.a136s"/>libertas<anchor xml:id="D3.t1.a136e"/> de iure naturali, ergo omnes, etiam
+                <lb n="358"/>serui, sunt liberi de iure naturali, ergo iure naturali serui non desinunt
+                <lb n="359"/>esse liberi. Item libertas est naturalis, seruitus est ciuilis. Set quod
+                <pb ed="#ed2024" n="14"/><lb n="360"/>ciuile est non tollit quod naturale est, ut <anchor xml:id="D3.t1.f99s"/>in Inst. <anchor xml:id="D3.t1.a137s"/>de capitis deminutione<anchor xml:id="D3.t1.a137e"/><anchor xml:id="D3.t1.f99e"/>.
+                <lb n="361"/>Non ergo seruitus aufert libertatem, ergo idem sunt serui et liberi. Set
+                <lb n="362"/>equius est quod est naturale quam quod ciuile, ergo equius potest quis
+                <lb n="363"/>domino seruitutem denegare quam conseruare.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="364"/><hi rend="bold">Solutio</hi>: Dicatur libertatem ad demonstrationes iuris naturalis perti<lb n="365" break="no"/>nere; unde contra illam non est peccatum iuste aliquem facere seruum.
+                <lb n="366"/>Ad secundum dicunt seruitutem esse ablationem <anchor xml:id="D3.t1.a138s"/>libertatis<anchor xml:id="D3.t1.a138e"/>; unde et
+                <lb n="367"/>manumissor eam dat, et secundum hoc libertas est <anchor xml:id="D3.t1.a139s"/>accidentale<anchor xml:id="D3.t1.a139e"/> sicut
+                <lb n="368"/>seruitus. Olim uero fuit naturale. Et quod dicitur ‘<anchor xml:id="D3.t1.f100s"/>una est omnium
+                <lb n="369"/>libertas<anchor xml:id="D3.t1.f100e"/>’ ita intelligitur: ‘est’, idest esse debet iure naturali hoc exigente.
+                <lb n="370"/>Aliis placet etiam seruos esse liberos de iure naturali; unde concedunt
+                <lb n="371"/>eosdem esse seruos et liberos, set non simpliciter, set cum hac
+                <lb n="372"/>adiectione ‘de iure naturali’. Nec tamen equius est resistere quam
+                <lb n="373"/>obedire, quia libertas ligata est et iuste, ne ea utatur. Vnde cum seruus
+                <lb n="374"/>efficitur, ligatur, non tollitur. Sic in manumissione non datur, quia
+                <lb n="375"/>bonum est naturale, set soluitur, sicut auis capta in laqueo, cum
+                <lb n="376"/>soluitur, non datur ei libertas, set soluitur.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="17" xml:id="D3.t1.q17">
+            <div type="queritur">
+              <p><lb n="377"/><anchor xml:id="D3.t1.f101s"/><label>q.17</label> Item de coniunctione maris et femine <hi rend="bold">queritur</hi>, utrum per<lb n="378" break="no"/>tineat ad demonstrationes uel precepta.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="379"/><hi rend="bold">Videtur</hi> quod ad precepta, quia dictum est: ‘<anchor xml:id="D3.t1.f102s"/>Crescite et multiplicamini<anchor xml:id="D3.t1.f102e"/>’.
+                <lb n="380"/>Item: ‘<anchor xml:id="D3.t1.f103s"/>Maledictus, qui non reliquerit semen super <anchor xml:id="D3.t1.a140s"/>Israel<anchor xml:id="D3.t1.a140e"/><anchor xml:id="D3.t1.f103e"/>’. Item sponsa
+                <lb n="381"/>premortui eius fratri nubere tenebatur, ut <anchor xml:id="D3.t1.a141s"/><anchor xml:id="D3.t1.f104s"/>viii. Q.i.<anchor xml:id="D3.t1.a141e"/> Olim<anchor xml:id="D3.t1.f104e"/>, <anchor xml:id="D3.t1.a142s"/>ergo<anchor xml:id="D3.t1.a142e"/> uidetur
+                <lb n="382"/>quod preceptum fuerit.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="383"/><hi rend="bold">Econtra</hi>: Nam Abel uirgo fuit nec transgressor dici potest, quod esset,
+                <lb n="384"/>si preceptum esset. Item in ueteri testamento licitum erat uirginitatem
+                <lb n="385"/>seruare. Sic ergo uidetur ad demonstrationes pertinere.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="386"/>Item <hi rend="bold">queritur</hi> que coniunctio sit a iure naturali.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="387"/><hi rend="bold">Videtur</hi> quod nulla, quia non legitima, que introducta est a iure
+                <lb n="388"/>canonico, item nec fornicaria, quia illa est peccatum; set nullum
+                <lb n="389"/><anchor xml:id="D3.t1.a143s"/>peccatum est<anchor xml:id="D3.t1.a143e"/> a iure naturali.</p>
+            </div>
+            <pb ed="#ed2024" n="15"/>
+            <div type="econtra">
+              <p><lb n="390"/><anchor xml:id="D3.t1.a144s"/><hi rend="bold">Econtra uidetur</hi> quod legitima, quia matrimonium Ade fuit a iure
+                <lb n="391"/>naturali<anchor xml:id="D3.t1.a144e"/>; pari ratione et quelibet alia. Item <hi rend="bold">uidetur</hi> quod <anchor xml:id="D3.t1.a145s"/>fornicaria<anchor xml:id="D3.t1.a145e"/>, quia
+                <lb n="392"/><anchor xml:id="D3.t1.a146s"/>commixtio<anchor xml:id="D3.t1.a146e"/> brutorum animalium est a iure naturali. Quanto magis
+                <lb n="393"/>hominum, nam <anchor xml:id="D3.t1.a147s"/>utrobique<anchor xml:id="D3.t1.a147e"/> indiscretio?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="394"/><hi rend="bold">Solutio</hi>: Dici potest ad primum, <anchor xml:id="D3.t1.a148s"/>coniunctionem<anchor xml:id="D3.t1.a148e"/> maris et femine ex post
+                <lb n="395"/>facto precepti fuisse semper ab initio, ante contractum matrimonium
+                <lb n="396"/>semper ab initio fuisse demonstrationis, nisi specialiter sicut in lege
+                <lb n="397"/>precepta esset ob multiplicationem fidelium. Semper ergo ab <anchor xml:id="D3.t1.a149s"/>initio<anchor xml:id="D3.t1.a149e"/>
+                <lb n="398"/>liberum fuit contrahere, liberum abstinere, nisi specialiter preceptum
+                <lb n="399"/><anchor xml:id="D3.t1.a150s"/>esset<anchor xml:id="D3.t1.a150e"/> contrarium. Ad secundum dici potest quod omnis coniunctio
+                <lb n="400"/>simpliciter in eo quod est coniunctio est a iure naturali, set quod accipit
+                <lb n="401"/>formam talem uel talem, non est iure naturali; ergo ipsum substantiale
+                <lb n="402"/>est a iure naturali, non autem accidentale. Vel dici potest solam
+                <lb n="403"/>legitimam coniunctionem esse a iure naturali, quia Deus, qui est
+                <lb n="404"/>summa natura, eam instituit; <anchor xml:id="D3.t1.a151s"/>illegitima coniunctio<anchor xml:id="D3.t1.a151e"/> non, quia ea re<lb n="405" break="no"/>ceditur a natura. Nec de commixtione animalium obstat, cum illa coire
+                <lb n="406"/>cum peccato non possint, unde et naturaliter <anchor xml:id="D3.t1.a152s"/>coeunt<anchor xml:id="D3.t1.a152e"/>. Vel dici potest
+                <lb n="407"/>coniunctionem hominum esse a iure naturali secundum quod dicitur
+                <lb n="408"/>diuinum, secundum quod sola legitima est a iure naturali, con<lb n="409" break="no"/>iunctionem animalium brutorum esse a iure naturali secundum quod
+                <lb n="410"/>dicitur ius naturale ‘<anchor xml:id="D3.t1.f105s"/>instinctus et ordo<anchor xml:id="D3.t1.f105e"/>’ etc.<anchor xml:id="D3.t1.f101e"/></p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="18" xml:id="D3.t1.q18">
+            <div type="queritur">
+              <p><lb n="411"/><label>q.18</label> Item <hi rend="bold">queritur</hi> de uiolentie repulsa, utrum licita sit.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="412"/><hi rend="bold">Et uidetur</hi>, quia a iure naturali est, a quo nullum illicitum, ut <anchor xml:id="D3.t1.f106s"/>di. i. Ius
+                <lb n="413"/>naturale<anchor xml:id="D3.t1.f106e"/>.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="414"/><hi rend="bold">Econtra</hi>, quia se defendentes non promouentur, ut <anchor xml:id="D3.t1.f107s"/>di. xlvi. Se<lb n="415" break="no"/>ditionarios<anchor xml:id="D3.t1.f107e"/>. <anchor xml:id="D3.t1.a153s"/>Item in euangelio: ‘<anchor xml:id="D3.t1.f108s"/>Si quis te percusserit<anchor xml:id="D3.t1.f108e"/>’ etc., ut <anchor xml:id="D3.t1.f109s"/>xiiii. Q.i. c.
+                <lb n="416"/>i., ii.<anchor xml:id="D3.t1.f109e"/> Item in Apostolo<anchor xml:id="D3.t1.a153e"/>: ‘<anchor xml:id="D3.t1.f110s"/>Non uos <anchor xml:id="D3.t1.a154s"/>uindicantes<anchor xml:id="D3.t1.a154e"/><anchor xml:id="D3.t1.f110e"/>’ etc., ut <anchor xml:id="D3.t1.f111s"/>xi. Q.iii. Ira<anchor xml:id="D3.t1.f111e"/>.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="417"/>Item quod dicitur incontinenti posse repelli uiolentiam, <hi rend="bold">queritur</hi> quod
+                <lb n="418"/>tempus ibi contineatur, cum incontinenti dicatur fieri quod <anchor xml:id="D3.t1.a155s"/>infra<anchor xml:id="D3.t1.a155e"/> tri<lb n="419" break="no"/>duum fit uel infra decem dies, ut <anchor xml:id="D3.t1.f112s"/>ii. Q.<anchor xml:id="D3.t1.a156s"/>vi.<anchor xml:id="D3.t1.a156e"/> Anteriorum<anchor xml:id="D3.t1.f112e"/>, uel infra mensem,
+                <lb n="420"/>arg. <anchor xml:id="D3.t1.f113s"/>i. Q.i. Constat<anchor xml:id="D3.t1.f113e"/>, uel infra annum et diem, ut <anchor xml:id="D3.t1.f114s"/>xx. Q.ii. Puella<anchor xml:id="D3.t1.f114e"/>.</p>
+            </div>
+            <pb ed="#ed2024" n="16"/>
+            <div type="queritur">
+              <p><lb n="421"/>Item <hi rend="bold">queritur</hi>, utrum his qui iter perfectionis arripuerunt liceat <anchor xml:id="D3.t1.a157s"/>uim<anchor xml:id="D3.t1.a157e"/>
+                <lb n="422"/>repellere.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="423"/><hi rend="bold">Et uidetur</hi>, quia omnia iura hoc permittunt, <anchor xml:id="D3.t1.a158s"/>ut <anchor xml:id="D3.t1.f115s"/>in extra. de his qui
+                <lb n="424"/>incidunt in canonem <anchor xml:id="D3.t1.a159s"/>Si uero<anchor xml:id="D3.t1.f115e"/>. Si ergo hoc omnia permittunt<anchor xml:id="D3.t1.a158e"/><anchor xml:id="D3.t1.a159e"/>, ergo et illa
+                <lb n="425"/>que perfectis sunt proposita uel prodita.</p>
+            </div>
+            <div type="econtra">
+              <p><lb n="426"/><hi rend="bold">Econtra</hi> non uidetur, quia penitentia taliter occidentibus indicitur et
+                <lb n="427"/>biennis, ut <anchor xml:id="D3.t1.f116s"/>di. l. De his clericis<anchor xml:id="D3.t1.f116e"/>, ergo mortale est, uel saltem est ueniale.
+                <lb n="428"/>Set <anchor xml:id="D3.t1.a160s"/>perfecto<anchor xml:id="D3.t1.a160e"/> pro uita conseruanda non licet uenialiter peccare, ut <anchor xml:id="D3.t1.f117s"/>xxii.
+                <lb n="429"/>Q.ii. Ne quis arbitretur<anchor xml:id="D3.t1.f117e"/>. Numquid ergo non licet monacho occidere, ne
+                <lb n="430"/>occidatur?</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="431"/><hi rend="bold">Solutio</hi>: Ad primum dicatur licitum esse uim repellere, incontinenti,
+                <lb n="432"/>flagrante scilicet maleficio, cum moderamine inculpate tutele, causa
+                <lb n="433"/>defensionis non ultionis, que prohibetur <anchor xml:id="D3.t1.f118s"/>in canone Seditionarios<anchor xml:id="D3.t1.f118e"/> et <anchor xml:id="D3.t1.f119s"/>in
+                <lb n="434"/>Apostolo<anchor xml:id="D3.t1.f119e"/>. Illud euangelicum de perfectione consilium propositum. Ad
+                <lb n="435"/>secundum dicatur tunc fieri in continenti, quando sine interuallo fit, uel
+                <lb n="436"/>post modica interualla, dum actu contrario interueniente non aboleri
+                <lb n="437"/>uideatur iniuria. Hoc tamen credimus locum habere, cum res aliqua
+                <lb n="438"/>corporalis adimitur, non cum corpori tantum infertur iniuria. Tunc
+                <lb n="439"/>enim post interualla non liceret. Nec enim esset defensio, set peccati
+                <lb n="440"/>ultio. Circa tertium <anchor xml:id="D3.t1.a161s"/>dissensio<anchor xml:id="D3.t1.a161e"/> est. Placet <anchor xml:id="D3.t1.a162s"/>quibusdam<anchor xml:id="D3.t1.a162e"/> perfectos posse uim
+                <lb n="441"/>repellere etiam <anchor xml:id="D3.t1.a163s"/>occidendo<anchor xml:id="D3.t1.a163e"/>, si alias euadere non <anchor xml:id="D3.t1.a164s"/>possent<anchor xml:id="D3.t1.a164e"/>. Et <anchor xml:id="D3.t1.a165s"/>quod<anchor xml:id="D3.t1.a165e"/> dicitur
+                <lb n="442"/><anchor xml:id="D3.t1.f120s"/>c. Ne quis arbitretur<anchor xml:id="D3.t1.f120e"/>, de uita alterius loquitur, non de propria. Vel forte
+                <lb n="443"/>nec etiam ueniale est. Quod iubetur penitentia imponi, hoc ad cautelam
+                <lb n="444"/>tantum est. Et quod dicitur in euangelio, etiam perfectis consilium est
+                <lb n="445"/>et citra ordinem. Aliis placet in contrarium exemplo Domini <anchor xml:id="D3.t1.a166s"/>dicentis<anchor xml:id="D3.t1.a166e"/>,
+                <lb n="446"/>paratos esse debere ad omnem iniuriam tolerandam.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="19" xml:id="D3.t1.q19">
+            <div type="queritur">
+              <p><lb n="447"/><label>q.19</label> Item his qui iter perfectionis arripuerunt uidetur esse
+                <lb n="448"/>preceptum omnia debere esse communia. Et uerum est, <anchor xml:id="D3.t1.f121s"/>ut supra<anchor xml:id="D3.t1.f121e"/> dictum
+                <lb n="449"/>est. Secundum hoc non potest monachus habere aliquid proprium.
+                <lb n="450"/><anchor xml:id="D3.t1.f122s"/>Secundum hoc ergo nec cuculla erit propria, nec panis sibi assignatus
+                <pb ed="#ed2024" n="17"/><lb n="451"/>proprius, ergo quilibet monachus partem habet in cuculla, in pane<anchor xml:id="D3.t1.f122e"/>. Sic
+                <lb n="452"/>ergo uidetur, si monachus petat panem uel cucullam, ei debeat alius
+                <lb n="453"/>dare. Rem enim communem nullus alii debet negare.</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="454"/>Item <hi rend="bold">queri solet</hi> quo tempore dici possit panis non communis, utrum
+                <lb n="455"/>fractus, an etiam in ore masticatus dicatur communis.</p>
+              <p><lb n="456"/>Item cum una sit ecclesia, uidetur omnium ecclesiarum res communes
+                <lb n="457"/>esse debere. Quid est ergo quod ecclesie et monasteria inter se litigant?</p>
+              <p><lb n="458"/>Item si omnia sint omnium ecclesiarum communia, quare ergo aliqua
+                <lb n="459"/>uni apropriantur et alia alii?</p>
+            </div>
+            <div type="queritur">
+              <p><lb n="460"/>Item <hi rend="bold">solet queri</hi>, cum abbas res sui monasterii repetit tamquam
+                <lb n="461"/><anchor xml:id="D3.t1.a167s"/>procurator<anchor xml:id="D3.t1.a167e"/>, cuius nomine repetit.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="462"/><hi rend="bold">Non uidetur</hi> quod nomine sui collegii, quia non sunt magis sui collegii
+                <lb n="463"/>quam alterius, <anchor xml:id="D3.t1.a168s"/>unde non<anchor xml:id="D3.t1.a168e"/> magis audietur quam abbas alterius collegii.</p>
+              <p><lb n="464"/><anchor xml:id="D3.t1.f123s"/>Item si abbas potest <anchor xml:id="D3.t1.a169s"/>repetere<anchor xml:id="D3.t1.a169e"/> rem sui collegii quia dispensatio sibi est
+                <lb n="465"/>assignata, ergo pari ratione monachus cucullam sibi ablatam, cum
+                <lb n="466"/>contrarium sit euangelicum: ‘<anchor xml:id="D3.t1.f124s"/>Si quis uelit tunicam tollere et in iudicio<anchor xml:id="D3.t1.f124e"/>’
+                <lb n="467"/>etc., ut <anchor xml:id="D3.t1.f125s"/>xiiii. Q.i. c. i.<anchor xml:id="D3.t1.f125e"/>, <anchor xml:id="D3.t1.a170s"/>uel<anchor xml:id="D3.t1.a170e"/> <anchor xml:id="D3.t1.a171s"/>panem<anchor xml:id="D3.t1.a171e"/>, quorum usus siue dispensatio sibi est,
+                <lb n="468"/>et <anchor xml:id="D3.t1.a172s"/>non<anchor xml:id="D3.t1.a172e"/> proprietas, assignata<anchor xml:id="D3.t1.f123e"/>.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="469"/><hi rend="bold">Solutio</hi>: In rebus ecclesiarum claustralium <anchor xml:id="D3.t1.f126s"/>tria attenduntur<anchor xml:id="D3.t1.f126e"/>: proprietas,
+                <lb n="470"/>usus, dispensatio. Proprietas solius Dei uel uniuersitatis pauperum;
+                <lb n="471"/>usus omnium indigentium in communi, unde et tempore indigentie non
+                <lb n="472"/>illis qui de collegio uno, set omnibus de quocumque sunt bona
+                <lb n="473"/>cuiuslibet monasterii communicanda; dispensationes singule singu<lb n="474" break="no"/>lorum collegiorum, unde quod unum collegium ab alio aliqua petit
+                <lb n="475"/>propter dispensationem sibi specialiter assignatam conceditur, non
+                <lb n="476"/>propter proprietatem uel usum specialem. Vnde cum abbas procurator
+                <lb n="477"/>collegii sui est, etiam procurator omnium pauperum est quantum ad
+                <lb n="478"/>usum sui collegii, ratione dispensationis sibi assignate. Et recte
+                <lb n="479"/>statutum est singulas singulis collegiis dispensationes deputatas, cum
+                <lb n="480"/>sic pauperibus melius <anchor xml:id="D3.t1.a173s"/>prouideatur<anchor xml:id="D3.t1.a173e"/> singulariter quam generaliter. De eo
+                <lb n="481"/>autem quod quesitum est quando panis monacho assignatus desinat
+                <lb n="482"/>esse communis, dici potest cum sic est masticatus, quod alii non
+                <pb ed="#ed2024" n="18"/><lb n="483"/>proficeret. <anchor xml:id="D3.t1.f127s"/>Cuculla autem semper est communis. Vel distingue: Quedam
+                <lb n="484"/>ad generales usus, <anchor xml:id="D3.t1.a174s"/>quedam ad<anchor xml:id="D3.t1.a174e"/> speciales usus <anchor xml:id="D3.t1.a175s"/>assignantur<anchor xml:id="D3.t1.a175e"/>, <anchor xml:id="D3.t1.a176s"/>sicut<anchor xml:id="D3.t1.a176e"/> uestis
+                <lb n="485"/>monacho, panis et huiusmodi, que quidem fratri petenti negare potest
+                <lb n="486"/>nisi ipse indigeat, quod quidem de generalis usus re dici non posset. Vel
+                <lb n="487"/>potest dici nichil posse petere unum ab alio, licet omnia sint communia,
+                <lb n="488"/>sine auctoritate dispensatoris quem sibi in omnibus preposuerunt.
+                <lb n="489"/>Quod ultimo dictum est quod monachus cucullam sibi <anchor xml:id="D3.t1.a177s"/>ablatam<anchor xml:id="D3.t1.a177e"/> posset
+                <lb n="490"/>repetere, non concedimus<anchor xml:id="D3.t1.f127e"/>. Rem enim ad communes usus assignatam
+                <lb n="491"/>dispensator repetere potest utpote publice intersit. Ceterum monachus
+                <lb n="492"/>rem in proprios suos usus assignatam non potest, nam quasi propriam
+                <lb n="493"/>uideretur repetere.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="20" xml:id="D3.t1.q20">
+            <div type="queritur">
+              <p><lb n="494"/><label>q.20</label> Item <hi rend="bold">queritur</hi>, utrum ius naturale sibi contrarium sit.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="495"/><hi rend="bold">Et uidetur</hi> quia aliqua esse propria et omnia communia sunt <anchor xml:id="D3.t1.a178s"/>contraria<anchor xml:id="D3.t1.a178e"/>,
+                <lb n="496"/>set utrumque de iure naturali est. De ultimo constat <anchor xml:id="D3.t1.a179s"/>sicut<anchor xml:id="D3.t1.a179e"/> de primo,
+                <lb n="497"/>quia transire per alienum agrum est ius <anchor xml:id="D3.t1.a180s"/>naturale<anchor xml:id="D3.t1.a180e"/>, ergo iure naturali
+                <lb n="498"/>ager est alienus et sic proprius. Item ‘<anchor xml:id="D3.t1.f128s"/>acquisitio eorum que celo terra
+                <lb n="499"/>marique sunt<anchor xml:id="D3.t1.f128e"/>’ est de iure naturali, ergo appropriatio. Item libertas est
+                <lb n="500"/>de iure naturali, ut <anchor xml:id="D3.t1.f129s"/>di. i. Ius naturale<anchor xml:id="D3.t1.f129e"/>. Item seruitus, nam in ueteri
+                <lb n="501"/>testamento et in nouo seruitus est <anchor xml:id="D3.t1.a181s"/>approbata<anchor xml:id="D3.t1.a181e"/>. Et contraria sunt, quia
+                <lb n="502"/>utrumque tollit reliquum. Item tolerantia iniuriarum est de iure
+                <lb n="503"/>naturali, quia ab euangelio, <anchor xml:id="D3.t1.a182s"/>sic<anchor xml:id="D3.t1.a182e"/> eius contrarium, iniurie repulsio.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="504"/><hi rend="bold">Solutio</hi>: Dicunt quidam ius naturale uno modo acceptum derogare iuri
+                <lb n="505"/>naturali alio modo accepto. Nec enim inconueniens est, nam demon<lb n="506" break="no"/>strationibus per alias demonstrationes detrahi non est absurdum. Aliis
+                <lb n="507"/><anchor xml:id="D3.t1.a183s"/>placet<anchor xml:id="D3.t1.a183e"/> ius naturale sibi contrarium nullo modo esse. Est <anchor xml:id="D3.t1.a184s"/>enim<anchor xml:id="D3.t1.a184e"/> in sua
+                <lb n="508"/>substantia idem et inuariabile, set secundum uaria subiecta temporum
+                <lb n="509"/>uel personarum uarios <anchor xml:id="D3.t1.a185s"/>recipit<anchor xml:id="D3.t1.a185e"/> effectus, gratia quorum ius naturale
+                <lb n="510"/>uarias recipit acceptiones, sicut uerum sibi non est contrarium, cum
+                <lb n="511"/>alium fouet, alium ledit, set habet secundum uaria subiecta que inuenit
+                <lb n="512"/><anchor xml:id="D3.t1.a186s"/>contrarios<anchor xml:id="D3.t1.a186e"/> effectus, <anchor xml:id="D3.t1.a187s"/>ut<anchor xml:id="D3.t1.a187e"/> ratione unius dicatur <anchor xml:id="D3.t1.a188s"/>tale<anchor xml:id="D3.t1.a188e"/>, ratione alterius tale.
+                <lb n="513"/>Sic <anchor xml:id="D3.t1.a189s"/>ius<anchor xml:id="D3.t1.a189e"/> naturale in sui natura inuariabile secundum uaria subiecta
+                <lb n="514"/>temporum uel personarum etiam contrarios habet effectus, ut ratione
+                <pb ed="#ed2024" n="19"/><lb n="515"/>unius dicatur ‘<anchor xml:id="D3.t1.f130s"/>ius naturale est quod natura omnia animantia docuit<anchor xml:id="D3.t1.f130e"/>’,
+                <lb n="516"/>ratione alterius dicatur ‘<anchor xml:id="D3.t1.f131s"/>licitum et approbatum<anchor xml:id="D3.t1.f131e"/>’ etc. Sunt enim quedam
+                <lb n="517"/>temporis uel persone que hunc effectum sibi uendicant ut omnia <anchor xml:id="D3.t1.a190s"/>sint<anchor xml:id="D3.t1.a190e"/>
+                <lb n="518"/>communia, alia que uolunt aliqua esse propria. Item quedam que uolunt
+                <lb n="519"/>omnes homines esse liberos, alia que <anchor xml:id="D3.t1.a191s"/>aliquos<anchor xml:id="D3.t1.a191e"/> seruos. Item quedam <anchor xml:id="D3.t1.a192s"/>que<anchor xml:id="D3.t1.a192e"/>
+                <lb n="520"/>admittunt omnes iniurias, alia que omnes repulsas. Et secundum
+                <lb n="521"/>uarietatem effectuum uarias ius naturale dicitur habere acceptiones.
+                <lb n="522"/>Omnia ergo esse communia, omnes esse liberos, uiolentiarum repul<lb n="523" break="no"/>sionem, dicimus unum esse effectum iuris naturalis, secundum quem
+                <lb n="524"/>dicitur ius naturale ‘<anchor xml:id="D3.t1.f133s"/>ordo et instinctus nature<anchor xml:id="D3.t1.f133e"/>’ etc. Aliqua esse propria,
+                <lb n="525"/>aliquos seruos, alium effectum secundum quem dicitur ius <anchor xml:id="D3.t1.a193s"/>naturale<anchor xml:id="D3.t1.a193e"/>
+                <lb n="526"/>‘<anchor xml:id="D3.t1.a194s"/><anchor xml:id="D3.t1.f132s"/>licitum<anchor xml:id="D3.t1.a194e"/> et <anchor xml:id="D3.t1.a195s"/>approbatum<anchor xml:id="D3.t1.a195e"/><anchor xml:id="D3.t1.f132e"/>’ etc., iniuriarum tolerantiam alium effectum
+                <lb n="527"/>secundum quem dicitur ius naturale ‘<anchor xml:id="D3.t1.a196s"/>ius diuinum<anchor xml:id="D3.t1.a196e"/>’ quod in euangelio
+                <lb n="528"/>continetur.</p>
+            </div>
+          </div>
+
+          <div type="quaestio" n="21" xml:id="D3.t1.q21">
+            <div type="queritur">
+              <p><lb n="529"/><label>q.21</label> Item <hi rend="bold">queritur</hi>, cum acquisitio ‘omnium que celo’ etc. dicatur
+                <lb n="530"/>esse a iure naturali, ut <anchor xml:id="D3.t1.f134s"/>di. i. Ius naturale<anchor xml:id="D3.t1.f134e"/>, qualiter ‘occupatio sedium’
+                <lb n="531"/>dicatur esse a iure gentium <anchor xml:id="D3.t1.f135s"/>di. i. Ius gentium<anchor xml:id="D3.t1.f135e"/>, cum ius idem sit,
+                <lb n="532"/>acquisitio quod occupatio, et diuerse sint species iuris ius gentium et
+                <lb n="533"/>ius naturale.</p>
+            </div>
+            <div type="videtur">
+              <p><lb n="534"/>Item seruitus sit a iure gentium? <hi rend="bold">Non uidetur</hi> quod sit a iure naturali.</p>
+              <p><lb n="535"/>Item cum iniuriarum repulsa sit a iure gentium, ut <anchor xml:id="D3.t1.f136s"/>ff. de iustitia et iure<anchor xml:id="D3.t1.f136e"/>,
+                <lb n="536"/><hi rend="bold">non uidetur</hi> quod sit a iure naturali, uel si idem est, ab utroque. Non
+                <lb n="537"/>ergo per opposita data fuit illa <anchor xml:id="D3.t1.a197s"/>diuisio<anchor xml:id="D3.t1.a197e"/>.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="538"/><hi rend="bold">Solutio</hi>: Ad primum dici potest quod acquisitio uacantium est a iure
+                <lb n="539"/>naturali, occupatio non uacantium est a iure gentium, ubi licita est
+                <lb n="540"/>pugna; alias non esset a iure gentium. Item seruitus est a iure gentium
+                <lb n="541"/>ut eius species a iure naturali per approbationem. Vnde secundum hoc
+                <lb n="542"/><anchor xml:id="D3.t1.a198s"/>dicitur<anchor xml:id="D3.t1.a198e"/> ius naturale ‘<anchor xml:id="D3.t1.f137s"/>licitum et approbatum<anchor xml:id="D3.t1.f137e"/>’. Item iniuriarum repulsa est
+                <lb n="543"/>a iure gentium, uiolentie repulsa est a iure naturali, et ita per opposita
+                <pb ed="#ed2024" n="20"/><lb n="544"/>data est illa diuisio. Vel dici potest secundum unam acceptionem
+                <lb n="545"/>tantum datam fuisse per opposita illam diuisionem, secundum quod
+                <lb n="546"/>dicitur ius naturale ‘<anchor xml:id="D3.t1.f142s"/>ordo et instinctus nature<anchor xml:id="D3.t1.f142e"/>’ etc. Secundum alias
+                <lb n="547"/>quasdam consonat ius naturale cum iure gentium secundum quod
+                <lb n="548"/>dicitur ‘<anchor xml:id="D3.t1.f138s"/>licitum et <anchor xml:id="D3.t1.a199s"/>approbatum<anchor xml:id="D3.t1.a199e"/><anchor xml:id="D3.t1.f138e"/>’ et ‘<anchor xml:id="D3.t1.f147s"/>iudicium rationis<anchor xml:id="D3.t1.f147e"/>’. Vnde seruitus,
+                <lb n="549"/><anchor xml:id="D3.t1.a200s"/>approbatio<anchor xml:id="D3.t1.a200e"/>, iniuriarum repulsa est a iure naturali secundum quod
+                <lb n="550"/>dicitur ‘<anchor xml:id="D3.t1.f139s"/>licitum et approbatum<anchor xml:id="D3.t1.f139e"/>’ et ‘<anchor xml:id="D3.t1.f148s"/>iudicium rationis<anchor xml:id="D3.t1.f148e"/>’.</p>
+              <p><lb n="551"/>In summa uero sciendum est coniunctionem maris et femine simpliciter
+                <lb n="552"/><anchor xml:id="D3.t1.a201s"/>esse<anchor xml:id="D3.t1.a201e"/> a iure naturali secundum quod dicitur ‘<anchor xml:id="D3.t1.f143s"/>ordo et instinctus<anchor xml:id="D3.t1.f143e"/>’ etc. Et
+                <lb n="553"/>secundum hoc congruit omni animanti. Secundum quod homini soli et
+                <lb n="554"/><anchor xml:id="D3.t1.a202s"/>legitima<anchor xml:id="D3.t1.a202e"/> dicitur esse a iure naturali, secundum quod diuinum dicitur,
+                <lb n="555"/>quia Deus qui est summa natura in paradiso eam legitimam <anchor xml:id="D3.t1.a203s"/>instituit<anchor xml:id="D3.t1.a203e"/>.
+                <lb n="556"/>Propagatio, educatio, communis omnium possessio, una libertas, secun<lb n="557" break="no"/>dum quod dicitur ‘<anchor xml:id="D3.t1.f144s"/>ordo quidam<anchor xml:id="D3.t1.f144e"/>’ etc. Sic et repulsa uiolentie. Iniurie
+                <lb n="558"/>uero repulsa secundum quod dicitur ‘<anchor xml:id="D3.t1.f149s"/>iudicium rationis<anchor xml:id="D3.t1.f149e"/>’. Sic et deposite
+                <lb n="559"/>uel commodate rei restitutio. Vel potius continetur sub illo precepto
+                <lb n="560"/>‘<anchor xml:id="D3.t1.f151s"/>quo quisque iubetur<anchor xml:id="D3.t1.f151e"/>’ etc. Acquisitio, si uero fiat ad communes usus,
+                <lb n="561"/>secundum quod ‘<anchor xml:id="D3.t1.f145s"/>ordo et instinctus<anchor xml:id="D3.t1.f145e"/>’ etc., si ad proprios, secundum quod
+                <lb n="562"/>dicitur ‘<anchor xml:id="D3.t1.f140s"/>licitum et <anchor xml:id="D3.t1.a204s"/>approbatum<anchor xml:id="D3.t1.a204e"/><anchor xml:id="D3.t1.f140e"/>’ etc. Item sedium non uacantium occu<lb n="563" break="no"/>patio, licet magis proprie dicatur cum iure gentium, tamen a iure
+                <lb n="564"/>naturali secundum quod dicitur ‘<anchor xml:id="D3.t1.f150s"/>iudicium rationis<anchor xml:id="D3.t1.f150e"/>’, uel etiam secundum
+                <lb n="565"/>quod ‘<anchor xml:id="D3.t1.f152s"/>iubetur quilibet alii facere quod sibi uellet fieri<anchor xml:id="D3.t1.f152e"/>’, <anchor xml:id="D3.t1.a205s"/>cum sibi hosti
+                <lb n="566"/>hoc debere fieri<anchor xml:id="D3.t1.a205e"/> debeat uelle. Item cum dicitur ‘<anchor xml:id="D3.t1.f153s"/>transire per agrum
+                <lb n="567"/>alienum fas est<anchor xml:id="D3.t1.f153e"/>’, idest nuda equitas et demonstratio iuris naturalis, ui<lb n="568" break="no"/>detur per hec uerba confundi ius naturale. Set distingue: Cum dicitur
+                <lb n="569"/>‘fas’, demonstrat rudem et informem equitatem iuris naturalis, secun<lb n="570" break="no"/>dum quod dicitur ‘<anchor xml:id="D3.t1.f146s"/>ordo<anchor xml:id="D3.t1.f146e"/>’ etc., cum dicitur ‘alienum’ demonstrat ius natu<lb n="571" break="no"/>rale, secundum quod dicitur ‘<anchor xml:id="D3.t1.f141s"/>licitum et approbatum<anchor xml:id="D3.t1.f141e"/>’, uel ius gentium.</p>
+            </div>
+          </div>
+
+          <pb ed="#ed2024" n="21"/>
+          <div type="quaestio" n="22" xml:id="D3.t1.q22">
+            <div type="queritur">
+              <p><lb n="572"/><label>q.22</label> Item cum dicitur ius aliud naturale, aliud positiuum, <hi rend="bold">queritur</hi>
+                <lb n="573"/>utrum sit per opposita hec diuisio.</p>
+            </div>
+            <div type="solutio">
+              <p><lb n="574"/><hi rend="bold">Resp.:</hi> Dici potest quod sic. Set secundum hoc larga est acceptio iuris
+                <lb n="575"/>naturalis, <anchor xml:id="D3.t1.a206s"/>ut comprehendantur omnes acceptiones iuris naturalis<anchor xml:id="D3.t1.a206e"/>. Et
+                <lb n="576"/>tamen inspecta proprietate uocabulorum ius legale, euangelicum,
+                <lb n="577"/>apostolorum, generalium conciliorum positiuum dici potest. Sibi enim
+                <lb n="578"/>appropriatum hoc nomen naturale. Solum ergo ius canonicum et legale
+                <lb n="579"/>humanum positiuum dicitur.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+    <back>
+      <!-- ===== Textkritischer Apparat (Reihenfolge und Wortlaut wie im Druck) ===== -->
+      <div type="apparatus" subtype="criticus">
+        <listApp>
+          <app from="#D3.t1.a1s" to="#D3.t1.a1e" n="tit.">
+            <lem rend="implicit">de iure naturali</lem>
+            <rdg wit="#B" type="marg">de iure naturali <wit><hi rend="italic">marg.</hi> B fol. 33<hi rend="superscript">va</hi></wit></rdg>
+            <rdg wit="#D" type="supra">de iure naturali <wit><hi rend="italic">supra col.</hi> D fol. 26<hi rend="superscript">r</hi> et 27<hi rend="superscript">rv</hi></wit></rdg>
+            <rdg wit="#D">de tertia questione <wit><hi rend="italic">in lin</hi>. <note type="editorial"><hi rend="italic">rubr</hi>.</note> D fol. 26<hi rend="superscript">rb</hi></wit></rdg>
+          </app>
+          <app from="#D3.t1.a2s" to="#D3.t1.a2e" n="6">
+            <lem rend="plain" wit="#Z #B #D">gentium <wit>ZBD</wit></lem>
+            <rdg wit="#P">ꝯn̄tium <wit>P</wit></rdg>
+            <rdg wit="#L" type="om"><wit><hi rend="italic">om</hi>. L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a3s" to="#D3.t1.a3e" n="10">
+            <lem rend="plain" wit="#Z #B">regum <wit>ZB</wit></lem>
+            <rdg wit="#P">reḡ <wit>P</wit></rdg>
+            <rdg wit="#L #D">regis <wit>LD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a4s" to="#D3.t1.a4e" n="13">
+            <lem rend="plain" wit="#L #B #D">coniunctione <wit>LBD</wit></lem>
+            <rdg wit="#P">ꝯuncto͞m <wit>P</wit></rdg>
+            <rdg wit="#Z">cum unctione <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a5s" to="#D3.t1.a5e" n="14">
+            <lem rend="plain">solum</lem>
+            <witDetail wit="#P" type="ras"><hi rend="italic">ras</hi>. <hi rend="italic">praem</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a6s" to="#D3.t1.a6e" n="21">
+            <lem rend="bracket">Sex</lem>
+            <rdg wit="#P">v. <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a7s" to="#D3.t1.a7e" n="22">
+            <lem rend="plain">modo</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a8s" to="#D3.t1.a8e" n="22">
+            <lem rend="plain" wit="#Z #B #D">dicitur <wit>ZBD</wit></lem>
+            <rdg wit="#P">uidetur <wit>P</wit></rdg>
+            <rdg wit="#Z" type="add">dicitur in naturali <wit><hi rend="italic">add</hi>. Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a9s" to="#D3.t1.a9e" n="22">
+            <lem rend="plain" wit="#Z #B">quem <wit>ZB</wit></lem>
+            <rdg wit="#P #L #D">quod <wit>PLD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a10s" to="#D3.t1.a10e" n="23">
+            <lem rend="plain" wit="#Z #B #D">iurisperitus <wit>ZBD</wit></lem>
+            <rdg wit="#P">iurispertus <wit>P</wit></rdg>
+            <rdg wit="#L" type="om"><wit><hi rend="italic">om</hi>. L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a11s" to="#D3.t1.a11e" n="26">
+            <lem rend="plain" wit="#Z #D">ut <note type="editorial">est <hi rend="italic">add</hi>. D</note> suum repetere non repetere <wit>ZD</wit></lem>
+            <rdg wit="#P">ut suum repetere <note type="editorial">non repere <hi rend="italic">marg</hi>.</note> <wit>P</wit></rdg>
+            <rdg wit="#L">ut suum repente non repetere <wit>L</wit></rdg>
+            <rdg wit="#B">ut repente uel non repente <wit>B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a12s" to="#D3.t1.a12e" n="28-29">
+            <lem rend="bracket">prohibentur</lem>
+            <rdg wit="#P">propterhibentur <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a13s" to="#D3.t1.a13e" n="30">
+            <lem rend="plain" wit="#B">uel quia a Deo <wit>B</wit></lem>
+            <rdg wit="#P">uel a Deo <wit>P</wit></rdg>
+            <rdg wit="#L #D">quod <note type="editorial"><hi rend="italic">supra lin</hi>. D</note> uel a Deo <wit>LD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a14s" to="#D3.t1.a14e" n="30-32">
+            <!-- Druck: „uel a Deo“ statt „uel quia a Deo“ – Versehen der gedruckten Edition, Korrektur bestätigt vom Herausgeber am 04.11.2026 -->
+            <lem rend="plain">uel quia a Deo – appellatur</lem>
+            <rdg wit="#Z" type="om"><wit><hi rend="italic">om</hi>. Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a15s" to="#D3.t1.a15e" n="33">
+            <lem rend="bracket">proditum</lem>
+            <rdg wit="#P" type="add">proditum hoc factum fuit primo die <wit><hi rend="italic">marg</hi>. <hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a16s" to="#D3.t1.a16e" n="34">
+            <lem rend="bracket">Quarto</lem>
+            <rdg wit="#P">Queritur <wit>P</wit></rdg>
+            <rdg wit="#L" type="add">Quarto modo <wit><hi rend="italic">add</hi>. L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a17s" to="#D3.t1.a17e" n="35-36">
+            <lem rend="plain" wit="#L">ut est habilis est <wit>L</wit></lem>
+            <rdg wit="#P">ut est habilis <wit>P</wit></rdg>
+            <rdg wit="#D">est habilis <wit>D</wit></rdg>
+            <rdg wit="#Z">ut conscit habet <wit>Z</wit></rdg>
+            <rdg wit="#B">ut c<hi rend="superscript">e</hi>scit habet <wit>B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a18s" to="#D3.t1.a18e" n="47">
+            <lem rend="bracket">naturalis</lem>
+            <rdg wit="#P">naturale <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a19s" to="#D3.t1.a19e" n="50">
+            <lem rend="bracket">dicta</lem>
+            <rdg wit="#P">c͞a <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a20s" to="#D3.t1.a20e" n="53">
+            <lem rend="plain" type="emendatio">censentur <wit><hi rend="italic">emend</hi>.</wit></lem>
+            <rdg wit="#P">censantur <wit>P</wit></rdg>
+            <rdg wit="#L">censet <wit>L</wit></rdg>
+            <rdg wit="#Z">considerant <wit>Z</wit></rdg>
+            <rdg wit="#B">considerantur <wit>B</wit></rdg>
+            <rdg wit="#D">censendum <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a21s" to="#D3.t1.a21e" n="59">
+            <lem rend="bracket">sibi</lem>
+            <rdg wit="#P">si <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a22s" to="#D3.t1.a22e" n="60-62">
+            <lem rend="plain">uel – intelligo</lem>
+            <rdg wit="#D" type="om"><wit><hi rend="italic">om</hi>. D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a23s" to="#D3.t1.a23e" n="61-62">
+            <lem rend="implicit">sit quemlibet ‘diligere proximum sicut’ etc., consequenter preceptum</lem>
+            <rdg wit="#P" type="marg">sit quemlibet dili[gere] proximum sicut conse[quenter] preceptum <wit><hi rend="italic">marg</hi>. P</wit></rdg>
+            <rdg wit="#L">quelibet diligere sicut proximum consequenter <wit>L</wit></rdg>
+            <rdg wit="#Z #B">sit quemlibet proximum diligere sic consequenter <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a24s" to="#D3.t1.a24e" n="62">
+            <lem rend="plain" type="emendatio">etc. <wit><hi rend="italic">add</hi>., <hi rend="italic">emend</hi>.</wit></lem>
+          </app>
+          <app from="#D3.t1.a25s" to="#D3.t1.a25e" n="62">
+            <lem rend="bracket">intelligo</lem>
+            <rdg wit="#P" type="add">intelligo xxiii. Q.v. <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a26s" to="#D3.t1.a26e" n="64">
+            <lem rend="plain" wit="#P #L #Z #D">Si non <wit>PLZD <hi rend="italic">et Friedb</hi>.</wit></lem>
+            <rdg wit="#B">Si uero <wit>B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a27s" to="#D3.t1.a27e" n="67">
+            <lem rend="bracket">Nam</lem>
+            <rdg wit="#Z" type="praem">Resp. Nam <wit><hi rend="italic">praem</hi>. Z</wit></rdg>
+            <rdg wit="#B" type="praem">Respondemus Nam <wit><hi rend="italic">praem</hi>. B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a28s" to="#D3.t1.a28e" n="67">
+            <lem rend="bracket">xxviii.</lem>
+            <rdg wit="#L">xviii. <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a29s" to="#D3.t1.a29e" n="69">
+            <lem rend="bracket">uellem</lem>
+            <rdg wit="#P">nollem <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a30s" to="#D3.t1.a30e" n="72">
+            <lem rend="bracket">de</lem>
+            <rdg wit="#P">ad <wit>P</wit></rdg>
+            <rdg wit="#Z #B" type="praem">et de <wit><hi rend="italic">praem</hi>. ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a31s" to="#D3.t1.a31e" n="74">
+            <lem rend="bracket">ex</lem>
+            <rdg wit="#P">aex <wit>P</wit></rdg>
+            <rdg wit="#D">ab <wit>D</wit></rdg>
+            <rdg wit="#L" type="om"><wit><hi rend="italic">om</hi>. L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a32s" to="#D3.t1.a32e" n="81">
+            <lem rend="plain">homines</lem>
+            <witDetail wit="#P" type="marg"><hi rend="italic">marg</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a33s" to="#D3.t1.a33e" n="82">
+            <lem rend="bracket">Resp.:</lem>
+            <rdg wit="#D" type="add">Resp.: Solutio <wit><hi rend="italic">add</hi>. D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a34s" to="#D3.t1.a34e" n="85">
+            <lem rend="bracket">xlv.</lem>
+            <rdg wit="#Z">xli. <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a35s" to="#D3.t1.a35e" n="88">
+            <lem rend="bracket">quod</lem>
+            <rdg wit="#P">et <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a36s" to="#D3.t1.a36e" n="93">
+            <lem rend="plain">Si uir</lem>
+            <rdg wit="#L" type="om"><wit><hi rend="italic">om</hi>. L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a37s" to="#D3.t1.a37e" n="93">
+            <lem rend="plain" wit="#D">infra <wit>D</wit></lem>
+            <rdg wit="#L #Z #B">in <wit>LZB</wit></rdg>
+            <rdg wit="#P">ibi <note type="editorial">ı<hi rend="superscript">ı</hi></note> <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a38s" to="#D3.t1.a38e" n="93">
+            <lem rend="bracket">uoto</lem>
+            <rdg wit="#Z #B" type="add">uoto sim&lt;plici&gt; <wit><hi rend="italic">add</hi>. ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a39s" to="#D3.t1.a39e" n="97">
+            <lem rend="bracket">Dispensabiliter</lem>
+            <rdg wit="#P" type="add">Dispensabiliter &lt;…&gt; est ratio diuersatatis(!) quod post et &lt;…&gt; ante hoc(?) est quia factum est quod &lt;…&gt; est puta qualiter matrimonium &lt;…&gt; aliis quantum/quot(?) nec post nec ante <wit><hi rend="italic">marg</hi>. <hi rend="italic">add</hi>. P</wit> <note type="editorial"><hi rend="italic">gl</hi>.</note></rdg>
+          </app>
+          <app from="#D3.t1.a40s" to="#D3.t1.a40e" n="99">
+            <lem rend="bracket">redditionem</lem>
+            <rdg wit="#Z" type="add">redditionem Resp. <wit><hi rend="italic">add</hi>. Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a41s" to="#D3.t1.a41e" n="102-103">
+            <lem rend="bracket">secundum – fractionem</lem>
+            <rdg wit="#Z #B">quam <note type="editorial">quod B</note> nullius fractione <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a42s" to="#D3.t1.a42e" n="103">
+            <lem rend="plain" type="emendatio">quod <wit><hi rend="italic">emend</hi>.</wit></lem>
+            <rdg wit="#P #L #D">quos <wit>PLD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a43s" to="#D3.t1.a43e" n="103">
+            <lem rend="plain" type="coniectura">dispensat <wit><hi rend="italic">coniec</hi>.</wit></lem>
+            <rdg wit="#P #L #Z #B #D" type="om"><wit><hi rend="italic">om</hi>. PLZBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a44s" to="#D3.t1.a44e" n="104">
+            <lem rend="bracket">Honora</lem>
+            <rdg wit="#P">honoro <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a45s" to="#D3.t1.a45e" n="104">
+            <lem rend="plain" wit="#Z #B #D">etc. <wit>ZBD</wit></lem>
+            <rdg wit="#L">et matrem <wit>L</wit></rdg>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a46s" to="#D3.t1.a46e" n="111">
+            <lem rend="plain" wit="#P #Z #B #D">Queritur <wit>PZBD <hi rend="italic">et Friedb</hi>.</wit></lem>
+            <rdg wit="#L">Queruntur <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a47s" to="#D3.t1.a47e" n="113">
+            <lem rend="bracket">subditum</lem>
+            <rdg wit="#P">subitum <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a48s" to="#D3.t1.a48e" n="117">
+            <lem rend="bracket">deferendum</lem>
+            <rdg wit="#P">defendere <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a49s" to="#D3.t1.a49e" n="124">
+            <lem rend="plain" wit="#P #D">Legi <wit>PD <hi rend="italic">et Friedb</hi>.</wit></lem>
+            <rdg wit="#L">Leḡ <wit>L</wit></rdg>
+            <rdg wit="#Z #B">Legis <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a50s" to="#D3.t1.a50e" n="127">
+            <lem rend="bracket">patres</lem>
+            <rdg wit="#P" type="add">patres et <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a51s" to="#D3.t1.a51e" n="129">
+            <lem rend="bracket">xxvii.</lem>
+            <rdg wit="#Z #B">xxxvii. <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a52s" to="#D3.t1.a52e" n="131-133">
+            <lem rend="bracket">Q. viii. – xi.</lem>
+            <rdg wit="#P" type="marg">[Q.] viii. Legi. Non ergo generale [est] preceptum ad omnes filios. [E]contra uidetur quod exhibebit, ut [x]i. <wit><hi rend="italic">marg</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a53s" to="#D3.t1.a53e" n="132">
+            <lem rend="plain">Legi</lem>
+            <rdg wit="#Z #B" type="om"><wit><hi rend="italic">om</hi>. ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a54s" to="#D3.t1.a54e" n="133-135">
+            <lem rend="plain">Item – Si quis</lem>
+            <rdg wit="#Z" type="om"><wit><hi rend="italic">om</hi>. Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a55s" to="#D3.t1.a55e" n="135">
+            <lem rend="plain" wit="#B #D">debet <wit>BD</wit></lem>
+            <rdg wit="#P">deberet <wit>P</wit></rdg>
+            <rdg wit="#L">debeat <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a56s" to="#D3.t1.a56e" n="135">
+            <lem rend="bracket">Si quis</lem>
+            <rdg wit="#D" type="add">Si quis d&lt;ereliquerit&gt; <wit><hi rend="italic">add</hi>. D</wit> <note type="editorial"><hi rend="italic">cf</hi>. <hi rend="italic">Friedb</hi>.</note></rdg>
+          </app>
+          <app from="#D3.t1.a57s" to="#D3.t1.a57e" n="136">
+            <lem rend="plain" wit="#P #Z #B #D">Si qui <wit>PZBD <hi rend="italic">et Friedb</hi>.</wit></lem>
+            <rdg wit="#L">Si quis <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a58s" to="#D3.t1.a58e" n="138">
+            <lem rend="bracket">uel</lem>
+            <rdg wit="#P">et <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a59s" to="#D3.t1.a59e" n="139">
+            <lem rend="plain">utrum</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a60s" to="#D3.t1.a60e" n="141">
+            <lem rend="bracket">appropriabit</lem>
+            <rdg wit="#P">approbabit <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a61s" to="#D3.t1.a61e" n="143">
+            <lem rend="plain">ii.</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a62s" to="#D3.t1.a62e" n="143">
+            <lem rend="bracket">xvi.</lem>
+            <rdg wit="#Z #B" type="add">xvi. et <wit><hi rend="italic">add</hi>. ZB</wit></rdg>
+            <rdg wit="#L">xv. <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a63s" to="#D3.t1.a63e" n="143">
+            <lem rend="bracket">At</lem>
+            <rdg wit="#P" type="add">At Demonstrato simplici monacho <wit><hi rend="italic">marg</hi>. <hi rend="italic">add</hi>. P</wit> <note type="editorial"><hi rend="italic">gl</hi>.</note></rdg>
+          </app>
+          <app from="#D3.t1.a64s" to="#D3.t1.a64e" n="145">
+            <lem rend="plain">Set – poterit</lem>
+            <witDetail wit="#P" type="marg"><hi rend="italic">marg</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a65s" to="#D3.t1.a65e" n="145">
+            <lem rend="plain" wit="#L">nonne <wit>L</wit></lem>
+            <rdg wit="#P #Z #B">non <wit>PZB</wit></rdg>
+            <rdg wit="#D">tamen <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a66s" to="#D3.t1.a66e" n="150">
+            <lem rend="bracket">monachicum</lem>
+            <rdg wit="#P #B">monachium <wit>PB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a67s" to="#D3.t1.a67e" n="151">
+            <lem rend="plain" wit="#L">ipsum autem <wit>L</wit></lem>
+            <rdg wit="#P">ı͞p autem <wit>P</wit></rdg>
+            <rdg wit="#Z #B">ipsa eum <wit>ZB</wit></rdg>
+            <rdg wit="#D">ipse autem <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a68s" to="#D3.t1.a68e" n="157">
+            <lem rend="bracket">necessitate</lem>
+            <rdg wit="#P">necitate <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a69s" to="#D3.t1.a69e" n="159">
+            <lem rend="plain">alere</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a70s" to="#D3.t1.a70e" n="166">
+            <lem rend="bracket">propagationem</lem>
+            <rdg wit="#P">purgationem <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a71s" to="#D3.t1.a71e" n="167">
+            <lem rend="bracket">contra sit</lem>
+            <rdg wit="#P">contracsit <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a72s" to="#D3.t1.a72e" n="167">
+            <lem rend="plain" wit="#P #L #D">ita <wit>PLD <hi rend="italic">et Friedb</hi>.</wit></lem>
+            <rdg wit="#Z #B">itaque <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a73s" to="#D3.t1.a73e" n="169">
+            <lem rend="bracket">dispensare</lem>
+            <rdg wit="#P">dispense <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a74s" to="#D3.t1.a74e" n="169">
+            <lem rend="plain" wit="#L #D">commisceretur <wit>LD</wit></lem>
+            <rdg wit="#P">commiscerentur <wit>P</wit></rdg>
+            <rdg wit="#Z">intelb’etur <wit>Z</wit></rdg>
+            <rdg wit="#B">intll’etur <wit>B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a75s" to="#D3.t1.a75e" n="172">
+            <lem rend="plain" wit="#P">Q.i. <wit>P</wit></lem>
+            <rdg wit="#L">Q.vii. <wit>L</wit></rdg>
+            <rdg wit="#Z #B #D">Q.ii. <wit>ZBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a76s" to="#D3.t1.a76e" n="177">
+            <lem rend="plain" wit="#Z #B">quod <wit>ZB</wit></lem>
+            <rdg wit="#P">quem <wit>P</wit></rdg>
+            <rdg wit="#L #D">que <wit>LD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a77s" to="#D3.t1.a77e" n="177">
+            <lem rend="plain" wit="#Z #B">casus <note type="editorial">caus Z</note> ingratitudinis <wit>ZB</wit></lem>
+            <rdg wit="#P" type="pc">casus ingratitudinis uel b’ertitudinis(!) <wit>P<hi rend="superscript">pc</hi></wit></rdg>
+            <rdg wit="#D">casus incertitudinis <wit>D</wit></rdg>
+            <rdg wit="#L">casus certitudinis <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a78s" to="#D3.t1.a78e" n="179">
+            <lem rend="bracket">propagationem</lem>
+            <rdg wit="#P">purgationem <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a79s" to="#D3.t1.a79e" n="179-180">
+            <lem rend="plain">dispensauit – enim</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a80s" to="#D3.t1.a80e" n="181">
+            <lem rend="bracket">Sic ergo</lem>
+            <rdg wit="#Z #B">Solutio <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a81s" to="#D3.t1.a81e" n="185">
+            <lem rend="plain" wit="#L #Z #B">deposita <wit>LZB</wit></lem>
+            <rdg wit="#P #D">depositi <wit>PD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a82s" to="#D3.t1.a82e" n="185">
+            <lem rend="plain" wit="#L #D">iuberetur <wit>LD</wit></lem>
+            <rdg wit="#P #Z #B">iubetur <wit>PZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a83s" to="#D3.t1.a83e" n="191">
+            <lem rend="bracket">contentum</lem>
+            <rdg wit="#P #Z #B">contemptum <wit>PZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a84s" to="#D3.t1.a84e" n="192">
+            <lem rend="plain">aliqua</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a85s" to="#D3.t1.a85e" n="196">
+            <lem rend="bracket">primitiis</lem>
+            <rdg wit="#P">principis <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a86s" to="#D3.t1.a86e" n="197">
+            <lem rend="plain" wit="#Z #B #D">sint² <wit>ZBD</wit></lem>
+            <rdg wit="#P #L">sit <wit>PL</wit></rdg>
+          </app>
+          <app from="#D3.t1.a87s" to="#D3.t1.a87e" n="209">
+            <lem rend="bracket">infert</lem>
+            <rdg wit="#P">insunt <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a88s" to="#D3.t1.a88e" n="211">
+            <lem rend="plain" wit="#P #L #D">Cum homo <wit>PLD <hi rend="italic">et Friedb</hi>.</wit></lem>
+            <rdg wit="#Z #B">Nemo <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a89s" to="#D3.t1.a89e" n="218">
+            <lem rend="bracket">occulti</lem>
+            <rdg wit="#P">occl’r <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a90s" to="#D3.t1.a90e" n="225">
+            <lem rend="plain">Item</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a91s" to="#D3.t1.a91e" n="227">
+            <lem rend="bracket">v.</lem>
+            <rdg wit="#Z #B #D">ii. <wit>ZBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a92s" to="#D3.t1.a92e" n="229">
+            <lem rend="plain">Q.viii. – ut xxiii.</lem>
+            <rdg wit="#B" type="om"><wit><hi rend="italic">om</hi>. B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a93s" to="#D3.t1.a93e" n="236">
+            <lem rend="bracket">xxxiii.</lem>
+            <rdg wit="#P" type="praem">infra xxxiii. <wit><hi rend="italic">praem</hi>. P</wit></rdg>
+            <rdg wit="#D" type="praem">ī xxxiii. <wit><hi rend="italic">praem</hi>. D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a94s" to="#D3.t1.a94e" n="236">
+            <lem rend="bracket">ii.</lem>
+            <rdg wit="#Z #B">v. <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a95s" to="#D3.t1.a95e" n="244">
+            <lem rend="plain" wit="#L">se tueri in re prescripta <wit>L</wit></lem>
+            <rdg wit="#P">se tantum <note type="editorial">tm̄</note> in re prescripta <wit>P</wit></rdg>
+            <rdg wit="#Z">se tueri in lege prescripta <wit>Z</wit></rdg>
+            <rdg wit="#B">se tueri lege prescripta <wit>B</wit></rdg>
+            <rdg wit="#D">se tueri in rescriptiua <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a96s" to="#D3.t1.a96e" n="247">
+            <lem rend="plain">de</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a97s" to="#D3.t1.a97e" n="247">
+            <lem rend="plain" wit="#Z #B">agitur <wit>ZB</wit></lem>
+            <rdg wit="#P">aḡtur <wit>P</wit></rdg>
+            <rdg wit="#L #D">agetur <wit>LD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a98s" to="#D3.t1.a98e" n="249">
+            <lem rend="plain">De male</lem>
+            <witDetail wit="#P" type="corr"><hi rend="italic">corr</hi>. P<hi rend="superscript">2</hi></witDetail>
+          </app>
+          <app from="#D3.t1.a99s" to="#D3.t1.a99e" n="249">
+            <lem rend="bracket">difficile</lem>
+            <rdg wit="#P">defifficile <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a100s" to="#D3.t1.a100e" n="251">
+            <lem rend="plain" wit="#Z #B #D">Ambrosius <wit>ZBD</wit></lem>
+            <rdg wit="#P" type="pc">Ambrt͞ı(!) <wit>P<hi rend="superscript">pc</hi></wit></rdg>
+            <rdg wit="#L" type="om"><wit><hi rend="italic">om</hi>. L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a101s" to="#D3.t1.a101e" n="251">
+            <lem rend="bracket">iiii.</lem>
+            <rdg wit="#P">iii. <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a102s" to="#D3.t1.a102e" n="253">
+            <lem rend="plain" wit="#L #Z">aliquo <wit>LZ</wit></lem>
+            <rdg wit="#P #B #D">alio <wit>PBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a103s" to="#D3.t1.a103e" n="253">
+            <lem rend="plain" wit="#D">acciperentur <wit>D</wit></lem>
+            <rdg wit="#P">accipientur <wit>P</wit></rdg>
+            <rdg wit="#L">excipietur <wit>L</wit></rdg>
+            <rdg wit="#Z #B">recipiantur <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a104s" to="#D3.t1.a104e" n="259">
+            <lem rend="plain" wit="#D">Romanum <wit>D</wit></lem>
+            <rdg wit="#L">Ro. <wit>L</wit></rdg>
+            <rdg wit="#P">Rem̄. <wit>P</wit></rdg>
+            <rdg wit="#B">Turonensis(!) <wit>B</wit></rdg>
+            <witDetail wit="#Z" type="lac"><hi rend="italic">lac</hi>. Z</witDetail>
+          </app>
+          <app from="#D3.t1.a105s" to="#D3.t1.a105e" n="263">
+            <lem rend="plain" wit="#L #B #D">sint <wit>LBD</wit></lem>
+            <rdg wit="#P #Z">sit <wit>PZ</wit></rdg>
+          </app>
+          <app from="#D3.t1.a106s" to="#D3.t1.a106e" n="267">
+            <lem rend="bracket">Siluester</lem>
+            <rdg wit="#P">Silıīī <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a107s" to="#D3.t1.a107e" n="267">
+            <lem rend="plain" wit="#L #Z #B">suspenderetur <wit>LZB</wit></lem>
+            <rdg wit="#P">dispenderetur <wit>P</wit></rdg>
+            <rdg wit="#D">dispensatur <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a108s" to="#D3.t1.a108e" n="270">
+            <lem rend="bracket">statuerint</lem>
+            <rdg wit="#P">statuererunt(!) <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a109s" to="#D3.t1.a109e" n="271">
+            <lem rend="plain" type="emendatio">lxxiii. <wit><hi rend="italic">emend</hi>. <hi rend="italic">cum Friedb</hi>.</wit></lem>
+            <rdg wit="#P #L #D">lxxii. <wit>PLD</wit></rdg>
+            <rdg wit="#Z #B">xxiii. <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a110s" to="#D3.t1.a110e" n="273">
+            <lem rend="plain" type="emendatio">xcviii. <wit><hi rend="italic">emend</hi>. <hi rend="italic">cum Friedb</hi>.</wit></lem>
+            <rdg wit="#P #L #D">xcvii. <wit>PLD</wit></rdg>
+            <rdg wit="#Z #B">xxvii. <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a111s" to="#D3.t1.a111e" n="273">
+            <lem rend="bracket">c.i.</lem>
+            <rdg wit="#Z #B">c.v. <wit>ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a112s" to="#D3.t1.a112e" n="277">
+            <lem rend="bracket">nondum fuerat</lem>
+            <rdg wit="#P">non fuerit <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a113s" to="#D3.t1.a113e" n="279">
+            <lem rend="bracket">sequentia</lem>
+            <rdg wit="#P">sequena <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a114s" to="#D3.t1.a114e" n="279">
+            <lem rend="bracket">contra – animaduertitur</lem>
+            <rdg wit="#L">vi. di. <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a115s" to="#D3.t1.a115e" n="279-280">
+            <lem rend="plain" wit="#P">rigidum in personas <wit>P<hi rend="superscript">2</hi> <hi rend="italic">in lac</hi>.</wit></lem>
+            <rdg wit="#L #Z #B #D">in personas <wit>LZBD</wit></rdg>
+            <note type="editorial">cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.82 c.5 (ubi statutum est aliquid rigidum in personas) et <hi rend="italic">S</hi>. <hi rend="italic">Lips</hi>. ad D.14 c.2 (ea que rigorem continent et statuta sunt in animaduersionem personarum - cum non sint de statu uniuersalis ecclesie)</note>
+          </app>
+          <app from="#D3.t1.a116s" to="#D3.t1.a116e" n="286">
+            <lem rend="bracket">non</lem>
+            <rdg wit="#P #Z">nam <wit>PZ</wit></rdg>
+          </app>
+          <app from="#D3.t1.a117s" to="#D3.t1.a117e" n="293">
+            <lem rend="bracket">excusetur</lem>
+            <rdg wit="#P">excuscetur(!) <wit>P</wit></rdg>
+            <rdg wit="#Z">excusantur <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a118s" to="#D3.t1.a118e" n="295">
+            <lem rend="bracket">erant</lem>
+            <rdg wit="#P">erat <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a119s" to="#D3.t1.a119e" n="304">
+            <lem rend="bracket">De</lem>
+            <rdg wit="#L" type="add">De Item <wit><hi rend="italic">add</hi>. L</wit></rdg>
+            <rdg wit="#Z #B" type="add">De et <wit><hi rend="italic">add</hi>. ZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a120s" to="#D3.t1.a120e" n="306">
+            <lem rend="plain">scilicet habere proprium</lem>
+            <witDetail wit="#P" type="supra"><hi rend="italic">supra lin</hi>. P<hi rend="superscript">2</hi></witDetail>
+          </app>
+          <app from="#D3.t1.a121s" to="#D3.t1.a121e" n="307">
+            <lem rend="plain" wit="#P #L">i. <wit>PL</wit></lem>
+            <rdg wit="#Z #B #D">ii. <wit>ZBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a122s" to="#D3.t1.a122e" n="309">
+            <lem rend="bracket">appropriauit</lem>
+            <rdg wit="#P">propriauit <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a123s" to="#D3.t1.a123e" n="311">
+            <lem rend="plain">mortale</lem>
+            <witDetail wit="#P" type="supra"><hi rend="italic">supra lin</hi>. P<hi rend="superscript">2</hi></witDetail>
+          </app>
+          <app from="#D3.t1.a124s" to="#D3.t1.a124e" n="311-312">
+            <lem rend="plain">quam – retinet</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a125s" to="#D3.t1.a125e" n="316-317">
+            <lem rend="plain">Set numquam fuit relaxa[tum] preceptum</lem>
+            <witDetail wit="#P" type="marg"><hi rend="italic">marg</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a126s" to="#D3.t1.a126e" n="316">
+            <lem rend="plain" wit="#P #D">numquam <wit>PD</wit></lem>
+            <rdg wit="#Z #B">numquid <wit>ZB</wit></rdg>
+            <witDetail wit="#L" type="illeg"><hi rend="italic">illeg</hi>. L</witDetail>
+          </app>
+          <app from="#D3.t1.a127s" to="#D3.t1.a127e" n="322">
+            <lem rend="bracket">contrectatio</lem>
+            <rdg wit="#P">contractio <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a128s" to="#D3.t1.a128e" n="331">
+            <lem rend="bracket">illud</lem>
+            <rdg wit="#P" type="praem">id illud <wit><hi rend="italic">praem</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a129s" to="#D3.t1.a129e" n="332">
+            <lem rend="bracket">Ad</lem>
+            <rdg wit="#P" type="praem">et Ad <wit><hi rend="italic">praem</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a130s" to="#D3.t1.a130e" n="351-353">
+            <lem rend="plain">immo – seruum</lem>
+            <rdg wit="#Z" type="om"><wit><hi rend="italic">om</hi>. Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a131s" to="#D3.t1.a131e" n="353">
+            <lem rend="plain" wit="#L #Z #B #D">quis <wit>LZBD <hi rend="italic">et Friedb</hi>.</wit></lem>
+            <rdg wit="#P">qui <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a132s" to="#D3.t1.a132e" n="354">
+            <lem rend="bracket">seruus</lem>
+            <rdg wit="#P">seruos <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a133s" to="#D3.t1.a133e" n="355-356">
+            <lem rend="plain">ut in Inst. – libertatis</lem>
+            <rdg wit="#L" type="om"><wit><hi rend="italic">om</hi>. L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a134s" to="#D3.t1.a134e" n="355-356">
+            <lem rend="plain">de libertinis</lem>
+            <witDetail wit="#B" type="ras"><hi rend="italic">ras</hi>. B</witDetail>
+            <rdg wit="#D">de lib’to <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a135s" to="#D3.t1.a135e" n="356">
+            <lem rend="plain">est – libertatis</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a136s" to="#D3.t1.a136e" n="357">
+            <lem rend="bracket">libertas</lem>
+            <rdg wit="#P" type="add">libertas ut or(!) est oblatio(!) libertatis <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a137s" to="#D3.t1.a137e" n="360">
+            <lem rend="plain" type="emendatio">de capitis deminutione <wit><hi rend="italic">emend</hi>. <hi rend="italic">cum Inst</hi>. 1.16;</wit></lem>
+            <rdg wit="#L">de capitis dem͞o <wit>L</wit></rdg>
+            <rdg wit="#P">de capitis aim̄(!) <wit>P</wit></rdg>
+            <rdg wit="#Z #B">de cap. diminutis <note type="editorial">cf. <hi rend="italic">Dig</hi>. 4.5</note> <wit>ZB</wit></rdg>
+            <rdg wit="#D">de capitis dııııīī <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a138s" to="#D3.t1.a138e" n="366">
+            <lem rend="plain" wit="#Z #B #D">libertatis <wit>ZBD</wit></lem>
+            <rdg wit="#P #L">seruitutis <wit>PL</wit></rdg>
+          </app>
+          <app from="#D3.t1.a139s" to="#D3.t1.a139e" n="367">
+            <lem rend="plain" wit="#L">accidentale <wit>L</wit></lem>
+            <rdg wit="#P" type="lac">an͞ale <wit><hi rend="italic">et lac</hi>. P</wit></rdg>
+            <rdg wit="#Z #B #D">ciuile statutum <wit>ZBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a140s" to="#D3.t1.a140e" n="380">
+            <lem rend="plain" wit="#P">Israel <wit>P</wit></lem>
+            <rdg wit="#L #Z #B #D">terram <wit>LZBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a141s" to="#D3.t1.a141e" n="381">
+            <lem rend="bracket">viii. Q.i.</lem>
+            <rdg wit="#Z">v. Q.i. <wit>Z</wit></rdg>
+            <rdg wit="#B">v. i. <wit>B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a142s" to="#D3.t1.a142e" n="381">
+            <lem rend="bracket">ergo</lem>
+            <rdg wit="#Z">§ <wit>Z</wit></rdg>
+            <rdg wit="#B">Solutio <wit>B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a143s" to="#D3.t1.a143e" n="389">
+            <lem rend="plain" wit="#L #Z #B #D">peccatum est <wit>LZBD</wit></lem>
+            <rdg wit="#P">est <wit>P<hi rend="superscript">2</hi></wit> <note type="editorial">est <hi rend="italic">add</hi>. <hi rend="italic">et</hi> peccatum <hi rend="italic">del</hi>.</note></rdg>
+          </app>
+          <app from="#D3.t1.a144s" to="#D3.t1.a144e" n="390-391">
+            <lem rend="plain">Econtra – naturali</lem>
+            <witDetail wit="#Z #B" type="tr"><hi rend="italic">post</hi> hominum <note type="editorial">lin. 393</note> <hi rend="italic">tr</hi>. ZB</witDetail>
+          </app>
+          <app from="#D3.t1.a145s" to="#D3.t1.a145e" n="391">
+            <lem rend="bracket">fornicaria</lem>
+            <rdg wit="#P">forni<hi rend="superscript">ı</hi>caria <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a146s" to="#D3.t1.a146e" n="392">
+            <lem rend="bracket">commixtio</lem>
+            <rdg wit="#P">commixitio <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a147s" to="#D3.t1.a147e" n="393">
+            <lem rend="plain">utrobique</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a148s" to="#D3.t1.a148e" n="394">
+            <lem rend="bracket">coniunctionem</lem>
+            <rdg wit="#P" type="praem">ad coniunctionem <wit><hi rend="italic">praem</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a149s" to="#D3.t1.a149e" n="397">
+            <lem rend="bracket">initio</lem>
+            <rdg wit="#P">itio <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a150s" to="#D3.t1.a150e" n="399">
+            <lem rend="plain">esset</lem>
+            <witDetail wit="#P" type="dupl"><hi rend="italic">dupl</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a151s" to="#D3.t1.a151e" n="404">
+            <lem rend="plain" type="emendatio">illegitima coniunctio <wit><hi rend="italic">emend</hi>.</wit></lem>
+            <rdg wit="#P">ille co͞ıa <wit>P</wit></rdg>
+            <rdg wit="#L">ille an̄t co͞ıa <wit>L</wit></rdg>
+            <rdg wit="#Z #B">formam <wit>ZB</wit></rdg>
+            <rdg wit="#D">fornicariam <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a152s" to="#D3.t1.a152e" n="406">
+            <lem rend="bracket">coeunt</lem>
+            <rdg wit="#P">eoeunt <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a153s" to="#D3.t1.a153e" n="415-416">
+            <lem rend="bracket">Item in – Apostolo</lem>
+            <rdg wit="#Z">Item in eodem <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a154s" to="#D3.t1.a154e" n="416">
+            <!-- Druck: Zeilenzahl 316 statt 416 – Versehen der gedruckten Edition, Korrektur bestätigt vom Herausgeber am 02.11.2026 -->
+            <lem rend="plain" wit="#L #D">uindicantes <wit>LD</wit></lem>
+            <rdg wit="#P #Z #B">iudicantes <wit>PZB</wit></rdg>
+          </app>
+          <app from="#D3.t1.a155s" to="#D3.t1.a155e" n="418">
+            <!-- Druck: Zeilenzahl 318 statt 418 – Versehen der gedruckten Edition, Korrektur bestätigt vom Herausgeber am 02.11.2026 -->
+            <lem rend="plain" wit="#L #B">infra <wit>LB</wit></lem>
+            <rdg wit="#P">ita <wit>P</wit></rdg>
+            <rdg wit="#Z" type="om"><wit><hi rend="italic">om</hi>. Z</wit></rdg>
+            <rdg wit="#D">s. <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a156s" to="#D3.t1.a156e" n="419">
+            <lem rend="bracket">vi.</lem>
+            <rdg wit="#L">vii. <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a157s" to="#D3.t1.a157e" n="421">
+            <lem rend="plain" wit="#Z #B #D">uim <wit>ZBD</wit></lem>
+            <rdg wit="#P">infra <wit>P<hi rend="superscript">2</hi></wit></rdg>
+            <rdg wit="#P" type="ac">ui <wit>P<hi rend="superscript">ac</hi></wit></rdg>
+            <rdg wit="#L">ui <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a158s" to="#D3.t1.a158e" n="423-424">
+            <lem rend="plain">ut in – permittunt</lem>
+            <witDetail wit="#P" type="marg"><hi rend="italic">marg</hi>. P</witDetail>
+            <rdg wit="#B" type="om"><wit><hi rend="italic">om</hi>. B</wit></rdg>
+          </app>
+          <app from="#D3.t1.a159s" to="#D3.t1.a159e" n="424">
+            <lem rend="plain">Si uero – permittunt</lem>
+            <rdg wit="#Z" type="om"><wit><hi rend="italic">om</hi>. Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a160s" to="#D3.t1.a160e" n="428">
+            <lem rend="bracket">perfecto</lem>
+            <rdg wit="#P #Z">profecto <wit>PZ</wit></rdg>
+          </app>
+          <app from="#D3.t1.a161s" to="#D3.t1.a161e" n="440">
+            <lem rend="plain" wit="#L #B #D">dissensio <wit>LBD</wit></lem>
+            <rdg wit="#P">diffinitio <wit>P</wit></rdg>
+            <rdg wit="#Z">discretio <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a162s" to="#D3.t1.a162e" n="440">
+            <lem rend="plain" wit="#L #B #D">quibusdam <wit>LBD</wit></lem>
+            <rdg wit="#P">quibus <wit>P</wit></rdg>
+            <rdg wit="#Z">quibus de <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a163s" to="#D3.t1.a163e" n="441">
+            <lem rend="bracket">occidendo</lem>
+            <rdg wit="#P">occidento <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a164s" to="#D3.t1.a164e" n="441">
+            <lem rend="bracket">possent</lem>
+            <rdg wit="#P #Z">posset <wit>PZ</wit></rdg>
+          </app>
+          <app from="#D3.t1.a165s" to="#D3.t1.a165e" n="441">
+            <lem rend="plain">quod</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a166s" to="#D3.t1.a166e" n="445">
+            <lem rend="plain" wit="#L #B #D">dicentis <wit>LBD</wit></lem>
+            <rdg wit="#P">dicentes <wit>P</wit></rdg>
+            <rdg wit="#Z">dentis <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a167s" to="#D3.t1.a167e" n="461">
+            <lem rend="plain" wit="#L #B #D">procurator <wit>LBD</wit></lem>
+            <rdg wit="#P">procuratur <wit>P</wit></rdg>
+            <rdg wit="#Z">procuratori <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a168s" to="#D3.t1.a168e" n="463">
+            <lem rend="bracket">unde non</lem>
+            <rdg wit="#P">un̄ <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a169s" to="#D3.t1.a169e" n="464">
+            <lem rend="bracket">repetere</lem>
+            <rdg wit="#P">reperetē(!) <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a170s" to="#D3.t1.a170e" n="467">
+            <lem rend="plain" wit="#L #B #D">uel <wit>LBD</wit></lem>
+            <rdg wit="#P">l. <wit>P</wit></rdg>
+            <rdg wit="#Z">item <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a171s" to="#D3.t1.a171e" n="467">
+            <lem rend="bracket">panem</lem>
+            <rdg wit="#P">pane <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a172s" to="#D3.t1.a172e" n="468">
+            <lem rend="bracket">non</lem>
+            <rdg wit="#P" type="add">non est <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a173s" to="#D3.t1.a173e" n="480">
+            <lem rend="bracket">prouideatur</lem>
+            <rdg wit="#P" type="pc">-batur <wit>P<hi rend="superscript">pc</hi></wit></rdg>
+          </app>
+          <app from="#D3.t1.a174s" to="#D3.t1.a174e" n="484">
+            <lem rend="plain" wit="#L #B #D">quedam ad <wit>LBD</wit></lem>
+            <rdg wit="#P">quedam <wit>P</wit></rdg>
+            <rdg wit="#Z">quod a <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a175s" to="#D3.t1.a175e" n="484">
+            <lem rend="plain" wit="#L">assignantur <wit>L</wit></lem>
+            <rdg wit="#P #Z">assignatur <wit>PZ</wit></rdg>
+            <rdg wit="#B">assignatam <wit>B</wit></rdg>
+            <rdg wit="#D" type="om"><wit><hi rend="italic">om</hi>. D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a176s" to="#D3.t1.a176e" n="484">
+            <lem rend="plain" wit="#L #B #D">sicut <wit>LBD</wit></lem>
+            <rdg wit="#Z">sic <wit>Z</wit></rdg>
+            <rdg wit="#P">cum <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a177s" to="#D3.t1.a177e" n="489">
+            <lem rend="bracket">ablatam</lem>
+            <rdg wit="#P" type="pc">abbatam <wit>P<hi rend="superscript">pc</hi></wit></rdg>
+          </app>
+          <app from="#D3.t1.a178s" to="#D3.t1.a178e" n="495">
+            <lem rend="plain" wit="#Z #B">contraria <wit>ZB</wit></lem>
+            <rdg wit="#P #L #D">communia <wit>PLD</wit> <note type="editorial">coīa PL, ꝯuīa D</note></rdg>
+          </app>
+          <app from="#D3.t1.a179s" to="#D3.t1.a179e" n="496">
+            <lem rend="bracket">sicut</lem>
+            <rdg wit="#P">sic <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a180s" to="#D3.t1.a180e" n="497">
+            <lem rend="bracket">naturale</lem>
+            <rdg wit="#P" type="add">naturale est <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a181s" to="#D3.t1.a181e" n="501">
+            <lem rend="plain" wit="#Z #B">approbata <wit>ZB</wit></lem>
+            <rdg wit="#P #L #D">appropriata <wit>PLD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a182s" to="#D3.t1.a182e" n="503">
+            <lem rend="plain">sic</lem>
+            <witDetail wit="#P" type="del"><hi rend="italic">del</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a183s" to="#D3.t1.a183e" n="507">
+            <lem rend="plain">placet</lem>
+            <witDetail wit="#P" type="dupl"><hi rend="italic">dupl</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a184s" to="#D3.t1.a184e" n="507">
+            <lem rend="bracket">enim</lem>
+            <rdg wit="#P" type="add">enim et <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a185s" to="#D3.t1.a185e" n="509">
+            <lem rend="plain" wit="#Z #B #D">recipit <wit>ZBD</wit></lem>
+            <rdg wit="#P">recepit <wit>P</wit></rdg>
+            <rdg wit="#L">habet <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a186s" to="#D3.t1.a186e" n="512">
+            <lem rend="bracket">contrarios</lem>
+            <rdg wit="#P" type="add">contrarios habet <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a187s" to="#D3.t1.a187e" n="512">
+            <lem rend="bracket">ut</lem>
+            <rdg wit="#P" type="add">ut in <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a188s" to="#D3.t1.a188e" n="512">
+            <lem rend="plain">tale¹</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a189s" to="#D3.t1.a189e" n="513">
+            <lem rend="bracket">ius</lem>
+            <rdg wit="#P">iure <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a190s" to="#D3.t1.a190e" n="517">
+            <lem rend="bracket">sint</lem>
+            <rdg wit="#P #Z">sit <wit>PZ</wit></rdg>
+          </app>
+          <app from="#D3.t1.a191s" to="#D3.t1.a191e" n="519">
+            <lem rend="plain" wit="#B #D">aliquos <wit>BD</wit></lem>
+            <rdg wit="#P #Z">alios <wit>PZ</wit></rdg>
+            <rdg wit="#L">omnes <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a192s" to="#D3.t1.a192e" n="519">
+            <lem rend="plain" type="emendatio">que² <wit><hi rend="italic">emend</hi>.</wit></lem>
+            <rdg wit="#P #L #Z #B #D" type="om"><wit><hi rend="italic">om</hi>. PLZBD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a193s" to="#D3.t1.a193e" n="525">
+            <lem rend="bracket">naturale</lem>
+            <rdg wit="#P" type="add">naturale quod <wit><hi rend="italic">add</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a194s" to="#D3.t1.a194e" n="526">
+            <lem rend="bracket">licitum</lem>
+            <rdg wit="#P" type="add">licitum est <wit><hi rend="italic">add</hi>. P<hi rend="superscript">pc</hi></wit></rdg>
+          </app>
+          <app from="#D3.t1.a195s" to="#D3.t1.a195e" n="526">
+            <lem rend="bracket">approbatum</lem>
+            <rdg wit="#P">appropriatum <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a196s" to="#D3.t1.a196e" n="527">
+            <lem rend="bracket">ius diuinum</lem>
+            <rdg wit="#P">in diuinum <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a197s" to="#D3.t1.a197e" n="537">
+            <lem rend="bracket">diuisio</lem>
+            <rdg wit="#P">d’ifio <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a198s" to="#D3.t1.a198e" n="542">
+            <lem rend="plain">dicitur</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a199s" to="#D3.t1.a199e" n="548">
+            <lem rend="bracket">approbatum</lem>
+            <rdg wit="#P">appropriatum <wit>P</wit></rdg>
+            <rdg wit="#D">comprobatum <wit>D</wit></rdg>
+          </app>
+          <app from="#D3.t1.a200s" to="#D3.t1.a200e" n="549">
+            <lem rend="bracket">approbatio</lem>
+            <rdg wit="#P #D">appropriatio <wit>PD</wit></rdg>
+          </app>
+          <app from="#D3.t1.a201s" to="#D3.t1.a201e" n="552">
+            <lem rend="plain">esse</lem>
+            <rdg wit="#P" type="om"><wit><hi rend="italic">om</hi>. P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a202s" to="#D3.t1.a202e" n="554">
+            <lem rend="plain" wit="#L #B #D">legitima <wit>LBD</wit></lem>
+            <rdg wit="#P">legitimam <wit>P</wit></rdg>
+            <rdg wit="#Z">legitime <wit>Z</wit></rdg>
+          </app>
+          <app from="#D3.t1.a203s" to="#D3.t1.a203e" n="555">
+            <!-- Druck: „constituit Z“ statt „constituit L“ – Versehen der gedruckten Edition, Korrektur bestätigt vom Herausgeber am 04.11.2026 -->
+            <lem rend="plain" wit="#Z #B #D">instituit <wit>ZBD</wit></lem>
+            <rdg wit="#P">instatuit <wit>P</wit></rdg>
+            <rdg wit="#L">constituit <wit>L</wit></rdg>
+          </app>
+          <app from="#D3.t1.a204s" to="#D3.t1.a204e" n="562">
+            <lem rend="bracket">approbatum</lem>
+            <rdg wit="#P">appropriatum <wit>P</wit></rdg>
+          </app>
+          <app from="#D3.t1.a205s" to="#D3.t1.a205e" n="565-566">
+            <lem rend="plain">cum – fieri</lem>
+            <witDetail wit="#P" type="marg"><hi rend="italic">marg</hi>. P</witDetail>
+          </app>
+          <app from="#D3.t1.a206s" to="#D3.t1.a206e" n="575">
+            <lem rend="plain">ut – naturalis²</lem>
+            <witDetail wit="#P" type="marg"><hi rend="italic">marg</hi>. P</witDetail>
+          </app>
+        </listApp>
+      </div>
+
+      <!-- ===== Quellenapparat (Reihenfolge und Wortlaut wie im Druck) ===== -->
+      <div type="apparatus" subtype="fontium">
+        <note type="fons" target="#D3.t1.f1s" targetEnd="#D3.t1.f1e" n="2"><hi rend="italic">docet</hi> - <hi rend="italic">suas</hi> cf. Ps. 24.9</note>
+        <note type="fons" target="#D3.t1.f2s" targetEnd="#D3.t1.f2e" n="6-7"><hi rend="italic">magnum</hi> - <hi rend="italic">ecclesia</hi> cf. Eph. 5.32</note>
+        <note type="fons" target="#D3.t1.f3s" targetEnd="#D3.t1.f3e" n="17-18"><hi rend="italic">ius</hi> - <hi rend="italic">demonstrationibus</hi> cf. Jo. Fav. 2<hi rend="superscript">rb</hi> et Ruf. 6</note>
+        <note type="fons" target="#D3.t1.f4s" targetEnd="#D3.t1.f4e" n="19-49"><hi rend="italic">Sciendum</hi> - <hi rend="italic">fieri</hi> cf. S. Kuttner, <hi rend="italic">Repertorium</hi>, p. 201-203; Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. pr. et <hi rend="italic">S</hi>. <hi rend="italic">Lips</hi>. D.1 pr.</note>
+        <note type="fons" target="#D3.t1.f5s" targetEnd="#D3.t1.f5e" n="22"><hi rend="italic">ordo</hi> - <hi rend="italic">nature</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.17 (lin. 410), q.20 (lin. 524) et q.21 (lin. 546, 552, 557, 561, 570); cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. pr. (lin. 4-5), ad D.1 c.7 (lin. 2, 7, 62, 66, 74, 92) et <hi rend="italic">S</hi>. <hi rend="italic">Lips</hi>. ad D.1 pr. (lin. 5), ad D.1 c.7 (lin. 5-6)</note>
+        <note type="fons" target="#D3.t1.f6s" targetEnd="#D3.t1.f6e" n="23-24"><hi rend="italic">Ius</hi> - <hi rend="italic">docuit</hi> cf. <hi rend="italic">Dig</hi>. 1.1.1.3 et <hi rend="italic">Inst</hi>. 1.2.pr.; cf. Jo. Fav. 2<hi rend="superscript">rb</hi> et Ruf. 6</note>
+        <note type="fons" target="#D3.t1.f7s" targetEnd="#D3.t1.f7e" n="25"><hi rend="italic">licitum et approbatum</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.20 (lin. 516, 526) et q.21 (lin. 542, 548, 550, 562, 571); cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. pr. (lin. 7), ad D.1 c.1 (lin. 32), ad D.1 c.7 (lin. 72) et <hi rend="italic">S</hi>. <hi rend="italic">Lips</hi>. ad D.1 pr. (lin. 8), ad D.1 c.7 (lin. 14, 66)</note>
+        <note type="fons" target="#D3.t1.f8s" targetEnd="#D3.t1.f8e" n="27"><hi rend="italic">Omnia</hi> - <hi rend="italic">licent</hi> cf. 1 Cor. 6.12, 10.23 et <hi rend="italic">Gl</hi>. <hi rend="italic">ord</hi>. ad 1 Cor. 10.23</note>
+        <note type="fons" target="#D3.t1.f9s" targetEnd="#D3.t1.f9e" n="28-29"><hi rend="italic">Licent</hi> - <hi rend="italic">prohibentur</hi> cf. Augustinus, <hi rend="italic">Ad Pollentium de adulterinis coniugiis</hi> 1.14.15</note>
+        <note type="fons" target="#D3.t1.f10s" targetEnd="#D3.t1.f10e" n="29"><hi rend="italic">Licent</hi> - <hi rend="italic">nature</hi> cf. Ambrosiastri <hi rend="italic">Comment</hi>. <hi rend="italic">in epist. ad</hi> 1 <hi rend="italic">Cor</hi>. 6.12 et 10.22(!)</note>
+        <note type="fons" target="#D3.t1.f11s" targetEnd="#D3.t1.f11e" n="39-40"><hi rend="italic">Video legem</hi> - <hi rend="italic">mentis</hi> cf. Rom. 7.23</note>
+        <note type="fons" target="#D3.t1.f12s" targetEnd="#D3.t1.f12e" n="41"><hi rend="italic">iudicium rationis</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.7 (lin. 189) et q.21 (lin. 548, 550, 558, 564); cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. pr. (lin. 23-24), ad D.1 c.7 (lin. 57, 87) et <hi rend="italic">S</hi>. <hi rend="italic">Lips</hi>. pr. (lin. 10), ad D.1 pr. (lin. 25), ad D.1 c.7 (lin. 8, 15-16)</note>
+        <note type="fons" target="#D3.t1.f13s" targetEnd="#D3.t1.f13e" n="41-45"><!-- Druck: „Vnde Origenes“ statt „Vnde Origines“ – Versehen der gedruckten Edition, Korrektur bestätigt vom Herausgeber am 04.11.2026 --><hi rend="italic">Vnde Origines</hi> - <hi rend="italic">bonum</hi> cf. Origenes, <hi rend="italic">In epist</hi>. <hi rend="italic">ad Rom</hi>. 2.8.9; <hi rend="italic">Gl</hi>. <hi rend="italic">ord</hi>. ad Rom. 2.14</note>
+        <note type="fons" target="#D3.t1.f14s" targetEnd="#D3.t1.f14e" n="42-43"><hi rend="italic">Cum</hi> - <hi rend="italic">faciunt</hi> cf. Rom. 2.14</note>
+        <note type="fons" target="#D3.t1.f15s" targetEnd="#D3.t1.f15e" n="47-49"><hi rend="italic">Lex naturalis</hi> - <hi rend="italic">fieri</hi> cf. Hilarius, <hi rend="italic">Tract</hi>. <hi rend="italic">in psalm</hi>. 118.15.11, PL 9.604</note>
+        <note type="fons" target="#D3.t1.f16s" targetEnd="#D3.t1.f16e" n="59"><hi rend="italic">alii facere</hi> - <hi rend="italic">fieri</hi> cf. Luc. 7.31</note>
+        <note type="fons" target="#D3.t1.f17s" targetEnd="#D3.t1.f17e" n="61-62"><hi rend="italic">diligere</hi> - <hi rend="italic">sicut</hi> cf. Matth. 22.39</note>
+        <note type="fons" target="#D3.t1.f18s" targetEnd="#D3.t1.f18e" n="64">C.23 q.5 c.9 (in §2)</note>
+        <note type="fons" target="#D3.t1.f19s" targetEnd="#D3.t1.f19e" n="67">C.28 q.1 c.8</note>
+        <note type="fons" target="#D3.t1.f20s" targetEnd="#D3.t1.f20e" n="79"><hi rend="italic">Omnia</hi> - <hi rend="italic">uultis</hi> cf. Matth. 7.12</note>
+        <note type="fons" target="#D3.t1.f21s" targetEnd="#D3.t1.f21e" n="85">D.45 c.14</note>
+        <note type="fons" target="#D3.t1.f22s" targetEnd="#D3.t1.f22e" n="93">D.27 c.3</note>
+        <note type="fons" target="#D3.t1.f23s" targetEnd="#D3.t1.f23e" n="93"><hi rend="italic">infra t</hi>. <hi rend="italic">De voto</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.V qq.7-9 (B. Grimm, <hi rend="italic">Die Ehelehre</hi>, p. 301-305)</note>
+        <note type="fons" target="#D3.t1.f24s" targetEnd="#D3.t1.f24e" n="94-103"><hi rend="italic">Solutio</hi> - <hi rend="italic">dispensat</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.V q.8 (B. Grimm, <hi rend="italic">Die Ehelehre</hi>, p. 303-305) et Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.27 p.c.8 (lin. 67-85) et ad D.8 p.c.1 (lin. 22-27)</note>
+        <note type="fons" target="#D3.t1.f25s" targetEnd="#D3.t1.f25e" n="100">C.27 q.1 p.c.43</note>
+        <note type="fons" target="#D3.t1.f26s" targetEnd="#D3.t1.f26e" n="104"><hi rend="italic">Honora patrem</hi> cf. Ex. 20.12, Deut. 5.16, Matth. 15.4</note>
+        <note type="fons" target="#D3.t1.f27s" targetEnd="#D3.t1.f27e" n="108-109">C.11 q.3 c.103</note>
+        <note type="fons" target="#D3.t1.f28s" targetEnd="#D3.t1.f28e" n="111">C.2 q.7 c.36</note>
+        <note type="fons" target="#D3.t1.f29s" targetEnd="#D3.t1.f29e" n="114-115">D.54 c.20</note>
+        <note type="fons" target="#D3.t1.f30s" targetEnd="#D3.t1.f30e" n="116">C.2 q.5 c.4(!)</note>
+        <note type="fons" target="#D3.t1.f31s" targetEnd="#D3.t1.f31e" n="117">C.11 q.3 c.43</note>
+        <note type="fons" target="#D3.t1.f32s" targetEnd="#D3.t1.f32e" n="124">C.23 q.8 c.13</note>
+        <note type="fons" target="#D3.t1.f33s" targetEnd="#D3.t1.f33e" n="125-163">Cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.1 c.7 (lin. 44-55)</note>
+        <note type="fons" target="#D3.t1.f34s" targetEnd="#D3.t1.f34e" n="129">C.27 q.1 c.26</note>
+        <note type="fons" target="#D3.t1.f35s" targetEnd="#D3.t1.f35e" n="130">C.5 q.5 c.2</note>
+        <note type="fons" target="#D3.t1.f36s" targetEnd="#D3.t1.f36e" n="131-132">C.23 q.8 c.13</note>
+        <note type="fons" target="#D3.t1.f37s" targetEnd="#D3.t1.f37e" n="133">C.11 q.3 c.103</note>
+        <note type="fons" target="#D3.t1.f38s" targetEnd="#D3.t1.f38e" n="135">D.30 c.14</note>
+        <note type="fons" target="#D3.t1.f39s" targetEnd="#D3.t1.f39e" n="136">D.30 c.1</note>
+        <note type="fons" target="#D3.t1.f40s" targetEnd="#D3.t1.f40e" n="143">C.12 q.2 c.19; C.16 q.7 c.3</note>
+        <note type="fons" target="#D3.t1.f41s" targetEnd="#D3.t1.f41e" n="155"><hi rend="italic">supra - simplici</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.3 et D.3 t.V. qq.7-9 (B. Grimm, <hi rend="italic">Ehelehre</hi>, p. 301-305)</note>
+        <note type="fons" target="#D3.t1.f42s" targetEnd="#D3.t1.f42e" n="163"><hi rend="italic">Responsio - infra</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.19</note>
+        <note type="fons" target="#D3.t1.f43s" targetEnd="#D3.t1.f43e" n="164-182">Cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.1 c.7 (lin. 37-44)</note>
+        <note type="fons" target="#D3.t1.f44s" targetEnd="#D3.t1.f44e" n="167">C.32 q.2 p.c.2, c.3</note>
+        <note type="fons" target="#D3.t1.f45s" targetEnd="#D3.t1.f45e" n="172">C.16 q.1 c.64</note>
+        <note type="fons" target="#D3.t1.f46s" targetEnd="#D3.t1.f46e" n="178">C.11 q.1 c.12</note>
+        <note type="fons" target="#D3.t1.f47s" targetEnd="#D3.t1.f47e" n="184">D.1 c.7</note>
+        <note type="fons" target="#D3.t1.f48s" targetEnd="#D3.t1.f48e" n="189"><hi rend="italic">iudicium rationis</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 41)</note>
+        <note type="fons" target="#D3.t1.f49s" targetEnd="#D3.t1.f49e" n="191"><hi rend="italic">Omnia</hi> - <hi rend="italic">uultis</hi> cf. Matth. 7.12</note>
+        <note type="fons" target="#D3.t1.f50s" targetEnd="#D3.t1.f50e" n="194"><hi rend="italic">Memento</hi> - <hi rend="italic">sabbati</hi> cf. Ex. 20.8, Deut. 5.12</note>
+        <note type="fons" target="#D3.t1.f51s" targetEnd="#D3.t1.f51e" n="203-204"><hi rend="italic">ut supra</hi> - <hi rend="italic">primitiis</hi> titulus non continetur in <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>., cf. W. Kozur – K. Miethaner-Vent, <hi rend="italic">Titel in der Quaestionen- und Dekretsumme</hi>, p.161</note>
+        <note type="fons" target="#D3.t1.f52s" targetEnd="#D3.t1.f52e" n="211">C.23 q.5 c.13, c.19</note>
+        <note type="fons" target="#D3.t1.f53s" targetEnd="#D3.t1.f53e" n="223">C.23 q.5 c.11</note>
+        <note type="fons" target="#D3.t1.f54s" targetEnd="#D3.t1.f54e" n="225-236">Cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.8 p.c.1 (lin. 3-10)</note>
+        <note type="fons" target="#D3.t1.f55s #D3.t1.f56s #D3.t1.f57s" targetEnd="#D3.t1.f55e #D3.t1.f56e #D3.t1.f57e" n="225,231,234"><hi rend="italic">non occides</hi> cf. Ex. 20.13, Deut. 5.17</note>
+        <note type="fons" target="#D3.t1.f58s" targetEnd="#D3.t1.f58e" n="227">C.23 q.5 c.13</note>
+        <note type="fons" target="#D3.t1.f59s" targetEnd="#D3.t1.f59e" n="228-229">C.23 q.8 c.14</note>
+        <note type="fons" target="#D3.t1.f60s" targetEnd="#D3.t1.f60e" n="229">C.23 q.4 c.44</note>
+        <note type="fons" target="#D3.t1.f61s" targetEnd="#D3.t1.f61e" n="230">C.23 q.8 c.13</note>
+        <note type="fons" target="#D3.t1.f62s" targetEnd="#D3.t1.f62e" n="236">C.33 q.2 c.18</note>
+        <note type="fons" target="#D3.t1.f63s" targetEnd="#D3.t1.f63e" n="237-249">Cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.8 p.c.1 (lin. 10-16)</note>
+        <note type="fons" target="#D3.t1.f64s" targetEnd="#D3.t1.f64e" n="237"><hi rend="italic">non - facies</hi> cf. Ex. 20.15, Deut. 5.19</note>
+        <note type="fons" target="#D3.t1.f65s" targetEnd="#D3.t1.f65e" n="240">C.14 q.5 c.12</note>
+        <note type="fons" target="#D3.t1.f66s" targetEnd="#D3.t1.f66e" n="246"><hi rend="italic">cuius</hi> - <hi rend="italic">omnia</hi> cf. C.23 q.7 c.2 (in §1)</note>
+        <note type="fons" target="#D3.t1.f67s" targetEnd="#D3.t1.f67e" n="247"><hi rend="italic">infra</hi> - <hi rend="italic">agitur</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.15</note>
+        <note type="fons" target="#D3.t1.f68s" targetEnd="#D3.t1.f68e" n="250-261">Cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.8 p.c.1 (lin. 19-22) et ad C.14 q.4 c.12 (lin. 7-20)</note>
+        <note type="fons" target="#D3.t1.f69s" targetEnd="#D3.t1.f69e" n="251">C.14 q.4 c.12</note>
+        <note type="fons" target="#D3.t1.f70s" targetEnd="#D3.t1.f70e" n="258"><hi rend="italic">Conc</hi>. <hi rend="italic">Turon</hi>. (1163) c.2; <hi rend="italic">App</hi>. 16.9; 1 <hi rend="italic">Comp</hi>. 5.15.1 (X 5.19.1)</note>
+        <note type="fons" target="#D3.t1.f71s" targetEnd="#D3.t1.f71e" n="260">3 <hi rend="italic">Conc</hi>. <hi rend="italic">Lat</hi>. c.26; 1 <hi rend="italic">Comp</hi>. 5.5.5 (X 2.20.21 et 5.6.5)</note>
+        <note type="fons" target="#D3.t1.f72s" targetEnd="#D3.t1.f72e" n="261"><hi rend="italic">supra</hi> - <hi rend="italic">usuris</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.2 t.10</note>
+        <note type="fons" target="#D3.t1.f73s" targetEnd="#D3.t1.f73e" n="264-265"><hi rend="italic">Apostolus</hi> - <hi rend="italic">ordinari</hi> cf. 1 Tim. 3.2, 3.12</note>
+        <note type="fons" target="#D3.t1.f74s" targetEnd="#D3.t1.f74e" n="265-266">D.34 c.18</note>
+        <note type="fons" target="#D3.t1.f75s" targetEnd="#D3.t1.f75e" n="267-268">D.82 c.5</note>
+        <note type="fons" target="#D3.t1.f76s" targetEnd="#D3.t1.f76e" n="268"><hi rend="italic">Nicenum</hi> - <hi rend="italic">statuerit</hi> cf. D.34 c.14 (allegatur in Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.34 c.18)</note>
+        <note type="fons" target="#D3.t1.f77s" targetEnd="#D3.t1.f77e" n="271">D.73 cc.1,2</note>
+        <note type="fons" target="#D3.t1.f78s" targetEnd="#D3.t1.f78e" n="273">D.98 cc.1,2</note>
+        <note type="fons" target="#D3.t1.f79s" targetEnd="#D3.t1.f79e" n="274">C.21 q.1 c.2</note>
+        <note type="fons" target="#D3.t1.f80s" targetEnd="#D3.t1.f80e" n="275">C.10 q.3 c.3; JL 14192; <hi rend="italic">App</hi>. 2.7; 1 <hi rend="italic">Comp</hi>. 5.27.1 (X 5.31.1)</note>
+        <note type="fons" target="#D3.t1.f81s" targetEnd="#D3.t1.f81e" n="292-293"><hi rend="italic">Petrus</hi> - <hi rend="italic">subtraxit</hi> cf. C.2 q.7 c.39 (in §4); cf. Gal. 2</note>
+        <note type="fons" target="#D3.t1.f82s" targetEnd="#D3.t1.f82e" n="296-297"><hi rend="italic">Item</hi> - <hi rend="italic">fuerant</hi> cf. C.2 q.7 c.39 (in §5); cf. Act. 11</note>
+        <note type="fons" target="#D3.t1.f83s" targetEnd="#D3.t1.f83e" n="302-303">D.40 c.6</note>
+        <note type="fons" target="#D3.t1.f84s" targetEnd="#D3.t1.f84e" n="303"><hi rend="italic">ut</hi> - <hi rend="italic">de accusationibus</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.1 t.11 q.3</note>
+        <note type="fons" target="#D3.t1.f85s" targetEnd="#D3.t1.f85e" n="307">C.12 q.1 c.2</note>
+        <note type="fons" target="#D3.t1.f86s" targetEnd="#D3.t1.f86e" n="310">C.17 q.1 c.3</note>
+        <note type="fons" target="#D3.t1.f87s" targetEnd="#D3.t1.f87e" n="312">D.47 c.8</note>
+        <note type="fons" target="#D3.t1.f88s" targetEnd="#D3.t1.f88e" n="315">D.8 pr.</note>
+        <note type="fons" target="#D3.t1.f89s" targetEnd="#D3.t1.f89e" n="321">C.23 q.7 c.1</note>
+        <note type="fons" target="#D3.t1.f90s" targetEnd="#D3.t1.f90e" n="328-333">Cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.6 p.c.3 (lin. 15-24)</note>
+        <note type="fons" target="#D3.t1.f91s" targetEnd="#D3.t1.f91e" n="334">C.12 q.1 c.2</note>
+        <note type="fons" target="#D3.t1.f92s" targetEnd="#D3.t1.f92e" n="338"><hi rend="italic">ut iam dicetur</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. D.3 t.1 q.19 (lin. 447-449)</note>
+        <note type="fons" target="#D3.t1.f93s" targetEnd="#D3.t1.f93e" n="345">C.15 q.8 c.3</note>
+        <note type="fons" target="#D3.t1.f94s" targetEnd="#D3.t1.f94e" n="347">D.1 c.7</note>
+        <note type="fons" target="#D3.t1.f95s" targetEnd="#D3.t1.f95e" n="348-349">D.35 c.8</note>
+        <note type="fons" target="#D3.t1.f96s" targetEnd="#D3.t1.f96e" n="350-351"><hi rend="italic">Estote</hi> - <hi rend="italic">uestris</hi> cf. 1 Petr. 2.18; Col. 3.22; Eph. 6.5</note>
+        <note type="fons" target="#D3.t1.f97s" targetEnd="#D3.t1.f97e" n="353">C.17 q.4 c.37</note>
+        <note type="fons" target="#D3.t1.f98s" targetEnd="#D3.t1.f98e" n="355-356"><hi rend="italic">Inst</hi>. 1.5 pr.</note>
+        <note type="fons" target="#D3.t1.f99s" targetEnd="#D3.t1.f99e" n="360"><hi rend="italic">Inst</hi>. 1.16; cf. <hi rend="italic">Dig</hi>. 4.5</note>
+        <note type="fons" target="#D3.t1.f100s" targetEnd="#D3.t1.f100e" n="368-369"><hi rend="italic">una</hi> - <hi rend="italic">libertas</hi> cf. D.1 c.7; cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.16 (lin. 347)</note>
+        <note type="fons" target="#D3.t1.f101s" targetEnd="#D3.t1.f101e" n="377-410">Cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.1 c.7 (lin. 6-37)</note>
+        <note type="fons" target="#D3.t1.f102s" targetEnd="#D3.t1.f102e" n="379"><hi rend="italic">Crescite et multiplicamini</hi> cf. Gen. 1.28</note>
+        <note type="fons" target="#D3.t1.f103s" targetEnd="#D3.t1.f103e" n="380"><hi rend="italic">Maledictus</hi> - <hi rend="italic">Israel</hi> cf. <hi rend="italic">S</hi>. <hi rend="italic">Lips</hi>. ad C.27 q.1 c.41 (lin. 19) et Ruf. 439; cf. C.32 q.4 in p.c.2 (Maledicta†† sterilis, que non reliquerit semen suum super terram) et <hi rend="italic">Not</hi>. <hi rend="italic">Corr</hi>. ad loc.</note>
+        <note type="fons" target="#D3.t1.f104s" targetEnd="#D3.t1.f104e" n="381">C.8 q.1 c.8</note>
+        <note type="fons" target="#D3.t1.f105s" targetEnd="#D3.t1.f105e" n="410"><hi rend="italic">instinctus et ordo</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 22)</note>
+        <note type="fons" target="#D3.t1.f106s" targetEnd="#D3.t1.f106e" n="412-413">D.1 q.7</note>
+        <note type="fons" target="#D3.t1.f107s" targetEnd="#D3.t1.f107e" n="414-415">D.46 c.8</note>
+        <note type="fons" target="#D3.t1.f108s" targetEnd="#D3.t1.f108e" n="415"><hi rend="italic">Si</hi> - <hi rend="italic">percusserit</hi> cf. Matth. 5.39</note>
+        <note type="fons" target="#D3.t1.f109s" targetEnd="#D3.t1.f109e" n="415-416">C.14 q.1 cc.1,2</note>
+        <note type="fons" target="#D3.t1.f110s" targetEnd="#D3.t1.f110e" n="416"><hi rend="italic">Non</hi> - <hi rend="italic">uindicantes</hi> cf. Rom. 12.19</note>
+        <note type="fons" target="#D3.t1.f111s" targetEnd="#D3.t1.f111e" n="416">C.11 q.3 c.68</note>
+        <note type="fons" target="#D3.t1.f112s" targetEnd="#D3.t1.f112e" n="419">C.2 q.6 c.28</note>
+        <note type="fons" target="#D3.t1.f113s" targetEnd="#D3.t1.f113e" n="420">C.1 q.1 c.111</note>
+        <note type="fons" target="#D3.t1.f114s" targetEnd="#D3.t1.f114e" n="420">C.20 q.2 c.2</note>
+        <note type="fons" target="#D3.t1.f115s" targetEnd="#D3.t1.f115e" n="423-424">JL 13771; <hi rend="italic">App</hi>. 14.1; 1 <hi rend="italic">Comp</hi>. 5.34.5 (X 5.39.4)</note>
+        <note type="fons" target="#D3.t1.f116s" targetEnd="#D3.t1.f116e" n="427">D.50 c.36</note>
+        <note type="fons" target="#D3.t1.f117s" targetEnd="#D3.t1.f117e" n="428-429">C.22 q.2 c.14</note>
+        <note type="fons" target="#D3.t1.f118s" targetEnd="#D3.t1.f118e" n="433"><hi rend="italic">in</hi> - <hi rend="italic">Seditionarios</hi> cf. D.46 c.8</note>
+        <note type="fons" target="#D3.t1.f119s" targetEnd="#D3.t1.f119e" n="433-434"><hi rend="italic">in Apostolo</hi> cf. Rom. 12.19 et C.11 q.3 c.68</note>
+        <note type="fons" target="#D3.t1.f120s" targetEnd="#D3.t1.f120e" n="442"><hi rend="italic">c</hi>. <hi rend="italic">Ne quis arbitretur</hi> cf. C.22 q.2 c.14</note>
+        <note type="fons" target="#D3.t1.f121s" targetEnd="#D3.t1.f121e" n="448"><hi rend="italic">ut supra</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.15 (lin. 337-340)</note>
+        <note type="fons" target="#D3.t1.f122s" targetEnd="#D3.t1.f122e" n="450-451"><hi rend="italic">Secundum</hi> - <hi rend="italic">pane</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.19 (lin. 464-468, 483-490); cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.8 pr. (lin. 11-38), ad C.14 q.1 (lin. 18-20)</note>
+        <note type="fons" target="#D3.t1.f123s" targetEnd="#D3.t1.f123e" n="464-468"><hi rend="italic">Item</hi> - <hi rend="italic">assignata</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.19 (lin. 450-451)</note>
+        <note type="fons" target="#D3.t1.f124s" targetEnd="#D3.t1.f124e" n="466"><hi rend="italic">Si quis</hi> - <hi rend="italic">in iudicio</hi> cf. Matth. 5.40</note>
+        <note type="fons" target="#D3.t1.f125s" targetEnd="#D3.t1.f125e" n="467">C.14 q.1 p.c.1</note>
+        <note type="fons" target="#D3.t1.f126s" targetEnd="#D3.t1.f126e" n="469"><hi rend="italic">tria attenduntur</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Decr</hi>. ad D.8 pr. (lin. 27ss.)</note>
+        <note type="fons" target="#D3.t1.f127s" targetEnd="#D3.t1.f127e" n="483-490"><hi rend="italic">Cuculla</hi> - <hi rend="italic">concedimus</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 q.19 (lin. 450-451)</note>
+        <note type="fons" target="#D3.t1.f128s" targetEnd="#D3.t1.f128e" n="498-499"><hi rend="italic">acquisitio</hi> - <hi rend="italic">marique sunt</hi> cf. D.1 in c.7</note>
+        <note type="fons" target="#D3.t1.f129s" targetEnd="#D3.t1.f129e" n="500">D.1 c.7</note>
+        <note type="fons" target="#D3.t1.f130s" targetEnd="#D3.t1.f130e" n="515"><hi rend="italic">ius</hi> - <hi rend="italic">docuit</hi> cf. <hi rend="italic">Dig</hi>. 1.1.1.3 et <hi rend="italic">Inst</hi>. 1.2.pr.; cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 23-24)</note>
+        <note type="fons" target="#D3.t1.f131s #D3.t1.f132s" targetEnd="#D3.t1.f131e #D3.t1.f132e" n="516,526"><hi rend="italic">licitum et approbatum</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 25)</note>
+        <note type="fons" target="#D3.t1.f133s" targetEnd="#D3.t1.f133e" n="524"><hi rend="italic">ordo</hi> - <hi rend="italic">nature</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 22)</note>
+        <note type="fons" target="#D3.t1.f134s" targetEnd="#D3.t1.f134e" n="530">D.1 c.7</note>
+        <note type="fons" target="#D3.t1.f135s" targetEnd="#D3.t1.f135e" n="531">D.1 c.9</note>
+        <note type="fons" target="#D3.t1.f136s" targetEnd="#D3.t1.f136e" n="535"><hi rend="italic">Dig</hi>. 1.1</note>
+        <note type="fons" target="#D3.t1.f137s #D3.t1.f138s #D3.t1.f139s #D3.t1.f140s #D3.t1.f141s" targetEnd="#D3.t1.f137e #D3.t1.f138e #D3.t1.f139e #D3.t1.f140e #D3.t1.f141e" n="542,548,550,562,571"><hi rend="italic">licitum et approbatum</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 25)</note>
+        <note type="fons" target="#D3.t1.f142s #D3.t1.f143s #D3.t1.f144s #D3.t1.f145s #D3.t1.f146s" targetEnd="#D3.t1.f142e #D3.t1.f143e #D3.t1.f144e #D3.t1.f145e #D3.t1.f146e" n="546,552,557,561,570"><hi rend="italic">ordo</hi> (<hi rend="italic">quidam</hi>) <hi rend="italic">et instinctus</hi> (<hi rend="italic">nature</hi>) cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 22)</note>
+        <note type="fons" target="#D3.t1.f147s #D3.t1.f148s #D3.t1.f149s #D3.t1.f150s" targetEnd="#D3.t1.f147e #D3.t1.f148e #D3.t1.f149e #D3.t1.f150e" n="548,550,558,564"><hi rend="italic">iudicium rationis</hi> cf. Hon. <hi rend="italic">S</hi>. <hi rend="italic">Quaest</hi>. D.3 t.1 pr. (lin. 41)</note>
+        <note type="fons" target="#D3.t1.f151s" targetEnd="#D3.t1.f151e" n="560"><hi rend="italic">quo</hi> - <hi rend="italic">iubetur</hi> cf. D.1 pr.</note>
+        <note type="fons" target="#D3.t1.f152s" targetEnd="#D3.t1.f152e" n="565"><hi rend="italic">iubetur</hi> - <hi rend="italic">fieri</hi> cf. D.1 pr.</note>
+        <note type="fons" target="#D3.t1.f153s" targetEnd="#D3.t1.f153e" n="566-567"><hi rend="italic">transire</hi> - <hi rend="italic">fas est</hi> cf. D.1 c.1</note>
+      </div>
+    </back>
+  </text>
+</TEI>

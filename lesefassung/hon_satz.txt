@@ -1,0 +1,89 @@
+$$! QUELLE=hon_d3_t1.tf, ZIEL=hon_d3_t1.ps, PDF=hon_d3_t1.pdf, SEITEN=1(21)
+$$- =================================================================================================
+$$- SETZEN: Satz von Magister Honorius, Summa quaestionum, D.3 t.1 (de iure naturali)
+$$-         mit Titel-Apparat (1), kritischem Apparat (2) und Quellenapparat (3)
+$$-
+$$- Aufruf: #$SETZEN$hon_satz.tf
+$$-         #$SETZEN$hon_satz.tf, quelle, ziel.ps, ziel.pdf, seiten
+$$-         (ohne Angaben gelten die Voreinstellungen in der ersten Zeile)
+$$- Ergebnis: PostScript-Datei ZIEL; PDF-Datei PDF (über #*PS2PDF, unter Windows mit Ghostscript)
+$$-
+$$- Ablauf: 1. #KOPIERE    Kürzungszeichen con/cum #[A76F] im Satz als „9“ wie im Druck
+$$-         2. #SATZ T     Zeilenumbruch (Zeilenfall der Datei, &!U), Platzbedarf der Apparate;
+$$-                        Zeilennummern ins Protokoll (Parameter ZLN, 7. Wert 2)
+$$-         3. #*AUMBRUCH  Apparateinträge aus dem Protokoll von Lauf T herausziehen, Zeilenzahlen
+$$-                        einsetzen, Apparatblöcke bilden
+$$-         4. #SATZ A     Seiten wie in der Datei (&&-n&&{), Apparate am Seitenfuß
+$$-         5. #*PSAUS, #*PS2PDF
+$$- Maße in Didot-Punkt. Erläuterungen im LIESMICH.
+$$- =================================================================================================
+$$-
+$$- Parameter für beide Läufe von #SATZ; ZLN und HOE folgen je Lauf (ZLN vor MON). Grundtext
+$$- 11,25 auf 12 Punkt, Apparate 8+2, Satzspiegel 330 Punkt breit, Ausweichapparate 4 und 5 in 2
+$$- bzw. 3 eingereiht, Satzmakro &.am: Spalte der Einträge hinter einer Abschnittsmarke
+$$ SET satzkopf = *
+GRO       11,25//12 9+1 8+2 15+3 17+3 9+15 9+15 9+15
+BRE       330 330 330 330 330 330 330 330 330
+SEI       1 2 1 0
+$$ SET satzrest = *
+KOL       -6
+&&        2 2 0 0 8
+ABB       200 20 4000 4000
+MON       1 0 330 105 105
+AP1       330 330 1 8 2 0
+AP2       330 330 1 8 2 0
+AP3       330 330 1 8 2 0
+AP4       2
+AP5       3
+AP6
+AP7
+AP8
+AP9
+MAC       &.am &=024
+$$- Parameter für #*AUMBRUCH: Zeichenfolgen vor dem ersten Eintrag | zwischen zwei Einträgen |
+$$- nach dem letzten Eintrag | nach einem Zeilenwechsel im Apparat (vor einer Abschnittsmarke);
+$$- AZ1 ohne Angabe: Titel-Apparat ohne Zeilenzahlen; AZ2, AZ3: 5. Zeichenfolge für Bereiche bis
+$$- auf die Folgeseite mit dreistelliger Zeilennummer (xxx)
+$$ SET umbrpar = *
+APA       |&!A $$$+0$$$ &!R. |
+APE       | &=000 |
+AP1       | &!--(0,60) &!K(8/10) | @+______ | &!K{| &!K{ $$$0$$$ &!K(8/10) |
+AZ1
+AF1       ||
+AP2       | &!--(0,60) &!K(8/10) | @+______ | &!K{| &!K{ $$$0$$$ &!K(8/10) |
+AZ2       |||||\-S._xxxxxx.xxx||
+AF2       ||
+AP3       | &!--(0,60) &!K(8/10) | @+______ | &!K{| &!K{ $$$0$$$ &!K(8/10) |
+AZ3       |||||\-S._xxxxxx.xxx||
+AF3       ||
+AP4       2
+AP5       3
+AP6
+AP7
+AP8
+AP9
+APF       ||
+$$- Zwischendateien (temporär, werden am Ende der Sitzung gelöscht)
+#ANMELDE, <QUELLE>
+#DATEI, hs_kopie.tf'hs_ziel_t.tf'hs_aus.tf'hs_pro.tf'hs_umbr.tf'hs_ziel_a.tf, SEQ-T, , -
+#KOPIERE, <QUELLE>, hs_kopie.tf, -, +, *
+XX        |#\[A76F\]|9|
+*EOF
+#SATZ, hs_kopie.tf, hs_ziel_t.tf, T, +, *, hs_aus.tf, hs_pro.tf
+<satzkopf>
+ZLN       5 6 8 1 0 10 2
+<satzrest>
+HOE       1500 -999
+*EOF
+#*AUMBRUCH, hs_pro.tf, hs_umbr.tf, PARAMETER=*
+<umbrpar>
+*EOF
+#SATZ, hs_umbr.tf, hs_ziel_a.tf, A, +, *, hs_aus.tf, -
+<satzkopf>
+ZLN       5 6 8 1 0 10 0
+<satzrest>
+HOE       504 100 1 2
+*EOF
+#DATEI, <ZIEL>'<PDF>, FDF-AP
+#*PSAUS, hs_aus.tf, SEITEN=<SEITEN>, DATEI=<ZIEL>, KOPF=-, EINRUECKEN=0+50
+#*PS2PDF, <ZIEL>, <PDF>

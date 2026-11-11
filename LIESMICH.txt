@@ -1,0 +1,262 @@
+LIESMICH
+========
+
+Magister Honorius, Summa quaestionum ‘De quaestionibus decretalibus tractaturi’
+Tertia distinctio, Titulus 1: De iure naturali – TUSTEP-Fassung
+
+Vorlage:  Magistri Honorii Summa quaestionum … Tertia distinctio, Titulus 1: De iure naturali. Textus,
+          ed. Niels Becker, Waltraud Kozur, Karin Miethaner-Vent, München und Würzburg 2024 (15.02.2024),
+          https://honorius-summa-quaestionum.com/ (dort als PDF), Lizenz CC BY-NC-ND 4.0.
+TUSTEP-Fassung: Niels Becker (LMU München, niels.becker@lmu.de), November 2026. Text und beide Apparate
+          sind wortgleich mit dem Druck, Zeilen- und Seitenumbruch wie im Druck; Abweichungen in Abschnitt 7.
+Erstellt und geprüft mit TUSTEP Version 2026 unter Windows 11.
+
+
+1. Inhalt
+---------
+
+hon_d3_t1.tf        TUSTEP-Datei: Text mit Titel-, kritischem und Quellenapparat, ein Satz je Druckzeile
+hon_satz.tf         TUSTEP-Segment-Datei mit dem Kommandomakro SETZEN (Satz bis zur PDF, s. Abschnitt 2)
+hon_d3_t1.pdf       Ergebnis von SETZEN: der ganze Titulus, 21 Seiten
+
+austausch/          dieselben beiden TUSTEP-Dateien im Datenaustauschformat (#UMWANDLE … MODUS=TX,
+                    Handbuch S. 60), falls die .tf-Dateien bei der Übertragung beschädigt wurden:
+  hon_d3_t1_tx.txt
+  hon_satz_tx.txt
+
+lesefassung/        zum Ansehen ohne TUSTEP:
+  hon_d3_t1.txt     Satznummer und Text in TUSTEP-Schreibweise (wie im Editor; #UMWANDLE … CODE=ASCII)
+  hon_satz.txt      das Makro SETZEN
+
+beilagen/
+  honorius_D3_t1.xml
+                    TEI-Fassung (schlanker „TEI-Kern“), aus der hon_d3_t1.tf erzeugt wurde
+
+README.md, LICENSE.md   Kurzbeschreibung und Lizenzen (Edition CC BY-NC-ND 4.0, Makro MIT)
+
+
+2. Setzen
+---------
+
+Beide .tf-Dateien in das Verzeichnis kopieren, in dem die TUSTEP-Sitzung ihre Dateien hat, dann:
+
+    #ANMELDE, hon_satz.tf
+    #$SETZEN$hon_satz.tf
+
+Ergebnis: hon_d3_t1.ps (PostScript) und hon_d3_t1.pdf. Die Zwischendateien (hs_….tf) sind temporär.
+Spezifikationen (Voreinstellung in Klammern):
+
+    #$SETZEN$hon_satz.tf, QUELLE, ZIEL, PDF, SEITEN
+      QUELLE  zu setzende Datei                  (hon_d3_t1.tf)
+      ZIEL    PostScript-Datei                   (hon_d3_t1.ps)
+      PDF     PDF-Datei                          (hon_d3_t1.pdf)
+      SEITEN  auszugebende Seiten für #*PSAUS    (1(21))
+
+Ablauf des Makros:
+  1. #KOPIERE   tauscht das Kürzungszeichen con/cum #[A76F] gegen „9“ wie im Druck (die Standardschrift
+                hat kein ꝯ; die Datei selbst behält #[A76F])
+  2. #SATZ T    Zeilenumbruch, Platzbedarf der Apparate, Zeilennummern ins Protokoll
+  3. #*AUMBRUCH zieht die Einträge aus dem Protokoll von Lauf T heraus, setzt die Zeilenzahlen ein
+  4. #SATZ A    Seitenumbruch mit den Apparaten am Seitenfuß
+  5. #*PSAUS, #*PS2PDF (unter Windows mit Ghostscript, Handbuch S. 39)
+
+Das Makro wurde im Stapelbetrieb in einem leeren Verzeichnis geprüft; hon_d3_t1.pdf ist sein Ergebnis.
+
+Rückweg aus dem Austauschformat:
+
+    #ANMELDE, hon_d3_t1_tx.txt'hon_satz_tx.txt
+    #DATEI, hon_d3_t1.tf, SEQ-P
+    #UMWANDLE, hon_d3_t1_tx.txt, hon_d3_t1.tf, XT, +
+    #DATEI, hon_satz.tf, RAN-P
+    #UMWANDLE, hon_satz_tx.txt, hon_satz.tf, XT, +
+
+
+3. Aufbau von hon_d3_t1.tf
+--------------------------
+
+- 581 Sätze: 2 Überschriften und 579 Textzeilen (pr., q.1–q.22). Zeilenfall wie im Druck; Silbentrennung
+  mit „-“ am Satzende wie im Druck.
+- Satznummer = Druckseite.Zeile; Zeile = durchgehende Zeilenzählung des Titulus (2.22 = Druckseite 2,
+  Zeile 22). Die Überschriften haben 1.0/1 und 1.0/2.
+- Zeilenfall, Seitenumbruch und Zeilenzählung folgen dem Druck, weil der Quellenapparat selbst auf Zeilen
+  des Titulus verweist („q.17 (lin. 410)“) und die Zählung mit der gedruckten Edition übereinstimmen soll.
+- Die Datei enthält keine Maßangaben; Schriftgrößen, Abstände und Satzspiegel stehen in den Parametern von
+  SETZEN.
+
+Zeichen:
+
+  fett (pr., q.N, Gliederungswörter, Überschriften)    #F+ … #F-
+  kursiv (im Apparat: om., add., Lemmata und Werktitel  #/+ … #/-
+    im Quellenapparat)
+  hochgestellt (P², fol. 33va, naturalis²)               &!H+ … &!H.   (nicht #'x: scheitert an „ıı“)
+  ꝯ (Kürzung con/cum, im Druck „9“)                     #[A76F]
+  ı (i ohne Punkt)                                       #.i
+  Überstrich über einem Buchstaben (n̄, ḡ, ī …)           %-n, %-g, %-i …
+  ‘ ’                                                   #[2018] #[2019]
+  …                                                     #[2026]       (nur Randglosse q.3 Z. 97)
+  〈 〉 (〈TERTIA DISTINCTIO〉, 〈dispensat〉)             ^< ^>
+  †                                                     ^+            (Quellenapparat Z. 380)
+  – in Lemma und Bereich („magnum – ecclesia“, „19-49“)  „ - “ bzw. „-“ vor Ziffer (Halbgeviertstrich im Satz)
+  – sonst                                                #[2013]       (Quellenapparat Z. 203)
+  fester Abstand nach der Zeilenzahl im Apparat          _
+  [ ] in Randlesarten von P (Ergänzungen der Herausgeber, wo der Text im Falz steht), (!), (?)  wie im Druck
+
+Überstriche, die im Druck zwischen zwei Buchstaben stehen (paläographischer Befund), setzt TUSTEP nicht
+(der lange Überstrich %%- gehört nicht zu den Akzenten des Satzprogramms); dafür steht eine Ersatzform des
+Herausgebers mit dem Strich über einem der beiden Buchstaben:
+
+  pr. Z. 13    #[A76F]unct%-om      pr. Z. 50     c%-a           q.5 Z. 151   %-ip
+  q.12 Z. 251  Ambrt%-i             q.16 Z. 360   dem%-mo        q.16 Z. 367  an%-ale
+  q.17 Z. 404  co%-ia (zweimal)
+
+Satzanweisungen in der Datei:
+
+  @=D.3 t.1 q.1 - q.3@{                  lebender Kolumnentitel, je Seite wie im Druck
+  &&&#F+^<TERTIA DISTINCTIO^>#F-@-Z&&&{   Titelzeile Stufe 3, zentriert (Satz 1.0/1)
+  &&#F+D.3 t.1 de iure naturali#F-@-Z&&{  Titelzeile Stufe 2, zentriert (Satz 1.0/2)
+  &!U &!R(1)                             vor Z. 1: Zeilenfall der Datei übernehmen; fortlaufende Zählung ab 1
+  $$$0$$$                                Absatzanfang (96×)
+  &&-2&&{                                Seitenwechsel wie im Druck (20×)
+  &!R(22) &!R+                           nach jedem Seitenwechsel: Nummer der ersten Zeile der Seite (der Satz
+                                         zählt die Apparatzeilen der Vorseite mit), Randzahlen wieder ein
+
+Beispiel (Druckseite 1, Z. 6–7):
+
+  1.6  locum optinere meruit, quia testante doctore gentium &xx2#F+pr.#F-&.am 00_gentium ZBD,
+       #[A76F]%-ntium P, #/+om#/-. L&xx{ magnum &xx30-0_#/+magnum#/- - #/+ecclesia#/- cf. Eph. 5.32&xx{ est
+  1.7  sacramentum in Christo et ecclesia. &xx3&xx{ Preminet enim ceteris temporis
+
+  gesetzt: kritischer Apparat „pr. 6 gentium ZBD, 9n̄tium P, om. L“ (erster Eintrag zu pr., daher mit
+  Abschnittsmarke), Quellenapparat „6-7 magnum – ecclesia cf. Eph. 5.32“
+
+
+4. Apparate
+-----------
+
+4.1 Apparatnummern
+
+  1   Titel-Apparat (Marke „tit.“, ohne Zeilenzahlen; eigener Block vor dem kritischen Apparat)   1 Eintrag
+  2   kritischer Apparat                                                                     205 Einträge
+  3   Quellenapparat                                                                         139 Einträge
+  4   Ausweichnummer, beim Setzen in Apparat 2 eingereiht (AP4 2)                              6 Einträge
+  5   Ausweichnummer, beim Setzen in Apparat 3 eingereiht (AP5 3)                             33 Einträge
+
+  Wo sich im Druck Lemmata über mehrere Wörter desselben Apparats überschneiden oder umschließen (z. B.
+  pr. Z. 30-32 „uel quia a Deo“ und „uel quia a Deo – appellatur“) oder im Bereich eines Lemmas ein
+  Zeilenwechsel-Kennzeichen desselben Apparats steht, bekommt der Eintrag eine Ausweichnummer (Handbuch
+  S. 1348).
+
+4.2 Einträge
+
+  Jeder Eintrag des Drucks steht genau einmal in der Datei, im Wortlaut des Drucks (Lemma mit oder ohne „]“,
+  Lesarten, Sigel; Kürzungen von P wie im Druck diplomatisch: ꝯ, Überstriche, ı).
+
+  Ein Wort:        &xxn00_…&xx{ direkt hinter dem Wort (hinter anschließenden Satzzeichen).
+  Mehrere Wörter:  &xxn0-0_…&xx{ hinter dem ersten Wort, leere Endmarke &xxn&xx{ hinter dem letzten; auch
+                   über einen Seitenwechsel (pr. Z. 41-45, 94-103, 125-163, 237-249, 377-410, 450-451).
+  Die Zeilenzahlen setzt #*AUMBRUCH ein. Wo TUSTEP kein Verfahren hat, ist nur die erste Zahl automatisch,
+  die übrigen stehen fest (6 Einträge im Quellenapparat):
+    - Zeilenlisten, Eintrag hinter dem ersten Lemma: &xx300,231,234_#/+non occides#/- cf. …&xx{
+      (ebenso 516,526; 542,…; 546,…; 548,…);
+    - pr. Z. 19-49, über zwei Seitenwechsel (#*AUMBRUCH verarbeitet die Endmarke nur bis zur nächsten
+      Seite, Handbuch S. 1347): &xx300-49_#/+Sciendum#/- - #/+fieri#/- cf. …&xx{
+
+4.3 Abschnittsmarken
+
+  Jeder Abschnitt (pr., q.N) beginnt in jedem Apparat mit seiner fetten Marke auf neuer Zeile. Im Text steht
+  am Abschnittsanfang das Zeilenwechsel-Kennzeichen (Handbuch S. 1348), die Marke steht im ersten Eintrag des
+  Abschnitts vor der Zeilenangabe; das Satzmakro &.am (Parameter MAC) rückt die Einträge in die Spalte rechts
+  der Marke:
+
+    1.1   &!U &!R(1) #F+pr.#F- &xx2\&xx{ &xx3\&xx{ Primam et secundam …
+    1.6   … gentium &xx2#F+pr.#F-&.am 00_gentium ZBD, …&xx{
+
+  46 Marken (mit „tit.“). Läuft ein Abschnitt auf der Folgeseite weiter, beginnt sein Apparat dort ohne Marke.
+
+
+5. Satzparameter (im Makro SETZEN)
+----------------------------------
+
+Maße in Didot-Punkt; Ausgabe in Originalgröße auf DIN A4. Schrift Times (TUSTEP-Standard).
+
+  GRO   11,25//12 9+1 8+2 15+3 17+3 9+15 9+15 9+15
+                                  Grundtext 11,25 auf 12 (≈ 12 pt wie im Druck), Titelzeilen, Seitenzahl und
+                                  Kolumnentitel (Abstand Kopfzeile → Text 24 Punkt)
+  BRE   330 (9×)                  Satzbreite 330 Punkt (12,4 cm)
+  SEI   1 2 1 0                   Seitenzahl oben außen
+  ZLN   Lauf T 5 6 8 1 0 10 2     Randzahl jede 5. Zeile, links; Zeilennummern ins Protokoll (für #*AUMBRUCH)
+        Lauf A 5 6 8 1 0 10 0
+  KOL   -6                        Kolumnentitel oben, zentriert; ohne Hinweis bei jedem Wechsel
+  &&    2 2 0 0 8                 Abstand vor und nach der Titelzeile Stufe 2
+  ABB   200 20 4000 4000          Apparateinträge bis 4000 Zeichen
+  MON   1 0 330 105 105           mit der Einrückung von *PSAUS (10 Punkt) Satzspiegel mittig
+  AP1–AP3  330 330 1 8 2 0        Apparate fortlaufend, 8+2
+  AP4 2, AP5 3                    Ausweichnummern einreihen
+  MAC   &.am &=024                Satzmakro hinter der Abschnittsmarke: Spalte der Einträge
+  HOE   Lauf T 1500 -999          Seitenumbruch nur an den Seitenwechseln der Datei
+        Lauf A 504 100 1 2        42 Grundzeilen; freier Raum an &!A vor dem Apparat (Apparat am Seitenfuß)
+
+  #*AUMBRUCH:
+  APA   |&!A $$$+0$$$ &!R. |
+  APE   | &=000 |
+  AP1–AP3  | &!--(0,60) &!K(8/10) | @+______ | &!K{| &!K{ $$$0$$$ &!K(8/10) |
+           Fußnotenlinie vor jedem Block; zwischen zwei Einträgen 1½ Geviert (feste Ausschlüsse, fallen am
+           Zeilenanfang und -ende weg); vor einer Abschnittsmarke neue Zeile
+  AZ1   (leer)                    Titel-Apparat ohne Zeilenzahlen
+  AZ2, AZ3  |||||\-S._xxxxxx.xxx||   5. Zeichenfolge: Bereich, dessen Ende auf der Folgeseite steht
+
+  Befunde, die die Parameter bestimmt haben:
+  - AZn, 5. Zeichenfolge: Mit der Voreinstellung (\-S._xxxxxx.xx, zweistellige Zeilennummer) setzte
+    #*AUMBRUCH bei dreistelligen Zeilennummern die zweite Zahl nicht ein („94-“ statt „94-103“).
+  - #*AUMBRUCH ersetzt „00“ auch in den Zeichenfolgen der Parameter (aus @+&!(+1500) wurde „+1530“);
+    deshalb feste Ausschlüsse statt einer Zahlenangabe.
+  - #SATZ T mit ZLN 7. Wert 2 braucht eine ZIEL-Datei (Handbuch S. 1188).
+  - #*PS2PDF verlangt eine eingerichtete Ziel-Datei (#DATEI, …, FDF-AP).
+
+
+6. Handschriften (Sigla)
+------------------------
+
+  P   Paris, BnF, lat. 14591 – Leithandschrift
+  L   Leipzig, UB 984
+  Z   Zwettl, Stiftsbibliothek 162
+  B   Bamberg, SB, Msc. Can. 45 (P. II. 4)
+  D   Douai, BM 640 (584)
+
+Reichweite des kritischen Apparats: Vollständig verzeichnet ist nur P. L, Z, B und D sind nur für die
+Allegationen (bzw. Passagen, die Allegationen enthalten) und für die Gliederungselemente (Queritur, Videtur,
+Econtra, Solutio usw. bzw. Passagen, die sie enthalten) verzeichnet. Schweigen des Apparats bedeutet für
+L–D außerhalb dieser Passagen keine Übereinstimmung mit dem Text.
+
+Korrekturen gegenüber dem Druck (vom Herausgeber bestätigt): q.18 Zeilenzahlen 416, 418 (Druck 316, 318);
+q.21 Z. 555 „constituit L“ (Druck „constituit Z“); pr. Z. 30-32 Lemma „uel quia a Deo – appellatur“ (Druck
+„uel a Deo – appellatur“); Quellenapparat pr. Z. 41-45 „Vnde Origines“ (Druck „Vnde Origenes“).
+
+
+7. Abweichungen des Satzes vom Druck
+------------------------------------
+
+  - Gestaltung mit gängigen TUSTEP-Einstellungen statt genauer Nachbildung: Times statt Bell MT,
+    Zeilenabstand 12 Didot-Punkt statt 12,5 pt (die Seiten sind dadurch etwa 3 mm länger), runde Maße,
+    TUSTEP-Fußnotenlinie. Zeilenfall, Seitenumbruch und Zeilenzählung sind wie im Druck.
+  - Der Apparat steht auf allen Seiten am Seitenfuß, auch auf S. 21 (im Druck dort direkt unter dem Text).
+  - Läuft ein Abschnitt auf der Folgeseite weiter, beginnt sein Apparat dort ohne Marke (im Druck mit der
+    Marke in normaler Schrift).
+  - Zeilenumbrüche innerhalb der Apparate fallen anders aus.
+  - Randausgleich: Z. 145, 571 (Absatzenden, im Druck zufällig voll) kurz; Z. 357 (im Druck kurz, kein
+    Absatzende) sowie Z. 67, 457 (im Druck knapp nicht voll) voll.
+  - ꝯ im Satz als „9“ in Times; Überstriche zwischen zwei Buchstaben als Ersatzformen (Abschnitt 3).
+
+
+8. Entstehung und Prüfung
+-------------------------
+
+Die Datei hon_d3_t1.tf wurde aus der TEI-Fassung (beilagen/honorius_D3_t1.xml) erzeugt, diese aus der
+Textschicht der Druck-PDF. Automatisch geprüft wurden u. a.:
+  - Text und alle Apparateinträge aus der .tf zurückgewonnen = TEI = Druck (mit den genannten Korrekturen);
+    Rückumwandlung der .tf ohne Verlust;
+  - im Satz: alle 579 Zeilen wortgleich mit dem Druck, Zeilenfall, Seitenwechsel und Randzahlen wie im Druck;
+    alle 345 Apparateinträge mit der von TUSTEP eingesetzten Zeilenzahl und ihrem Wortlaut wie im Druck;
+    Abschnittsmarken wie die fetten Marken des Drucks; Zeilenabstand überall gleich; Apparat am Seitenfuß;
+  - SETZEN allein in TUSTEP (leeres Verzeichnis): Ergebnis gleich dem geprüften Satz; Austauschformat hin und
+    zurück ohne Verlust.

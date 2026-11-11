@@ -1,0 +1,55 @@
+^TUSTEP[X]:N=-*HON_SATZ.TF,#=91,D=05.11.26 21:21:40,M=2026-11-05 21:21:37       
+10#/100=#=  SETZEN85#1.0=#=: SETZEN                                             
+         #=- 05.11.26 21:21:3775#/100=$$! QUELLE=hon_d3_t1.tf, ZIEL=hon_d3_t1.ps
+, PDF=hon_d3_t1.pdf, SEITEN=1(21)101#/200=$$- ==================================
+===============================================================85#/300=$$- SETZE
+N: Satz von Magister Honorius, Summa quaestionum, D.3 t.1 (de iure naturali)80#/
+400=$$-         mit Titel-Apparat (1), kritischem Apparat (2) und Quellenapparat
+ (3)3#/500=$$-32#/600=$$- Aufruf: #$SETZEN$hon_satz.tf67#/700=$$-         #$SETZ
+EN$hon_satz.tf, quelle, ziel.ps, ziel.pdf, seiten74#/800=$$-         (ohne Angab
+en gelten die Voreinstellungen in der ersten Zeile)98#/900=$$- Ergebnis: PostScr
+ipt-Datei ZIEL; PDF-Datei PDF (^uber #*PS2PDF, unter Windows mit Ghostscript)3#.
+1=$$-92#/100=$$- Ablauf: 1. #KOPIERE    K^urzungszeichen con/cum #[A76F] im Satz
+ als #.,9#.' wie im Druck95#/200=$$-         2. #SATZ T     Zeilenumbruch (Zeile
+nfall der Datei, &!U), Platzbedarf der Apparate;81#/300=$$-                     
+   Zeilennummern ins Protokoll (Parameter ZLN, 7. Wert 2)99#/400=$$-         3. 
+#*AUMBRUCH  Apparateintr^age aus dem Protokoll von Lauf T herausziehen, Zeilenza
+hlen59#/500=$$-                        einsetzen, Apparatbl^ocke bilden84#/600=$
+$-         4. #SATZ A     Seiten wie in der Datei (&&-n&&{), Apparate am Seitenf
+u^s32#/700=$$-         5. #*PSAUS, #*PS2PDF53#/800=$$- Ma^se in Didot-Punkt. Erl
+^auterungen im LIESMICH.101#/900=$$- ===========================================
+======================================================3#.2=$$-94#/100=$$- Parame
+ter f^ur beide L^aufe von #SATZ; ZLN und HOE folgen je Lauf (ZLN vor MON). Grund
+text96#/200=$$- 11,25 auf 12 Punkt, Apparate 8+2, Satzspiegel 330 Punkt breit, A
+usweichapparate 4 und 5 in 288#/300=$$- bzw. 3 eingereiht, Satzmakro &.am: Spalt
+e der Eintr^age hinter einer Abschnittsmarke19#/400=$$ SET satzkopf = *52#/500=G
+RO       11,25//12 9+1 8+2 15+3 17+3 9+15 9+15 9+1545#/600=BRE       330 330 330
+ 330 330 330 330 330 33017#/700=SEI       1 2 1 019#/800=$$ SET satzrest = *12#/
+900=KOL       -619#.3=&&        2 2 0 0 826#/100=ABB       200 20 4000 400025#/2
+00=MON       1 0 330 105 10525#/300=AP1       330 330 1 8 2 025#/400=AP2       3
+30 330 1 8 2 025#/500=AP3       330 330 1 8 2 011#/600=AP4       211#/700=AP5   
+    33#/800=AP63#/900=AP73#.4=AP83#/100=AP920#/200=MAC       &.am &=02496#/300=$
+$- Parameter f^ur #*AUMBRUCH: Zeichenfolgen vor dem ersten Eintrag | zwischen zw
+ei Eintr^agen |95#/400=$$- nach dem letzten Eintrag | nach einem Zeilenwechsel i
+m Apparat (vor einer Abschnittsmarke);97#/500=$$- AZ1 ohne Angabe: Titel-Apparat
+ ohne Zeilenzahlen; AZ2, AZ3: 5. Zeichenfolge f^ur Bereiche bis59#/600=$$- auf d
+ie Folgeseite mit dreistelliger Zeilennummer (xxx)18#/700=$$ SET umbrpar = *30#/
+800=APA       |&!A $$$+0$$$ &!R. |19#/900=APE       | &=000 |76#.5=AP1       | &
+!--(0,60) &!K(8/10) | @+______ | &!K{| &!K{ $$$0$$$ &!K(8/10) |3#/100=AZ112#/200
+=AF1       ||76#/300=AP2       | &!--(0,60) &!K(8/10) | @+______ | &!K{| &!K{ $$
+$0$$$ &!K(8/10) |32#/400=AZ2       |||||\-S._xxxxxx.xxx||12#/500=AF2       ||76#
+/600=AP3       | &!--(0,60) &!K(8/10) | @+______ | &!K{| &!K{ $$$0$$$ &!K(8/10) 
+|32#/700=AZ3       |||||\-S._xxxxxx.xxx||12#/800=AF3       ||11#/900=AP4       2
+11#.6=AP5       33#/100=AP63#/200=AP73#/300=AP83#/400=AP912#/500=APF       ||69#
+/600=$$- Zwischendateien (tempor^ar, werden am Ende der Sitzung gel^oscht)18#/70
+0=#ANMELDE, <QUELLE>88#/800=#DATEI, hs_kopie.tf'hs_ziel_t.tf'hs_aus.tf'hs_pro.tf
+'hs_umbr.tf'hs_ziel_a.tf, SEQ-T, , -40#/900=#KOPIERE, <QUELLE>, hs_kopie.tf, -, 
++, *23#.7=XX        |#\[A76F\]|9|4#/100=*EOF63#/200=#SATZ, hs_kopie.tf, hs_ziel_
+t.tf, T, +, *, hs_aus.tf, hs_pro.tf10#/300=<satzkopf>24#/400=ZLN       5 6 8 1 0
+ 10 210#/500=<satzrest>19#/600=HOE       1500 -9994#/700=*EOF46#/800=#*AUMBRUCH,
+ hs_pro.tf, hs_umbr.tf, PARAMETER=*9#/900=<umbrpar>4#.8=*EOF54#/100=#SATZ, hs_um
+br.tf, hs_ziel_a.tf, A, +, *, hs_aus.tf, -10#/200=<satzkopf>24#/300=ZLN       5 
+6 8 1 0 10 010#/400=<satzrest>21#/500=HOE       504 100 1 24#/600=*EOF28#/700=#D
+ATEI, <ZIEL>'<PDF>, FDF-AP74#/800=#*PSAUS, hs_aus.tf, SEITEN=<SEITEN>, DATEI=<ZI
+EL>, KOPF=-, EINRUECKEN=0+5023#/900=#*PS2PDF, <ZIEL>, <PDF>^^^^^^^^^^^^^^^^^^^^^
+^*EOF^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
